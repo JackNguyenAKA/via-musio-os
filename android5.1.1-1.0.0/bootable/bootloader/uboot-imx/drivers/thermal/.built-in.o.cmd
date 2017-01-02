@@ -1,0 +1,1 @@
+cmd_drivers/thermal/built-in.o :=  /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld.bfd     -r -o drivers/thermal/built-in.o drivers/thermal/thermal-uclass.o drivers/thermal/imx_thermal.o 

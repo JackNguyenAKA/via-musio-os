@@ -1,0 +1,137 @@
+
+mode "1024x768-26"
+	# D: 25.176 MHz, H: 21.263 kHz, V: 26.154 Hz
+	geometry 1024 768 1024 768 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "800x600-41"
+	# D: 25.176 MHz, H: 26.225 kHz, V: 40.658 Hz
+	geometry 800 600 800 600 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 8/16,8/8,8/0,0/0
+endmode
+
+mode "640x480-60"
+	# D: 25.176 MHz, H: 31.469 kHz, V: 59.942 Hz
+	geometry 640 480 640 480 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "320x240-184"
+	# D: 25.176 MHz, H: 52.449 kHz, V: 184.032 Hz
+	geometry 320 240 320 240 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 8/16,8/8,8/0,0/0
+endmode
+
+mode "800x480-50"
+	# D: 25.176 MHz, H: 26.225 kHz, V: 49.952 Hz
+	geometry 800 480 800 480 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 8/16,8/8,8/0,0/0
+endmode
+
+mode "1152x864-21"
+	# D: 25.176 MHz, H: 19.189 kHz, V: 21.110 Hz
+	geometry 1152 864 1152 864 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1280x720-23"
+	# D: 25.176 MHz, H: 17.483 kHz, V: 22.854 Hz
+	geometry 1280 720 1280 720 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1280x768-22"
+	# D: 25.176 MHz, H: 17.483 kHz, V: 21.504 Hz
+	geometry 1280 768 1280 768 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1280x800-21"
+	# D: 25.176 MHz, H: 17.483 kHz, V: 20.690 Hz
+	geometry 1280 800 1280 800 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1280x960-17"
+	# D: 25.176 MHz, H: 17.483 kHz, V: 17.396 Hz
+	geometry 1280 960 1280 960 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1280x1024-16"
+	# D: 25.176 MHz, H: 17.483 kHz, V: 16.355 Hz
+	geometry 1280 1024 1280 1024 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1440x1050-14"
+	# D: 25.176 MHz, H: 15.735 kHz, V: 14.370 Hz
+	geometry 1440 1050 1440 1050 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1440x900-17"
+	# D: 25.176 MHz, H: 15.735 kHz, V: 16.651 Hz
+	geometry 1440 900 1440 900 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "720x480-54"
+	# D: 25.176 MHz, H: 28.609 kHz, V: 54.493 Hz
+	geometry 720 480 720 480 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "720x576-46"
+	# D: 25.176 MHz, H: 28.609 kHz, V: 46.069 Hz
+	geometry 720 576 720 576 32
+	timings 39721 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1920x1080-7123"
+	# D: 16666.667 MHz, H: 8012.821 kHz, V: 7122.507 Hz
+	geometry 1920 1080 1920 1080 16
+	timings 60 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+
+mode "1920x1200-6436"
+	# D: 16666.667 MHz, H: 8012.821 kHz, V: 6436.000 Hz
+	geometry 1920 1200 1920 1200 16
+	timings 60 40 24 32 11 96 2
+	accel false
+	rgba 5/11,6/5,5/0,0/0
+endmode
+

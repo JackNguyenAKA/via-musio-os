@@ -1,0 +1,1 @@
+cmd_arch/arm/cpu/armv7/mx6/built-in.o :=  /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld.bfd     -r -o arch/arm/cpu/armv7/mx6/built-in.o arch/arm/cpu/armv7/mx6/soc.o arch/arm/cpu/armv7/mx6/clock.o arch/arm/cpu/armv7/mx6/mp.o 

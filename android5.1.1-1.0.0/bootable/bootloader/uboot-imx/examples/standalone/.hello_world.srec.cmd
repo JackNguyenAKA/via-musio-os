@@ -1,0 +1,1 @@
+cmd_examples/standalone/hello_world.srec := /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-objcopy -O srec  examples/standalone/hello_world examples/standalone/hello_world.srec

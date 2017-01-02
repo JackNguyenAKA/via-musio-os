@@ -1,0 +1,11 @@
+#!/bin/sh
+# Copyright (c) VIA Technologies, Inc. All rights reserved.
+# DirectFB fusion kernel module install script
+# Written by Vincent Chen
+
+rmmod fusion 1>/dev/null 2>/dev/null
+fusion=`find /lib/modules/ -name "fusion.ko"`
+if [ -e "$fusion" ]; then
+	insmod $fusion 1>/dev/null 2>/dev/null
+fi
+mdev -s

@@ -1,0 +1,1 @@
+cmd_board/freescale/mx6sabresd/built-in.o :=  /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld.bfd     -r -o board/freescale/mx6sabresd/built-in.o board/freescale/mx6sabresd/mx6sabresd.o 

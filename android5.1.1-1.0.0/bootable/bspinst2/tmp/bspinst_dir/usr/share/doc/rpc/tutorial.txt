@@ -1,0 +1,198 @@
+RPC Command Tutorials
+
+Copyright (C) 2012 WonderMedia Technologies, Inc.
+
+RPC is a utility to emit commands to rpcsrv2d, a server to render graphics 
+written by DirectFB. Due to rpc command is sent by TCP/IP, the rpcsrv2d
+server could be local or remote host. With rpc utility, programmer could
+render 2D graphics in pure shell script.
+
+
+Lesson 1: start rpcsrv2d daemon
+
+$ rpcsrv2d
+
+
+Lesson 2: fill 64x64 rectangle with green color at (100,100)
+
+$ rpc picture create_widget
+$ rpc picture set_geometry 100 100 64 64
+$ rpc picture set_fg_color 0 255 0
+$ rpc picture set_ttl 2
+$ rpc picture set_removable 1
+$ rpc picture add_widget 
+
+
+Lesson 3: draw string "hello world"
+
+$ rpc picture create_widget
+$ rpc picture set_geometry 200 200 0 0
+$ rpc picture set_alignemnt 1
+$ rpc picture set_fg_color 0 0 0
+$ rpc picture set_font_color 255 255 0
+$ rpc picture set_font_size 32
+$ rpc picture set_string "hello world"
+$ rpc picture set_ttl 2
+$ rpc picture set_removable 1
+$ rpc picture add_widget
+
+
+Lesson 4: draw PNG image
+
+$ rpc picture create_widget
+$ rpc picture set_geometry 200 200 0 0
+$ rpc picture load_image /usr/share/directfb-examples/apple-red.png
+$ rpc picture set_ttl 2
+$ rpc picture add_widget
+
+
+Lesson 5: draw PNG image (zoom + colorkey)
+
+$ rpc picture create_widget
+$ rpc picture set_geometry 200 200 256 256
+$ rpc picture set_zoom 2
+$ rpc picture set_colorkey 0 0 0
+$ rpc picture load_image /usr/share/directfb-examples/apple-red.png
+$ rpc picture set_ttl 2
+$ rpc picture add_widget
+
+
+Lesson 6: draw PNG image (zoom + colorkey + slide show)
+
+$ rpc picture create_widget
+$ rpc picture set_geometry 200 200 256 256
+$ rpc picture set_fg_color 0 0 0
+$ rpc picture set_action 2 0
+$ rpc picture set_step 0 4
+$ rpc picture set_colorkey 0 0 0
+$ rpc picture set_zoom 2
+$ rpc picture load_image /usr/share/directfb-examples/apple-red.png
+$ rpc picture set_ttl 2
+$ rpc picture add_widget
+
+
+Lesson 7: draw string "hello world" by ticker (slide show)
+
+$ echo "hello world" > /tmp/txtfile
+$ rpc ticker stop
+$ rpc ticker set_geometry 0 400 1024 128
+$ rpc ticker set_fg_color 255 255 255
+$ rpc ticker set_bg_color 0 0 0
+$ rpc ticker set_fontsize 32
+$ rpc ticker set_direction 0
+$ rpc ticker set_speed 4
+$ rpc ticker load_font /usr/share/fonts/truetype/courbd.ttf
+$ rpc ticker load_file /tmp/txtfile
+$ rpc ticker start
+$ rm -f /tmp/txtfile
+
+
+Lesson 8: launch and control external program
+
+$ rpc plugin start /usr/bin/df_andi
+pid = 2992
+(it will prompt the pid of the external program)
+$ rpc plugin pause 2992
+$ rpc plugin resume 2992
+$ rpc plugin stop 2992
+
+
+Lesson 9: emit commands to remote server running rpcsrv2d
+
+(Assume the remote server ip address is 11.22.33.44)
+$ export RPCSRV_ADDR=11.22.33.44
+
+
+Lesson 10: stop rpcsrv2d daemon
+
+$ rpc sys shutdown
+
+
+Lesson 11: programming in C
+
+It is possible to send rpc commands in C.
+
+/* the following code is equivalent to 'rpc ticker stop' */
+
+#include <rpc.h>
+
+void example(void)
+{
+        int ret;
+        int socket;
+        char cmd[MAX_RPC_DATA_LEN];
+        ret = rpc_open(&socket);
+        sprintf(cmd, "ticker stop");
+        ret = rpc_ctrl(socket, cmd);
+        ret = rpc_close(socket);
+}
+
+
+# Lessen 12: list all rpc commands
+
+$ rpc help
+Usage:  rpc ${object} ${function} ${args}
+        rpc ticker 
+        rpc picture 
+        rpc sys 
+        rpc plugin 
+
+$ rpc ticker help
+Usage: ticker 
+ticker load_fle $filename
+ticker set_geometry $x $y $w $h 
+ticker load_font $filename
+ticker set_fontsize $size 
+ticker set_fg_color $r $g $b 
+ticker set_bg_color $r $g $b 
+ticker set_option $option 
+ticker set_speed $s 
+ticker set_direction $d 
+ticker set_level $val 
+ticker start 
+ticker stop 
+ticker get_status 
+ 
+$ rpc picture help
+Usage: picture 
+picture create_widget
+picture set_geometry $x $y $w $h 
+picture set_rotation $arc 
+picture set_fg_color $r $g $b 
+picture set_bg_color $r $g $b 
+picture set_font_color $r $g $b 
+picture set_font_size $fsize 
+picture set_string $str 
+picture set_boarder $up $down $left $right
+picture set_colorkey $r $g $b 
+picture set_ttl $t 
+picture set_invisible $val 
+picture set_timeout $val 
+picture set_removable $val 
+picture set_action $act $mode	/* $act: 0=nop, 1=up, 2=down, 3=left, 4=right
+				   $mode: 0=nop, 1=move out */
+picture set_step $xstep $ystep 
+picture set_alignemnt $a	/* $a: 0=center, 1=left, 2=right */
+picture set_zoom $val		/* 0=nop, 1=scale, 2=scale (keep aspect) */
+picture set_id $val 
+picture set_level $val 
+picture load_image $filename
+picture add_widget
+picture get_widget $id 
+picture put_widget 
+picture check_widget $id 
+picture get_xcnt $id 
+picture get_ycnt $id 
+
+$ rpc sys help
+Usage: sys 
+sys shutdown 
+
+$ rpc plugin help
+Usage: plugin 
+plugin start $filename $args
+plugin stop $pid
+plugin resume $pid
+plugin pause $pid
+
+<END>

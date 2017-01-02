@@ -1,0 +1,16 @@
+ci_udc.c:300:12:ci_ep_disable	0	static
+ci_udc.c:237:13:ci_ep_free_request	8	static
+ci_udc.c:160:13:ci_flush_qh	0	static
+ci_udc.c:255:13:ep_enable	16	static
+ci_udc.c:275:12:ci_ep_enable	8	static
+ci_udc.c:647:13:stop_activity	24	static
+ci_udc.c:372:13:ci_ep_submit_next_request	40	static
+ci_udc.c:215:1:ci_ep_alloc_request	8	static
+ci_udc.c:447:12:ci_ep_queue	16	static
+ci_udc.c:675:6:udc_irq	64	static
+ci_udc.c:744:5:usb_gadget_handle_interrupts	8	static
+ci_udc.c:756:6:udc_disconnect	16	static
+ci_udc.c:767:12:ci_pullup	16	static
+ci_udc.c:875:5:usb_gadget_register_driver	32	static
+ci_udc.c:914:5:usb_gadget_unregister_driver	16	static
+ci_udc.c:928:6:dfu_usb_get_reset	0	static

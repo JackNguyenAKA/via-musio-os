@@ -1,0 +1,6 @@
+mxc_ocotp.c:234:13:5	32	static
+mxc_ocotp.c:94:5:fuse_bank_physical	8	static
+mxc_ocotp.c:175:5:fuse_read	24	static
+mxc_ocotp.c:250:5:fuse_sense	24	static
+mxc_ocotp.c:277:5:fuse_prog	24	static
+mxc_ocotp.c:324:5:fuse_override	24	static

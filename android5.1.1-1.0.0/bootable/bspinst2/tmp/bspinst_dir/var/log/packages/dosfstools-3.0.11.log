@@ -1,0 +1,12 @@
+${DEVKIT_HOME}/target/var/log/packages/dosfstools-3.0.11.log
+${DEVKIT_HOME}/target/sbin/mkfs.vfat
+${DEVKIT_HOME}/target/sbin/fsck.vfat
+${DEVKIT_HOME}/target/sbin/fsck.msdos
+${DEVKIT_HOME}/target/sbin/dosfsck
+${DEVKIT_HOME}/target/sbin/mkfs.msdos
+${DEVKIT_HOME}/target/sbin/mkdosfs
+${DEVKIT_HOME}/target/sbin/dosfslabel
+${DEVKIT_HOME}/target/usr/share/man/man8/fsck.msdos.8
+${DEVKIT_HOME}/target/usr/share/man/man8/fsck.vfat.8
+${DEVKIT_HOME}/target/usr/share/man/man8/mkfs.msdos.8
+${DEVKIT_HOME}/target/usr/share/man/man8/mkfs.vfat.8
