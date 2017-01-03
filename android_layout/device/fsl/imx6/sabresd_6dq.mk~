@@ -17,10 +17,6 @@ PRODUCT_NAME := sabresd_6dq
 PRODUCT_DEVICE := sabresd_6dq
 
 
-
-
-
-
 PRODUCT_COPY_FILES += \
 	device/fsl/sabresd_6dq/init.rc:root/init.freescale.rc \
         device/fsl/sabresd_6dq/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
@@ -42,15 +38,15 @@ PRODUCT_COPY_FILES += \
 	device/fsl/sabresd_6dq/modem/simcom/libril.so:system/lib/libril.so
 
 #jni library copy
-#PRODUCT_COPY_FILES += \
-#    packages/apps/libpocketsphinx_jni.so:system/lib/libpocketsphinx_jni.so \
-#    packages/apps/libengine.so:system/lib/libengine.so \
-#    packages/apps/libmultitouch2.so:system/lib/libmultitouch2.so \
-#    packages/apps/libserial_port.so:system/lib/libserial_port.so \
-#    packages/apps/liblipitk.so:system/lib/liblipitk.so \
-#    packages/apps/librealm-jni.so:system/lib/librealm-jni.so \
-#    packages/apps/libdetection_based_tracker.so:system/lib/libdetection_based_tracker.so \
-#    packages/apps/libopencv_java3.so:system/lib/libopencv_java3.so \
+PRODUCT_COPY_FILES += \
+    packages/apps/libpocketsphinx_jni.so:system/lib/libpocketsphinx_jni.so \
+    packages/apps/libengine.so:system/lib/libengine.so \
+    packages/apps/libmultitouch2.so:system/lib/libmultitouch2.so \
+    packages/apps/libserial_port.so:system/lib/libserial_port.so \
+    packages/apps/liblipitk.so:system/lib/liblipitk.so \
+    packages/apps/librealm-jni.so:system/lib/librealm-jni.so \
+    packages/apps/libdetection_based_tracker.so:system/lib/libdetection_based_tracker.so \
+    packages/apps/libopencv_java3.so:system/lib/libopencv_java3.so \
 
 
 # setup dm-verity configs.

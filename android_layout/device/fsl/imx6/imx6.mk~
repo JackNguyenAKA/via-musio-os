@@ -7,19 +7,19 @@ PRODUCT_MANUFACTURER := Freescale
 PRODUCT_PACKAGES += \
 	LiveWallpapers				\
 	LiveWallpapersPicker			\
-	MagicSmokeWallpapers			\
-	Gallery2				\
-	Gallery		    			\
-	SoundRecorder				\
-	Camera					\
+	#MagicSmokeWallpapers			\
+	#Gallery2				\
+	#Gallery		    			\
+	#SoundRecorder				\
+	#Camera					\
         LegacyCamera                            \
-	Email					\
+	#Email					\
 	FSLOta					\
 	CactusPlayer                            \
 	WfdSink                                 \
 	wfd                                     \
-    A2dpSinkApp                             \
-	ethernet                                \
+    #A2dpSinkApp                             \
+	#ethernet                                \
 	libfsl_wfd.so                           \
 	fsl.imx.jar                             \
 	libfsl_hdcp_blob.so                     \
@@ -28,7 +28,7 @@ PRODUCT_PACKAGES += \
 	#VideoEditor				\
 	FSLProfileApp				\
 	FSLProfileService			\
-	VisualizationWallpapers			\
+	#VisualizationWallpapers			\
 	CubeLiveWallpapers			\
 	PinyinIME				\
 	libjni_pinyinime        		\
