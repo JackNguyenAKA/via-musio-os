@@ -1,1 +1,0 @@
-cmd_drivers/video/built-in.o :=  /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld.bfd     -r -o drivers/video/built-in.o drivers/video/cfb_console.o drivers/video/mxc_ipuv3_fb.o drivers/video/ipu_common.o drivers/video/ipu_disp.o 

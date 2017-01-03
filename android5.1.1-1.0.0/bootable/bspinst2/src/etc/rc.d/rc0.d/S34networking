@@ -1,8 +1,0 @@
-#!/bin/sh
-# Copyright (c) VIA Technologies, Inc. All rights reserved.
-# start network interface
-# Written by Vincent Chen
-
-ifup lo
-ifup eth0
-

@@ -1,3 +1,0 @@
-recovery.c:55:5:check_key_pressing	0	static
-recovery.c:61:6:setup_recovery_env	0	static
-recovery.c:67:6:check_recovery_mode	8	static

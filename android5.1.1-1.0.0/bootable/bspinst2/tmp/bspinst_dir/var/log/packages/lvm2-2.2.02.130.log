@@ -1,6 +1,0 @@
-${DEVKIT_HOME}/target/var/log/packages/lvm2-2.2.02.130.log
-${DEVKIT_HOME}/target/usr/lib/libdevmapper.so.1.02
-${DEVKIT_HOME}/target/usr/lib/libdevmapper.so
-${DEVKIT_HOME}/target/usr/sbin/dmsetup
-${DEVKIT_HOME}/target/usr/sbin/blkdeactivate
-${DEVKIT_HOME}/target/usr/sbin/dmstats

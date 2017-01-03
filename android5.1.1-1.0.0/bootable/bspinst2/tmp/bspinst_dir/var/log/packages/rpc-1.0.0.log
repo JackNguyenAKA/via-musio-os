@@ -1,8 +1,0 @@
-${DEVKIT_HOME}/target/var/log/packages/rpc-1.0.0.log
-${DEVKIT_HOME}/target/usr/bin/rpc
-${DEVKIT_HOME}/target/usr/lib/librpc.so.0
-${DEVKIT_HOME}/target/usr/lib/librpc.la
-${DEVKIT_HOME}/target/usr/lib/librpc.so.0.0.0
-${DEVKIT_HOME}/target/usr/lib/librpc.so
-${DEVKIT_HOME}/target/usr/share/doc/rpc/tutorial.txt
-${DEVKIT_HOME}/target/usr/include/rpc.h

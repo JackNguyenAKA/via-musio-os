@@ -1,9 +1,0 @@
-#!/bin/sh
-# Copyright (c) VIA Technologies, Inc. All rights reserved.
-# start udev daemon
-# Written by Vincent Chen
-
-/sbin/udevd --daemon
-/sbin/udevadm trigger --type=subsystems --action=add
-/sbin/udevadm trigger --type=devices --action=add
-

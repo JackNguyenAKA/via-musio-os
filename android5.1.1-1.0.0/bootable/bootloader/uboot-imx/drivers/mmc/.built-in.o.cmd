@@ -1,1 +1,0 @@
-cmd_drivers/mmc/built-in.o :=  /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld.bfd     -r -o drivers/mmc/built-in.o drivers/mmc/fsl_esdhc.o drivers/mmc/mmc.o drivers/mmc/mmc_write.o 

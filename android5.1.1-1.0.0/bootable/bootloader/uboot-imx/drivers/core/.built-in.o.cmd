@@ -1,1 +1,0 @@
-cmd_drivers/core/built-in.o :=  /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld.bfd     -r -o drivers/core/built-in.o drivers/core/device.o drivers/core/lists.o drivers/core/root.o drivers/core/uclass.o drivers/core/util.o drivers/core/device-remove.o 

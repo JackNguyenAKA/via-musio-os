@@ -1,1 +1,0 @@
-cmd_drivers/crypto/built-in.o :=  /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld.bfd     -r -o drivers/crypto/built-in.o drivers/crypto/rsa_mod_exp/built-in.o drivers/crypto/fsl/built-in.o 

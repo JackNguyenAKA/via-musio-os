@@ -1,7 +1,0 @@
-#!/bin/sh
-# Copyright (c) VIA Technologies, Inc. All rights reserved.
-# Set current video mode first in fb.modes
-# Written by Vincent Chen
-
-fbset > /etc/fb.modes
-cat /etc/fb.modes.default >> /etc/fb.modes

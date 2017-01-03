@@ -1,1 +1,0 @@
-cmd_drivers/power/built-in.o :=  /home/susan/via_Musio-OS/android5.1.1-1.0.0/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld.bfd     -r -o drivers/power/built-in.o drivers/power/power_core.o drivers/power/power_i2c.o 

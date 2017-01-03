@@ -1,7 +1,0 @@
-${DEVKIT_HOME}/target/var/log/packages/zlib-1.2.3.log
-${DEVKIT_HOME}/target/usr/lib/libz.so.1
-${DEVKIT_HOME}/target/usr/lib/libz.so
-${DEVKIT_HOME}/target/usr/lib/libz.so.1.2.3
-${DEVKIT_HOME}/target/usr/share/man/man3/zlib.3
-${DEVKIT_HOME}/target/usr/include/zlib.h
-${DEVKIT_HOME}/target/usr/include/zconf.h
