@@ -1,25 +1,28 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
+$(call inherit-product, $(TOPDIR)frameworks/base/data/sounds/AllAudio.mk)
 # overrides
 PRODUCT_BRAND := Freescale
 PRODUCT_MANUFACTURER := Freescale
 
 # Android infrastructures
 PRODUCT_PACKAGES += \
+	Launcher3 \
 	LiveWallpapers				\
 	LiveWallpapersPicker			\
 	MagicSmokeWallpapers			\
-	Gallery2				\
-	Gallery		    			\
-	SoundRecorder				\
+	#Gallery2				\
+	#Gallery		    			\
+	#SoundRecorder				\
 	Camera					\
         LegacyCamera                            \
-	Email					\
+	#Email					\
 	FSLOta					\
 	CactusPlayer                            \
 	WfdSink                                 \
 	wfd                                     \
-    A2dpSinkApp                             \
-	ethernet                                \
+    #A2dpSinkApp                             \
+	#ethernet                                \
 	libfsl_wfd.so                           \
 	fsl.imx.jar                             \
 	libfsl_hdcp_blob.so                     \
