@@ -258,8 +258,8 @@ umount /dev/mmcblk0*
 df -h
 
 ratio 13; mkfs_ext4 device   mmcblk0p7
-ratio 14; inst_fw cache.img    mmcblk0p6
-ratio 15; inst_fw userdata.img mmcblk0p4
+ratio 14; mkfs_ext4 cache    mmcblk0p6
+ratio 15; mkfs_ext4 userdata mmcblk0p4
 
 ratio 20; inst_fw boot-${board}.img     mmcblk0p1
 ratio 25; inst_fw recovery-${board}.img mmcblk0p2
