@@ -218,29 +218,29 @@ if [ -z "$board" ] || [ "$board" = "?" ]; then
   exit 255
 fi
 
-# 1 boot        16M 
-# 2 recovery    16M 
+# 1 boot        16M -> 64M
+# 2 recovery    16M -> 22M
 # 3 dummy        1M 
-# 4 data      2048M 
-# 5 system     800M -> 2048M /userimage blocks : 2.5gb
+# 4 data      2048M -> 768M
+# 5 system     800M -> 2560M
 # 6 cache      512M 
 # 7 device       8M 
 # 8 misc         6M
 # 9 datafooter   2M
-# can not over 3070M
+
 device=/dev/mmcblk0
 cmdfile=/tmp/mkpart.cmd
 
 echo "unit MiB"                  > $cmdfile
-echo "mkpart primary 8 24"      >> $cmdfile
-echo "mkpart primary 24 40"     >> $cmdfile
-echo "mkpart extended 41 2620"  >> $cmdfile
-echo "mkpart primary 3129 -1"   >> $cmdfile
-echo "mkpart logical 41 2601"    >> $cmdfile
-echo "mkpart logical 2601 3113"  >> $cmdfile
-echo "mkpart logical 3113 3121" >> $cmdfile
-echo "mkpart logical 3121 3127" >> $cmdfile
-echo "mkpart logical 3127 3129" >> $cmdfile
+echo "mkpart primary 8 72"      >> $cmdfile
+echo "mkpart primary 72 94"     >> $cmdfile
+echo "mkpart extended 94 3183"  >> $cmdfile
+echo "mkpart primary 3183 -1"   >> $cmdfile
+echo "mkpart logical 95 2655"    >> $cmdfile
+echo "mkpart logical 2655 3167"  >> $cmdfile
+echo "mkpart logical 3167 3175" >> $cmdfile
+echo "mkpart logical 3175 3181" >> $cmdfile
+echo "mkpart logical 3181 3183" >> $cmdfile
 echo "print"                    >> $cmdfile
 echo "quit"                     >> $cmdfile
 

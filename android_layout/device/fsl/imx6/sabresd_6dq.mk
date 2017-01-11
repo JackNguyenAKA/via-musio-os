@@ -2,7 +2,8 @@
 # It will inherit from FSL core product which in turn inherit from Google generic
 
 $(call inherit-product, device/fsl/imx6/imx6.mk)
-$(call inherit-product-if-exists,vendor/google/products/gms.mk)
+#$(call inherit-product-if-exists,vendor/google/products/gms.mk)
+$(call inherit-product, vendor/google/build/opengapps-for-musio-2.mk)
 
 ifneq ($(wildcard device/fsl/sabresd_6dq/fstab_nand.freescale),)
 $(shell touch device/fsl/sabresd_6dq/fstab_nand.freescale)
@@ -12,22 +13,27 @@ ifneq ($(wildcard device/fsl/sabresd_6dq/fstab.freescale),)
 $(shell touch device/fsl/sabresd_6dq/fstab.freescale)
 endif
 
+GAPPS_VARIANT := nano
+
 # Overrides
 PRODUCT_NAME := sabresd_6dq
 PRODUCT_DEVICE := sabresd_6dq
 
-
-
-
-
+PRODUCT_BRAND := Softbank
+PRODUCT_MODEL := MUSIO X - MXVI
+PRODUCT_MANUFACTURER := AKA
+PRODUCT_LOCALES := en_US
 
 PRODUCT_COPY_FILES += \
 	device/fsl/sabresd_6dq/init.rc:root/init.freescale.rc \
         device/fsl/sabresd_6dq/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
         device/fsl/sabresd_6dq/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
 	device/fsl/sabresd_6dq/init.i.MX6QP.rc:root/init.freescale.i.MX6QP.rc \
+	device/fsl/sabresd_6dq/init.musio.sh:system/etc/init.musio.sh \
+	device/fsl/sabresd_6dq/init.window.sh:system/etc/init.window.sh \
 	device/fsl/sabresd_6dq/audio_policy.conf:system/etc/audio_policy.conf \
-	device/fsl/sabresd_6dq/audio_effects.conf:system/vendor/etc/audio_effects.conf
+	device/fsl/sabresd_6dq/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+	device/fsl/sabresd_6dq/bootanimation.zip:system/media/bootanimation.zip
 
 PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\
@@ -40,18 +46,6 @@ PRODUCT_COPY_FILES += \
 	device/fsl/sabresd_6dq/modem/simcom/rild:system/bin/rild \
 	device/fsl/sabresd_6dq/modem/simcom/libreference-ril.so:system/lib/libreference-ril.so \
 	device/fsl/sabresd_6dq/modem/simcom/libril.so:system/lib/libril.so
-
-#jni library copy
-#PRODUCT_COPY_FILES += \
-#    packages/apps/libpocketsphinx_jni.so:system/lib/libpocketsphinx_jni.so \
-#    packages/apps/libengine.so:system/lib/libengine.so \
-#    packages/apps/libmultitouch2.so:system/lib/libmultitouch2.so \
-#    packages/apps/libserial_port.so:system/lib/libserial_port.so \
-#    packages/apps/liblipitk.so:system/lib/liblipitk.so \
-#    packages/apps/librealm-jni.so:system/lib/librealm-jni.so \
-#    packages/apps/libdetection_based_tracker.so:system/lib/libdetection_based_tracker.so \
-#    packages/apps/libopencv_java3.so:system/lib/libopencv_java3.so \
-
 
 # setup dm-verity configs.
 ifneq ($(BUILD_TARGET_DEVICE),sd)

@@ -7,28 +7,28 @@ PRODUCT_MANUFACTURER := Freescale
 
 # Android infrastructures
 PRODUCT_PACKAGES += \
-	Launcher3 \
+	MusioDummyHome	\
 	LiveWallpapers				\
 	LiveWallpapersPicker			\
 	MagicSmokeWallpapers			\
-	#Gallery2				\
-	#Gallery		    			\
-	#SoundRecorder				\
+	Gallery2				\
+	Gallery		    			\
+	SoundRecorder				\
 	Camera					\
         LegacyCamera                            \
-	#Email					\
+	Email					\
 	FSLOta					\
 	CactusPlayer                            \
 	WfdSink                                 \
 	wfd                                     \
-    #A2dpSinkApp                             \
-	#ethernet                                \
+    A2dpSinkApp                             \
+	ethernet                                \
 	libfsl_wfd.so                           \
 	fsl.imx.jar                             \
 	libfsl_hdcp_blob.so                     \
 	libstagefright_hdcp.so                  \
 	hwcomposer_fsl.imx6.so                  \
-	#VideoEditor				\
+	VideoEditor				\
 	FSLProfileApp				\
 	FSLProfileService			\
 	VisualizationWallpapers			\
