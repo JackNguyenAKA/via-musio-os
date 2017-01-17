@@ -26,7 +26,6 @@ PRODUCT_LOCALES := en_US
 
 
 PRODUCT_PACKAGES += \
-	#MusioDummyHome	\
 	MusioArduino \
     	MusioController \
 	MusioEmotion \
@@ -47,8 +46,8 @@ PRODUCT_PACKAGES += \
     	MusioWelcome \
     	MusioKeyboard \
     	MusioTTS \
-    	MusioSystem \
-
+    	MusioSystem 
+	#MusioDummyHome	\
 
 PRODUCT_COPY_FILES += \
 	device/fsl/sabresd_6dq/init.rc:root/init.freescale.rc \

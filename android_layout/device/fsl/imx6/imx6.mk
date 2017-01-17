@@ -8,31 +8,26 @@ PRODUCT_MANUFACTURER := Freescale
 # Android infrastructures
 
 PRODUCT_PACKAGES += \
-	#LiveWallpapers				\
-	#LiveWallpapersPicker			\
+	LiveWallpapers				\
+	LiveWallpapersPicker			\
 	MagicSmokeWallpapers			\
-	#Gallery2				\
-	#Gallery		    			\
-	#SoundRecorder				\
+	Gallery2				\
+	Gallery		    			\
+	SoundRecorder				\
 	Camera					\
         LegacyCamera                            \
-	#Email					\
+	Email					\
 	FSLOta					\
 	CactusPlayer                            \
 	WfdSink                                 \
 	wfd                                     \
-    #A2dpSinkApp                             \
-	#ethernet                                \
 	libfsl_wfd.so                           \
 	fsl.imx.jar                             \
 	libfsl_hdcp_blob.so                     \
 	libstagefright_hdcp.so                  \
 	hwcomposer_fsl.imx6.so                  \
-	#VideoEditor				\
 	FSLProfileApp				\
 	FSLProfileService			\
-	#VisualizationWallpapers			\
-	#CubeLiveWallpapers			\
 	PinyinIME				\
 	libjni_pinyinime        		\
 	libRS					\
@@ -54,6 +49,13 @@ PRODUCT_PACKAGES += \
 	display_mode_fb0.conf                   \
 	display_mode_fb2.conf                   \
 	display_mode_fb4.conf
+
+#PRODUCT_PACKAGES += \
+	#A2dpSinkApp                             \
+	#ethernet                                \	
+	#VideoEditor				\
+	#VisualizationWallpapers		\
+	#CubeLiveWallpapers			\
 
 #FREESCALE_EXTENDED
 PRODUCT_PACKAGES += freescale-extended 		\

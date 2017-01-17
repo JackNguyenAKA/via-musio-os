@@ -1,15 +1,10 @@
 PRODUCT_PACKAGES := \
     Bluetooth \
-    SystemUI \
-    Provision \
-    WallpaperCropper \
     Camera2 \
-#    Music \
-#    MusicFX \
-
-PRODUCT_PACKAGES += \
-    OneTimeInitializer \
-
+    Provision \
+    SystemUI \
+    WallpaperCropper
+#Gallery2 \OneTimeInitializer \Music \MusicFX \
 PRODUCT_PACKAGES += \
     clatd \
     clatd.conf \

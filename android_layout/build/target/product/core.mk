@@ -21,38 +21,40 @@
 # core_tiny.mk in addition to core_minimal.mk.
 
 PRODUCT_PACKAGES += \
-    #BasicDreams \
-    #Browser \
-    #Calculator \
-    #Calendar \
-    #CalendarProvider \
-    #CaptivePortalLogin \
+    Settings \
     CertInstaller \
-    #Contacts \
-    #DeskClock \
-    #DocumentsUI \
-    #DownloadProviderUi \
-    #Email \
-    #Exchange2 \
-    #ExternalStorageProvider \
-    #FusedLocation \
     InputDevices \
     KeyChain \
-    Keyguard \
-    LatinIME \
-    #Launcher2 \
     ManagedProvisioning \
-    #PicoTts \
     PacProcessor \
     libpac \
-    #PrintSpooler \
     ProxyHandler \
-    #QuickSearchBox \
-    Settings \
-    #SharedStorageBackup \
     Telecom \
     TeleService \
     VpnDialogs \
-    MmsService
+    MmsService \
+    LatinIME \
+    Keyguard \
+#    QuickSearchBox \
+
+#PRODUCT_PACKAGES += \
+#    BasicDreams \
+#    Browser \
+#    Calculator \
+#    Calendar \
+#    CalendarProvider \
+#    CaptivePortalLogin \
+#    Contacts \
+#    DeskClock \
+#    DocumentsUI \
+#    DownloadProviderUi \
+#    Email \
+#    Exchange2 \
+#    ExternalStorageProvider \
+#    FusedLocation \
+#    Launcher2 \
+#    PicoTts \
+#    PrintSpooler \
+#    SharedStorageBackup \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_base.mk)
