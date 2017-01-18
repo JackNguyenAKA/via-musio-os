@@ -26,6 +26,9 @@ PRODUCT_LOCALES := en_US
 
 
 PRODUCT_PACKAGES += \
+	AppsDictionary \
+	AppsEduhub \
+	AppsUpdate \
 	MusioArduino \
     	MusioController \
 	MusioEmotion \
@@ -46,6 +49,7 @@ PRODUCT_PACKAGES += \
     	MusioWelcome \
     	MusioKeyboard \
     	MusioTTS \
+	MusioUI \
     	MusioSystem 
 	#MusioDummyHome	\
 

@@ -379,10 +379,9 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 40
     #write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 792000
-##add setup
     start musio-setup
     start window-setup
-##
+
 # change interactive atrrubuties permissions when interactive is actived
 on property:sys.interactive="active"
     chown system root /sys/devices/system/cpu/cpufreq/interactive/timer_rate
@@ -519,17 +518,17 @@ service pppd_gprs /system/bin/init.gprs-pppd
 service wifi_mac /system/bin/sh /system/etc/check_wifi_mac.sh
     class late_start
     oneshot
-##
-service musio-setup /system/etc/init.musio.sh
+
+service musio-setup /system/bin/sh /system/etc/init.musio.sh
     class late_start 
     user system
     group system
     oneshot
 
-service window-setup /system/etc/init.window.sh
+service window-setup /system/bin/sh /system/etc/init.window.sh
     user system
     group system
-##
+
 
 # virtual sdcard daemon running as media_rw (1023)
 # default 4 threads have better performance to 2 threads.
