@@ -48,17 +48,6 @@ on boot
     #insmod /system/lib/modules/tty_hci.ko
     #insmod /system/lib/modules/btwilink.ko
 
-	##add additional init 
-    ## Grant permission to the initialization code
-    chown system system /system/etc/init.musio.sh
-    chmod 0777 /system/etc/init.musio.sh
-
-    ## Init window
-    chown system system /system/etc/init.window.sh 
-    chmod 0777 /system/etc/init.window.sh
-    start window-setup
-	
-	##
 
     # emmulate battery property
     setprop sys.emulated.battery 0
@@ -134,6 +123,14 @@ on boot
     # Set extsd access permission
     setprop persist.sampling_profiler 1
 
+# Grant permission to the initialization code
+    chown system system /system/etc/init.musio.sh
+    chmod 0777 /system/etc/init.musio.sh
+
+    chown system system /system/etc/init.window.sh 
+    chmod 0777 /system/etc/init.window.sh
+    start window-setup
+
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -182,125 +179,128 @@ on boot
     write /sys/power/wake_lock "musio_lock"
 
 # mpu-9250 sensors
-    chmod 0777 /data/inv_cal_data.bin
     chown root system /dev/iio:device0
-    chmod 0777 /dev/iio:device0
     chown root system /sys/bus/iio/devices/iio:device0/gyro_enable
-    chmod 0777 /sys/bus/iio/devices/iio:device0/gyro_enable
     chown root system /sys/bus/iio/devices/iio:device0/accl_enable
-    chmod 0777 /sys/bus/iio/devices/iio:device0/accl_enable
     chown root system /sys/bus/iio/devices/iio:device0/compass_enable
-    chmod 0777 /sys/bus/iio/devices/iio:device0/compass_enable
     chown root system /sys/bus/iio/devices/iio:device0/buffer
-    chmod 0777 /sys/bus/iio/devices/iio:device0/buffer
     chown root system /sys/bus/iio/devices/iio:device0/buffer/enable
-    chmod 0777 /sys/bus/iio/devices/iio:device0/buffer/enable
     chown root system /sys/bus/iio/devices/iio:device0/buffer/length
-    chmod 0777 /sys/bus/iio/devices/iio:device0/buffer/length
     chown root system /sys/bus/iio/devices/iio:device0/cal_data_auto_load
-    chmod 0777 /sys/bus/iio/devices/iio:device0/cal_data_auto_load  
     chown root system /sys/bus/iio/devices/iio:device0/display_orientation_on
-    chmod 0777 /sys/bus/iio/devices/iio:device0/display_orientation_on
     chown root system /sys/bus/iio/devices/iio:device0/dmp_event_int_on
-    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_event_int_on
     chown root system /sys/bus/iio/devices/iio:device0/dmp_firmware
-    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_firmware
     chown root system /sys/bus/iio/devices/iio:device0/dmp_int_on
-    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_int_on
     chown root system /sys/bus/iio/devices/iio:device0/dmp_on
-    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_on
     chown root system /sys/bus/iio/devices/iio:device0/dmp_output_rate
-    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_output_rate
     chown root system /sys/bus/iio/devices/iio:device0/firmware_loaded
-    chmod 0777 /sys/bus/iio/devices/iio:device0/firmware_loaded
     chown root system /sys/bus/iio/devices/iio:device0/in_accel_scale
-    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_scale
     chown root system /sys/bus/iio/devices/iio:device0/in_accel_x_calibbias
-    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_x_calibbias
     chown root system /sys/bus/iio/devices/iio:device0/in_accel_x_offset
-    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_x_offset
     chown root system /sys/bus/iio/devices/iio:device0/in_accel_y_calibbias
-    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_y_calibbias
     chown root system /sys/bus/iio/devices/iio:device0/in_accel_y_offset
-    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_y_offset
     chown root system /sys/bus/iio/devices/iio:device0/in_accel_z_calibbias
-    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_z_calibbias
     chown root system /sys/bus/iio/devices/iio:device0/in_accel_z_offset
-    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_z_offset
     chown root system /sys/bus/iio/devices/iio:device0/in_magn_scale
-    chmod 0777 /sys/bus/iio/devices/iio:device0/in_magn_scale
     chown root system /sys/bus/iio/devices/iio:device0/motion_lpa_duration
-    chmod 0777 /sys/bus/iio/devices/iio:device0/motion_lpa_duration
     chown root system /sys/bus/iio/devices/iio:device0/motion_lpa_freq
-    chmod 0777 /sys/bus/iio/devices/iio:device0/motion_lpa_freq
     chown root system /sys/bus/iio/devices/iio:device0/motion_lpa_on
-    chmod 0777 /sys/bus/iio/devices/iio:device0/motion_lpa_on
     chown root system /sys/bus/iio/devices/iio:device0/motion_lpa_threshold
-    chmod 0777 /sys/bus/iio/devices/iio:device0/motion_lpa_threshold
     chown root system /sys/bus/iio/devices/iio:device0/pedometer_steps
-    chmod 0777 /sys/bus/iio/devices/iio:device0/pedometer_steps
     chown root system /sys/bus/iio/devices/iio:device0/pedometer_time
-    chmod 0777 /sys/bus/iio/devices/iio:device0/pedometer_time
     chown root system /sys/bus/iio/devices/iio:device0/power
-    chmod 0777 /sys/bus/iio/devices/iio:device0/power
     chown root system /sys/bus/iio/devices/iio:device0/power/autosuspend_delay_ms
-    chmod 0777 /sys/bus/iio/devices/iio:device0/power/autosuspend_delay_ms
     chown root system /sys/bus/iio/devices/iio:device0/power/control
-    chmod 0777 /sys/bus/iio/devices/iio:device0/power/control
     chown root system /sys/bus/iio/devices/iio:device0/autosuspend_delay_ms
-    chmod 0777 /sys/bus/iio/devices/iio:device0/autosuspend_delay_ms
     chown root system /sys/bus/iio/devices/iio:device0/control
-    chmod 0777 /sys/bus/iio/devices/iio:device0/control
     chown root system /sys/bus/iio/devices/iio:device0/power_state
-    chmod 0777 /sys/bus/iio/devices/iio:device0/power_state
     chown root system /sys/bus/iio/devices/iio:device0/quaternion_on
-    chmod 0777 /sys/bus/iio/devices/iio:device0/quaternion_on
     chown root system /sys/bus/iio/devices/iio:device0/sampling_frequency
-    chmod 0777 /sys/bus/iio/devices/iio:device0/sampling_frequency
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_x_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_x_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_y_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_y_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_x_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_x_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_y_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_y_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_z_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_z_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_x_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_x_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_y_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_y_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_z_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_z_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_r_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_r_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_x_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_x_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_y_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_y_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_z_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_z_en
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_timestamp_en
-    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_timestamp_en
     chown root system /sys/bus/iio/devices/iio:device0/tap_min_count
-    chmod 0777 /sys/bus/iio/devices/iio:device0/tap_min_count
     chown root system /sys/bus/iio/devices/iio:device0/tap_on
-    chmod 0777 /sys/bus/iio/devices/iio:device0/tap_on
     chown root system /sys/bus/iio/devices/iio:device0/tap_threshold
-    chmod 0777 /sys/bus/iio/devices/iio:device0/tap_threshold
     chown root system /sys/bus/iio/devices/iio:device0/tap_time
-    chmod 0777 /sys/bus/iio/devices/iio:device0/tap_time
     chown root system /sys/bus/iio/devices/iio:device0/uevent
-    chmod 0777 /sys/bus/iio/devices/iio:device0/uevent
     chown root system /sys/bus/iio/devices/iio:device0/trigger
-    chmod 0777 /sys/bus/iio/devices/iio:device0/trigger
     chown root system /sys/bus/iio/devices/iio:device0/trigger/current_trigger
+    
+   chmod 0777 /data/inv_cal_data.bin
+    chmod 0777 /dev/iio:device0
+    chmod 0777 /sys/bus/iio/devices/iio:device0/gyro_enable
+    chmod 0777 /sys/bus/iio/devices/iio:device0/accl_enable
+    chmod 0777 /sys/bus/iio/devices/iio:device0/compass_enable
+    chmod 0777 /sys/bus/iio/devices/iio:device0/buffer
+    chmod 0777 /sys/bus/iio/devices/iio:device0/buffer/enable
+    chmod 0777 /sys/bus/iio/devices/iio:device0/buffer/length
+    chmod 0777 /sys/bus/iio/devices/iio:device0/cal_data_auto_load  
+    chmod 0777 /sys/bus/iio/devices/iio:device0/display_orientation_on
+    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_event_int_on
+    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_firmware
+    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_int_on
+    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_on
+    chmod 0777 /sys/bus/iio/devices/iio:device0/dmp_output_rate
+    chmod 0777 /sys/bus/iio/devices/iio:device0/firmware_loaded
+    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_scale
+    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_x_calibbias
+    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_x_offset
+    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_y_calibbias
+    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_y_offset
+    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_z_calibbias
+    chmod 0777 /sys/bus/iio/devices/iio:device0/in_accel_z_offset
+    chmod 0777 /sys/bus/iio/devices/iio:device0/in_magn_scale
+    chmod 0777 /sys/bus/iio/devices/iio:device0/motion_lpa_duration
+    chmod 0777 /sys/bus/iio/devices/iio:device0/motion_lpa_freq
+    chmod 0777 /sys/bus/iio/devices/iio:device0/motion_lpa_on
+    chmod 0777 /sys/bus/iio/devices/iio:device0/motion_lpa_threshold
+    chmod 0777 /sys/bus/iio/devices/iio:device0/pedometer_steps
+    chmod 0777 /sys/bus/iio/devices/iio:device0/pedometer_time
+    chmod 0777 /sys/bus/iio/devices/iio:device0/power
+    chmod 0777 /sys/bus/iio/devices/iio:device0/power/autosuspend_delay_ms
+    chmod 0777 /sys/bus/iio/devices/iio:device0/power/control
+    chmod 0777 /sys/bus/iio/devices/iio:device0/autosuspend_delay_ms
+    chmod 0777 /sys/bus/iio/devices/iio:device0/control
+    chmod 0777 /sys/bus/iio/devices/iio:device0/power_state
+    chmod 0777 /sys/bus/iio/devices/iio:device0/quaternion_on
+    chmod 0777 /sys/bus/iio/devices/iio:device0/sampling_frequency
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_x_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_y_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_x_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_y_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_z_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_x_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_y_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_z_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_r_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_x_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_y_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_z_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/scan_elements/in_timestamp_en
+    chmod 0777 /sys/bus/iio/devices/iio:device0/tap_min_count
+    chmod 0777 /sys/bus/iio/devices/iio:device0/tap_on
+    chmod 0777 /sys/bus/iio/devices/iio:device0/tap_threshold
+    chmod 0777 /sys/bus/iio/devices/iio:device0/tap_time
+    chmod 0777 /sys/bus/iio/devices/iio:device0/uevent
+    chmod 0777 /sys/bus/iio/devices/iio:device0/trigger
     chmod 0777 /sys/bus/iio/devices/iio:device0/trigger/current_trigger
+
+
     chown root system /sys/bus/iio/devices/iio:device0/accl_matrix
     chown root system /sys/bus/iio/devices/iio:device0/compass_matrix
     chown root system /sys/bus/iio/devices/iio:device0/dev
@@ -348,6 +348,7 @@ on boot
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_z_type
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_timestamp_index
     chown root system /sys/bus/iio/devices/iio:device0/scan_elements/in_timestamp_type
+
 
 
 # mount the debugfs
