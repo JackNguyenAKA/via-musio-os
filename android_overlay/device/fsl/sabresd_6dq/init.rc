@@ -105,7 +105,11 @@ on boot
     chmod 0660 /dev/ttymxc4
     chown bluetooth net_bt_stack /dev/ttymxc4 
 
-    
+    chmod 0660 /dev/ttymxc3
+    chown system system /dev/ttymxc3
+
+
+
     # Prepare for RIL
     setprop gsm.ril.delay 15
     setprop ro.ril.wake_lock_timeout 300
@@ -124,10 +128,10 @@ on boot
     setprop persist.sampling_profiler 1
 
 # Grant permission to the initialization code
-    chown system system /system/etc/init.musio.sh
+    chown root system /system/etc/init.musio.sh
     chmod 0777 /system/etc/init.musio.sh
 
-    chown system system /system/etc/init.window.sh 
+    chown root system /system/etc/init.window.sh 
     chmod 0777 /system/etc/init.window.sh
     start window-setup
 
