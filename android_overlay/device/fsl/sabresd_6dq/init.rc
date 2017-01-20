@@ -133,6 +133,7 @@ on boot
 
     chown root system /system/etc/init.window.sh 
     chmod 0777 /system/etc/init.window.sh
+    start musio-setup
     start window-setup
 
 # change for FSL specific service
