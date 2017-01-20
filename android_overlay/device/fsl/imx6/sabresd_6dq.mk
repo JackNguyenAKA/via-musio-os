@@ -37,6 +37,7 @@ PRODUCT_PACKAGES += \
     	MusioMember \
     	MusioMemberProfile \
     	MusioMode \
+	MusioHome \
     	MusioMuse \
     	MusioPush \
     	MusioSetting \
