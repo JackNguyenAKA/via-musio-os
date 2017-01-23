@@ -26,32 +26,31 @@ PRODUCT_LOCALES := en_US
 
 
 PRODUCT_PACKAGES += \
-	AppsDictionary \
-	AppsEduhub \
-	AppsUpdate \
-	MusioArduino \
-    	MusioController \
-	MusioEmotion \
-	MusioLauncher \
-    	MusioLiveFace \
-    	MusioMember \
-    	MusioMemberProfile \
-    	MusioMode \
-	MusioHome \
-    	MusioMuse \
-    	MusioPush \
-    	MusioSetting \
-    	MusioSophy \
-    	MusioSphinx \
-    	MusioStatus \
-    	MusioTouch \
-    	MusioTutor \
-    	MusioVision \
-    	MusioWelcome \
-    	MusioKeyboard \
-    	MusioTTS \
-	MusioUI \
-    	MusioSystem 
+    AppsDictionary \
+    AppsEduhub \
+    AppsUpdate \
+    MusioLauncher \
+    MusioMemberProfile \
+    MusioSetting \
+    MusioTutor \
+    MusioArduino \
+    MusioController \
+    MusioEmotion \
+    MusioLiveFace \
+    MusioHome \
+    MusioMember \
+    MusioMode \
+    MusioMuse \
+    MusioKeyboard \
+    MusioPush \
+    MusioSophy \
+    MusioSphinx \
+    MusioStatus \
+    MusioSystem \
+    MusioTouch \
+    MusioTTS \
+    MusioUI \
+    MusioVision \
 	#MusioDummyHome	\
 
 PRODUCT_COPY_FILES += \
