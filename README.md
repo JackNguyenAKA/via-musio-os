@@ -8,32 +8,32 @@ this directory holds stock images provided from VIA. These are Android 5.1.1 bui
 
 # setup
 
-1. unzip via bsp (not includd in this repo. get it from hwcell)
-2. copy `android_overlay` contents to android build root directory of the unziped VIA bsp.
-	```
-	$ cp -Ra android_overlay/* {android_root}
-	```
-3. move to android root directory.
+* unzip via bsp (not includd in this repo. get it from hwcell)
+* copy `android_overlay` contents to android build root directory of the unziped VIA bsp.
 ```
-	$ cd {android_root}
+$ cp -Ra android_overlay/* {android_root}
 ```
-
-4. run inst_android_gapps.sh
+* move to android root directory.
 ```
-	$ ./inst_android_gapps.sh
+$ cd {android_root}
 ```
 
-5. if it is your first time to unzip the VIA BSP, then make sure that {android_root}/build/envsetup.sh is executable.
+* run inst_android_gapps.sh
 ```
-	$ chmod u+x /build/envsetup.sh
+$ ./inst_android_gapps.sh
 ```
-6. run `/build/envsetup.sh`
+
+* if it is your first time to unzip the VIA BSP, then make sure that {android_root}/build/envsetup.sh is executable.
 ```
-	$ ./build/envsetup.sh
+$ chmod u+x /build/envsetup.sh
 ```
-7. build it. to do this there are several ways. you can use lunch and select sabresd_6dq variants. Or you can directly trigger make with something like this:
+* run `/build/envsetup.sh`
 ```
-	$ make PRODUCT-sabresd_6dq-user -j8
+$ ./build/envsetup.sh
+```
+* build it. to do this there are several ways. you can use lunch and select sabresd_6dq variants. Or you can directly trigger make with something like this:
+```
+$ make PRODUCT-sabresd_6dq-user -j8
 ```
 
 
