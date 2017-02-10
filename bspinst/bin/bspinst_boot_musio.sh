@@ -48,13 +48,13 @@ serial()
         echo $node $serialno
         drawstr `fwmul 6` `bsmul 22` $serialno
         if [ "$serialno" != "" ]; then
-           serialstr="setprop ro.musioserialno $serialno"
+           serialstr="setprop ro.serialno $serialno"
            echo $serialstr > /etc/serialno.txt
            flash_erase /dev/mtd0 0x3ff000 1
            dd if=/etc/serialno.txt of=/dev/mtd0 bs=4k seek=1023
         fi
      else
-       echo "setprop ro.musioserialno 1234567890" > /etc/serialno.txt
+       echo "setprop ro.serialno 1234567890" > /etc/serialno.txt
        flash_erase /dev/mtd0 0x3ff000 1
        dd if=/etc/serialno.txt of=/dev/mtd0 bs=4k seek=1023
      fi
