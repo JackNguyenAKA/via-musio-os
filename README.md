@@ -10,10 +10,19 @@ this directory holds stock images provided from VIA. These are Android 5.1.1 bui
 
 1. unzip via bsp (not includd in this repo. get it from hwcell)
 2. copy `android_overlay` contents to android build root directory of the unziped VIA bsp.
+```
 	cp -Ra android_overlay/* {android_root}
-3. cd {android_root}
+	```
+
+3. move to android root directory.
+```
+	$ cd {android_root}
+```
+
 4. run inst_android_gapps.sh
+
 	$ ./inst_android_gapps.sh
+
 5. if it is your first time to unzip the VIA BSP, then make sure that {android_root}/build/envsetup.sh is executable.
 	$ chmod u+x /build/envsetup.sh
 6. run `/build/envsetup.sh`
