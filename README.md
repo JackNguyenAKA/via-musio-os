@@ -13,7 +13,6 @@ this directory holds stock images provided from VIA. These are Android 5.1.1 bui
 ```
 	$ cp -Ra android_overlay/* {android_root}
 ```
-
 3. move to android root directory.
 ```
 	$ cd {android_root}
