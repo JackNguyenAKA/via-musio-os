@@ -10,9 +10,9 @@ this directory holds stock images provided from VIA. These are Android 5.1.1 bui
 
 1. unzip via bsp (not includd in this repo. get it from hwcell)
 2. copy `android_overlay` contents to android build root directory of the unziped VIA bsp.
-```
-$ cp -Ra android_overlay/* {android_root}
-```
+	```
+	$ cp -Ra android_overlay/* {android_root}
+	```
 3. move to android root directory.
 ```
 	$ cd {android_root}
