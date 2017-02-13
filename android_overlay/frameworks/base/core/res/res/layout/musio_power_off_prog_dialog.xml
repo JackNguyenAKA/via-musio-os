@@ -15,12 +15,16 @@
      work around this for now with LinearLayouts. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="788px"
+              android:layout_height="match_parent"
               android:orientation="horizontal"
-              android:layout_gravity="top"
+              android:layout_gravity="center"
+	      android:gravity="center"
               android:paddingStart="8dip"
               android:paddingTop="6dip"
               android:paddingBottom="6dip"
-              android:layout_alignParentTop="true"
-              android:background="@drawable/power_button_dim">
+              android:background="#ff000000">
+    <ImageView android:src="@drawable/power_button_dim"
+	       android:layout_gravity="center"
+               android:layout_width="317px"
+               android:layout_height="317px"/>
     </LinearLayout>

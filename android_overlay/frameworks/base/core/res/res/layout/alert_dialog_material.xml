@@ -22,7 +22,8 @@
     android:paddingTop="55dp"
     android:layout_gravity="top"
     android:layout_alignParentTop="true"
-    android:textColor="#ffffffff">
+    android:textColor="#ffffffff"
+    android:background="@drawable/musio_error_black">
 
     <LinearLayout android:id="@+id/topPanel"
                   android:layout_width="match_parent"

@@ -19,18 +19,19 @@
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
-             android:layout_height="788px"
+             android:layout_height="match_parent"
              android:layout_alignParentTop="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:textColor="#ffffffff">
+	android:gravity="center"
+        android:textColor="#00000000">
 
         <Button android:id="@+id/keyguard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffffff"
+                android:layout_width="1px"
+                android:layout_height="1px"
+                android:textColor="#00000000"
             />
 
         <Button android:id="@+id/off"
@@ -40,17 +41,17 @@
 		android:layout_marginTop="20dp"
                 android:text="@string/power_off"
                 android:gravity="center"
-                android:textColor="#ffffffff"/>
+                android:textColor="#00000000"/>
 
         <Button android:id="@+id/silent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffffff"/>
+                android:layout_width="1px"
+                android:layout_height="1px"
+                android:textColor="#00000000"/>
 
         <Button android:id="@+id/radio_power"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffffff"/>
+                android:layout_width="1px"
+                android:layout_height="1px"
+                android:textColor="#00000000"/>
 
     </LinearLayout>
 </FrameLayout>
