@@ -18,7 +18,6 @@
     android:layout_width="match_parent"
     android:layout_height="788px"
     android:orientation="vertical"
-    android:background="@color/black"
     android:paddingTop="55dp"
     android:layout_gravity="top"
     android:layout_alignParentTop="true"
