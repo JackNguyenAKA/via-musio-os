@@ -122,7 +122,7 @@ on boot
     setprop ro.sf.hwrotation 0
 
     # Set the density to 160dpi, default 128dpi is not good
-    setprop ro.sf.lcd_density 480
+    setprop ro.sf.lcd_density 420
 
     # Set extsd access permission
     setprop persist.sampling_profiler 1

@@ -8,3 +8,4 @@
 # Default network type.
 # 9 => GSM/UMTS/LTE mode preferred.
 ro.telephony.default_network=9
+sys.usb.config=mtp,adb
