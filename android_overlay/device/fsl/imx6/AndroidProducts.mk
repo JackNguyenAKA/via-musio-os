@@ -27,5 +27,5 @@
 # Copied from build/target/product/AndroidProducts.mk
 
 PRODUCT_MAKEFILES := \
-  $(LOCAL_DIR)/sabresd_6dq.mk 
+  $(LOCAL_DIR)/aosp_musio.mk 
 
