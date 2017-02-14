@@ -1,17 +1,34 @@
+#
+# this script will make populate directories needed to build the opengapps.
+#
+
+ROOTDIR=$(pwd)
+
+
 mkdir vendor
 mkdir vendor/google
 mkdir vendor/google/build
+
 cd vendor/google/build
+
+# in this place, copy the 'opengapps-for-musio-2.mk' file to here.
+cp $ROOTDIR/opengapps-for-musio2.mk .
+
+# populate this directory with necessary files.
 git clone https://github.com/opengapps/aosp_build.git
+
+# go back to /vendor
 cd ../..
-mkdir opengapps
-mkdir opengapps/sources
-#mkdir opengapps/sources/all
-cd opengapps/sources
-git clone https://github.com/opengapps/all.git
-#mkdir ../arm
-#cd ../arm
-git clone https://git.themusio.com/AKA-Intelligence/opengapps_arm_2016_jan_first.git
-cd ../../../..
-cp opengapps-for-musio-2.mk vendor/google/build
+
+git clone https://github.com/opengapps/opengapps.git
+
+#now there will be a directory named 'opengapps'. go into it.
+cd opengapps
+
+# now, download source of what we need.
+# the --shallow option is added in order to reduce disk space usage and save time.
+# since via board is ARM arch, the 'arm' parameter is used.
+# this command will populate the '/source' directory with 'all' and 'arm'.
+./download_sources.sh --shallow arm
+
 
