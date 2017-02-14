@@ -23,6 +23,8 @@ $ cd {android_root}
 $ ./inst_android_gapps.sh
 ```
 
+this process may take a long time due to downloading opengapps sources. Beaware.
+
 * if it is your first time to unzip the VIA BSP, then make sure that {android_root}/build/envsetup.sh is executable.
 ```
 $ chmod u+x /build/envsetup.sh
