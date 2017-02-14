@@ -7,18 +7,22 @@ ROOTDIR=$(pwd)
 
 mkdir vendor
 mkdir vendor/google
-mkdir vendor/google/build
 
-cd vendor/google/build
-
-# in this place, copy the 'opengapps-for-musio-2.mk' file to here.
-cp $ROOTDIR/opengapps-for-musio2.mk .
+cd vendor/google
 
 # populate this directory with necessary files.
 git clone https://github.com/opengapps/aosp_build.git
 
-# go back to /vendor
-cd ../..
+#after git download, the directory name is aosp_build. change this to 'build'
+mv aosp_build build
+
+
+# copy the 'opengapps-for-musio-2.mk' file to /vendor/google/build
+cp $ROOTDIR/opengapps-for-musio2.mk build/
+
+
+# we are curently in /vendor/google. go back to /vendor
+cd ..
 
 git clone https://github.com/opengapps/opengapps.git
 
