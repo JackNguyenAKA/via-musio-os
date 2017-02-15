@@ -8,7 +8,7 @@ this directory holds stock images provided from VIA. These are Android 5.1.1 bui
 
 # setup
 
-* unzip via bsp (not includd in this repo. get it from hwcell)
+* unzip via bsp (not included in this repo. get it from hwcell)
 * copy `android_overlay` contents to android build root directory of the unziped VIA bsp.
 ```
 $ cp -Ra android_overlay/* {android_root}
@@ -53,5 +53,10 @@ $ ./local_build_patches.sh
 ```
 $ make PRODUCT-sabresd_6dq-user -j8
 ```
+
+
+
+## comments
+* not sure if `make update-api` needs to be done before choosing the target product or not.
 
 
