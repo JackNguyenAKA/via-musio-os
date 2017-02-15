@@ -31,7 +31,7 @@ $ chmod u+x /build/envsetup.sh
 ```
 * run `/build/envsetup.sh`
 ```
-$ ./build/envsetup.sh
+$ source ./build/envsetup.sh
 ```
 * build it. to do this there are several ways. you can use lunch and select sabresd_6dq variants. Or you can directly trigger make with something like this:
 ```
