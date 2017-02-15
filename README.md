@@ -33,6 +33,22 @@ $ chmod u+x /build/envsetup.sh
 ```
 $ source ./build/envsetup.sh
 ```
+* if building from local, you should update API before doing make. If this is skipped, the user may waste a lot of time since this error will occur sometime before building the system.img.
+```
+$ make update-api
+```
+
+* if you are building from local and in Ubuntu 16.04 environment, clang patch is recommended. To do this follow the steps below
+```
+# currently in android root
+$ cd ..
+$ git clone https://github.com/chadrick-kwag/aosp_local_build_patch.git
+$ cp aosp_local_build_patch/local_build_patches.sh {android_root}/
+$ cd {android_root}
+$ ./local_build_patches.sh
+```
+
+
 * build it. to do this there are several ways. you can use lunch and select sabresd_6dq variants. Or you can directly trigger make with something like this:
 ```
 $ make PRODUCT-sabresd_6dq-user -j8
