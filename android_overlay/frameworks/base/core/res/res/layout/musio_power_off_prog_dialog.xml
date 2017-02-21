@@ -14,17 +14,15 @@
 <!-- RelativeLayouts have an issue enforcing minimum heights, so just
      work around this for now with LinearLayouts. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_width="1078px"
+              android:layout_height="833px"
+	      android:paddingTop="60px"
               android:orientation="horizontal"
               android:layout_gravity="center"
 	      android:gravity="center"
-              android:paddingStart="8dip"
-              android:paddingTop="6dip"
-              android:paddingBottom="6dip"
               android:background="#ff000000">
     <ImageView android:src="@drawable/power_button_dim"
 	       android:layout_gravity="center"
                android:layout_width="317px"
                android:layout_height="317px"/>
-    </LinearLayout>
+</LinearLayout>

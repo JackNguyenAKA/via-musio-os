@@ -233,7 +233,7 @@ public final class ShutdownThread extends Thread {
 //        pd.show();
 
         MusioPowerOffProgressDialog pd = new MusioPowerOffProgressDialog(context);
-        pd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        pd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
         pd.setCancelable(false);
         pd.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
 

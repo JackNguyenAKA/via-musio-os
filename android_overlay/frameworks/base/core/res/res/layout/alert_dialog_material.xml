@@ -12,22 +12,19 @@
      limitations under the License.
 -->
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/parentPanel"
-    android:layout_width="match_parent"
-    android:layout_height="788px"
-    android:orientation="vertical"
-    android:paddingTop="55dp"
-    android:layout_gravity="top"
-    android:layout_alignParentTop="true"
-    android:textColor="#ffffffff"
-    android:background="@drawable/musio_error_black">
-
+<LinearLayout 	xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/parentPanel"
+		android:layout_width="match_parent" 
+		android:layout_height="750px"
+		android:orientation="vertical"
+		android:layout_gravity="center"	
+		android:textColor="#ffffffff"
+		android:background="@drawable/musio_error_black">
     <LinearLayout android:id="@+id/topPanel"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:orientation="vertical">
+                  android:orientation="vertical"
+		  android:paddingTop="200px">
         <LinearLayout android:id="@+id/title_template"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
@@ -35,12 +32,10 @@
                       android:gravity="center|start"
                       android:paddingStart="?attr/dialogPreferredPadding"
                       android:paddingEnd="?attr/dialogPreferredPadding"
-                      android:paddingTop="@dimen/dialog_padding_top_material"
                       android:textColor="#ffffffff">
             <ImageView android:id="@+id/icon"
                        android:layout_width="1.0dip"
                        android:layout_height="1.0dip"
-                       android:layout_marginEnd="8.0dip"
                        android:scaleType="fitCenter"
                        android:src="@null"
                        android:textColor="#ffffffff"/>
@@ -55,13 +50,13 @@
         </LinearLayout>
         <!-- If the client uses a customTitle, it will be added here. -->
     </LinearLayout>
-
     <FrameLayout android:id="@+id/contentPanel"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:layout_weight="1"
                  android:minHeight="48dp"
-                 android:textColor="#ffffffff">
+                 android:textColor="#ffffffff"
+		 android:background="#ff000000">
         <View android:id="@+id/scrollIndicatorUp"
               android:visibility="gone"
               android:layout_width="match_parent"
@@ -74,10 +69,9 @@
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
                     android:textColor="#ffffffff">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            <LinearLayout android:layout_width="match_parent"
+		          android:layout_height="wrap_content"
+                	  android:orientation="vertical">
                 <TextView android:id="@+id/message"
                           style="@style/TextAppearance.Material.Subhead"
                           android:layout_width="match_parent"
@@ -104,7 +98,6 @@
               android:background="@drawable/list_divider_material"
               android:textColor="#ffffffff"/>
     </FrameLayout>
-
     <FrameLayout android:id="@+id/customPanel"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
@@ -116,7 +109,6 @@
                      android:layout_height="wrap_content"
                      android:textColor="#ffffffff"/>
     </FrameLayout>
-
     <LinearLayout android:id="@+id/buttonPanel"
                   style="?attr/buttonBarStyle"
                   android:layout_width="match_parent"

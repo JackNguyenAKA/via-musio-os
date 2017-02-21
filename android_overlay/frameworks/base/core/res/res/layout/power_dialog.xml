@@ -27,13 +27,10 @@
         android:orientation="vertical"
 	android:gravity="center"
         android:textColor="#00000000">
-
         <Button android:id="@+id/keyguard"
                 android:layout_width="1px"
                 android:layout_height="1px"
-                android:textColor="#00000000"
-            />
-
+                android:textColor="#00000000"/>
         <Button android:id="@+id/off"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,16 +39,13 @@
                 android:text="@string/power_off"
                 android:gravity="center"
                 android:textColor="#00000000"/>
-
         <Button android:id="@+id/silent"
                 android:layout_width="1px"
                 android:layout_height="1px"
                 android:textColor="#00000000"/>
-
         <Button android:id="@+id/radio_power"
                 android:layout_width="1px"
                 android:layout_height="1px"
                 android:textColor="#00000000"/>
-
     </LinearLayout>
 </FrameLayout>
