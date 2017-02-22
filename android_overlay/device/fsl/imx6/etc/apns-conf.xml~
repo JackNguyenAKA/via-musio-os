@@ -113,11 +113,6 @@
  	 mmsproxy="andmms.plusacs.ne.jp" 
 	 mmsport="8080"  
 		/>
-    <apn carrier="freetel.jp" 
-	 apn="freetel.link" 
-	 user="freetel@freetel.link" 
-	 password="freetel" 
-		/>
     <apn carrier=""
          mcc="310"
          mnc="230"
