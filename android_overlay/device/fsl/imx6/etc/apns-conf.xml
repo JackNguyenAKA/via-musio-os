@@ -345,4 +345,46 @@
          password=""
          mmsc=""
     />
+  <apn carrier="TaTa DOCOMO HTTP"
+      mcc="405"
+      mnc="02"
+      apn="TATA.DOCOMO.DIVE.IN"
+      proxy="10.124.94.7"
+      port="8080"
+      type="default,supl"
+  />
+  <apn carrier="TaTa DOCOMO Internet"
+      mcc="405"
+      mnc="02"
+      apn="TATA.DOCOMO.INTERNET"
+      type="default,supl"
+  />
+  <apn carrier="TaTa DOCOMO HTTP"
+      mcc="405"
+      mnc="03"
+      apn="TATA.DOCOMO.DIVE.IN"
+      proxy="10.124.94.7"
+      port="8080"
+      type="default,supl"
+  />
+  <apn carrier="TaTa DOCOMO Internet"
+      mcc="405"
+      mnc="03"
+      apn="TATA.DOCOMO.INTERNET"
+      type="default,supl"
+  />
+  <apn carrier="TaTa DOCOMO HTTP"
+      mcc="405"
+      mnc="034"
+      apn="TATA.DOCOMO.DIVE.IN"
+      proxy="10.124.94.7"
+      port="8080"
+      type="default,supl"
+  />
+  <apn carrier="TaTa DOCOMO Internet"
+      mcc="405"
+      mnc="034"
+      apn="TATA.DOCOMO.INTERNET"
+      type="default,supl"
+  />
 </apns>
