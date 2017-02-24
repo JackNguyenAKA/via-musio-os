@@ -674,6 +674,7 @@ static int console_init_action(int nargs, char **args)
 {
     int fd;
 
+    return 0;
     if (console[0]) {
         snprintf(console_name, sizeof(console_name), "/dev/%s", console);
     }
