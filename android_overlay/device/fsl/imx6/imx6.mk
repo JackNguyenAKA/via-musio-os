@@ -366,7 +366,8 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # for property
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp \
+	qemu.hw.mainkeys=1 	
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
         device/fsl/common/security/testkey
