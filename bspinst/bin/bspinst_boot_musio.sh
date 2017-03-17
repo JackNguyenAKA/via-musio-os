@@ -35,30 +35,37 @@ inst_tgz()
    umount /tmp/mtd
    sync
 }
-
+serialno=""
+barcode()
+{
+   if [ "$serialno" == "" ]; then
+      node1=`ls /dev/input/by-path/ | grep kbd | head -1`
+      if [ $node1 != "" ]; then
+         node="/dev/input/by-path/"$node1
+         reader="Barcode reader: $node1"        
+         drawstr `fwmul 6` `bsmul 20`  $reader
+         serialno=""
+         serialno=`$srcdir/bin/factorytool.sf 4 $node 9 | grep barcode | cut -d':' -f2`
+         seriallen=`echo $serialno | wc -c`
+         if [ $seriallen -eq 17 ]; then
+            echo $node $serialno
+            drawstr `fwmul 6` `bsmul 22` $serialno
+         fi
+       fi
+    fi
+}   
+  
 serial()
 {
-     node1=`ls /dev/input/by-path/ | grep kbd | head -1`
-     if [ $node1 != "" ]; then
-        node="/dev/input/by-path/"$node1
-        reader="Barcode reader: $node1"        
-        drawstr `fwmul 6` `bsmul 20`  $reader
-        serialno=""
-        serialno=`$srcdir/bin/factorytool.sf 4 $node 9 | grep barcode | cut -d':' -f2`
-        echo $node $serialno
-        drawstr `fwmul 6` `bsmul 22` $serialno
-        if [ "$serialno" != "" ]; then
-           serialstr="setprop ro.serialno $serialno"
-           echo $serialstr > /etc/serialno.txt
-           flash_erase /dev/mtd0 0x3ff000 1
-           dd if=/etc/serialno.txt of=/dev/mtd0 bs=4k seek=1023
-        fi
-     else
+   if [ "$serialno" != "" ]; then
+      serialstr="setprop ro.serialno $serialno"
+      echo $serialstr > /etc/serialno.txt
+    else
        echo "setprop ro.serialno 1234567890" > /etc/serialno.txt
-       flash_erase /dev/mtd0 0x3ff000 1
-       dd if=/etc/serialno.txt of=/dev/mtd0 bs=4k seek=1023
-     fi
-}     
+    fi
+    flash_erase /dev/mtd0 0x3ff000 1
+    dd if=/etc/serialno.txt of=/dev/mtd0 bs=4k seek=1023
+}
 
 part_id()
 {
@@ -218,11 +225,11 @@ if [ -z "$board" ] || [ "$board" = "?" ]; then
   exit 255
 fi
 
-# 1 boot        16M
-# 2 recovery    16M
+# 1 boot        64M
+# 2 recovery    22M -> 64M
 # 3 dummy        1M
-# 4 data      2048M
-# 5 system     800M
+# 4 data       768M
+# 5 system    2560M
 # 6 cache      512M
 # 7 device       8M
 # 8 misc         6M
@@ -232,18 +239,19 @@ device=/dev/mmcblk0
 cmdfile=/tmp/mkpart.cmd
 
 echo "unit MiB"                  > $cmdfile
-echo "mkpart primary 8 24"      >> $cmdfile
-echo "mkpart primary 24 40"     >> $cmdfile
-echo "mkpart extended 40 3200"  >> $cmdfile
+echo "mkpart primary 8 72"      >> $cmdfile
+echo "mkpart primary 72 136"     >> $cmdfile
+echo "mkpart extended 136 3200"  >> $cmdfile
 echo "mkpart primary 3200 -1"   >> $cmdfile
-echo "mkpart logical 41 2601"    >> $cmdfile
-echo "mkpart logical 2602 3114"  >> $cmdfile
-echo "mkpart logical 3115 3123" >> $cmdfile
-echo "mkpart logical 3124 3130" >> $cmdfile
-echo "mkpart logical 3131 3133" >> $cmdfile
+echo "mkpart logical 137 2655"    >> $cmdfile
+echo "mkpart logical 2656 3168"  >> $cmdfile
+echo "mkpart logical 3169 3177" >> $cmdfile
+echo "mkpart logical 3178 3184" >> $cmdfile
+echo "mkpart logical 3185 3187" >> $cmdfile
 echo "print"                    >> $cmdfile
 echo "quit"                     >> $cmdfile
 
+barcode
 dd if=/dev/zero of=$device bs=1k count=1 conv=notrunc
 parted -s $device mktable msdos
 cat $cmdfile | parted $device
@@ -271,8 +279,20 @@ if [ -e $srcdir/u-boot-${board}.imx ]; then
   dd if=$srcdir/u-boot-${board}.imx of=/dev/mmcblk0 bs=1k seek=1
   sleep 1
 fi
+
+if [ -e $srcdir/battery.bmp ]; then
+  ratio 40; msg "install u-boot logo"
+  dd if=$srcdir/battery.bmp of=/dev/mmcblk0p1 bs=1M seek=48
+  sleep 1
+fi
+if [ -e $srcdir/logo.bmp ]; then
+  dd if=$srcdir/logo.bmp of=/dev/mmcblk0p1 bs=1M seek=56
+  sleep 1
+fi
+
+barcode
 serial
-ratio 40; inst_simg system.img mmcblk0p5
+ratio 50; inst_simg system.img mmcblk0p5
 inst_tgz
 sync; sleep 1;               
 
