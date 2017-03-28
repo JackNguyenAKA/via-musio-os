@@ -39,7 +39,11 @@ serialno=""
 barcode()
 {
    if [ "$serialno" == "" ]; then
-      node1=`ls /dev/input/by-path/ | grep kbd | head -1`
+
+      while [ 1 ] ;
+      do
+           node1=`ls /dev/input/by-path/ | grep kbd | head -1`
+
       if [ $node1 != "" ]; then
          node="/dev/input/by-path/"$node1
          reader="Barcode reader: $node1"        
@@ -50,8 +54,11 @@ barcode()
          if [ $seriallen -eq 17 ]; then
             echo $node $serialno
             drawstr `fwmul 6` `bsmul 22` $serialno
+             break
          fi
        fi
+                sleep 1
+      done
     fi
 }   
   
