@@ -1,0 +1,4 @@
+config bq27x00_battery
+	bool "bq27x00 battery I2C driver"
+	depends on DM_I2C
+	default y
