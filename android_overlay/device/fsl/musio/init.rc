@@ -33,6 +33,7 @@ on init
 
     # deattch the fbcon as hdmi hotplug conflict with fbcon
     write /sys/class/vtconsole/vtcon1/bind 0
+    
 
 on boot
 
@@ -553,6 +554,8 @@ service bsservice /system/bin/bss_musio
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
+    setprop ro.crypto.fuse_sdcard true
+
 
 on post-fs
     # Turn on swap
