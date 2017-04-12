@@ -248,13 +248,13 @@ cmdfile=/tmp/mkpart.cmd
 echo "unit MiB"                  > $cmdfile
 echo "mkpart primary 8 72"      >> $cmdfile
 echo "mkpart primary 72 136"     >> $cmdfile
-echo "mkpart extended 136 3200"  >> $cmdfile
-echo "mkpart primary 3200 -1"   >> $cmdfile
-echo "mkpart logical 137 2655"    >> $cmdfile
-echo "mkpart logical 2656 3168"  >> $cmdfile
-echo "mkpart logical 3169 3177" >> $cmdfile
-echo "mkpart logical 3178 3184" >> $cmdfile
-echo "mkpart logical 3185 3187" >> $cmdfile
+echo "mkpart extended 136 3230"  >> $cmdfile
+echo "mkpart primary 3230 -1"   >> $cmdfile
+echo "mkpart logical 137 2697"    >> $cmdfile
+echo "mkpart logical 2698 3210"  >> $cmdfile
+echo "mkpart logical 3211 3219" >> $cmdfile
+echo "mkpart logical 3220 3226" >> $cmdfile
+echo "mkpart logical 3227 3229" >> $cmdfile
 echo "print"                    >> $cmdfile
 echo "quit"                     >> $cmdfile
 
