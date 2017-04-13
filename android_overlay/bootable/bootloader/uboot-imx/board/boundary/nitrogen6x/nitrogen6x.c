@@ -47,6 +47,8 @@
 
 /* via sam */
 extern int tc358778xbg_probe(void);
+extern void tc358778xbg_dispon(void);
+
 #define LOGO_BAT_X	490
 #define LOGO_BAT_Y	316
 #define LOGO_BAT_W	100
@@ -1290,8 +1292,9 @@ int misc_init_r(void)
 	setup_hdmi_iomux();
 #endif
 
-	ipu_display_setup();
 	tc358778xbg_probe();
+	ipu_display_setup();
+	tc358778xbg_dispon();
 
 	/* check battery status */
 	/* printf("check battery status, if too low then power off\n"); */

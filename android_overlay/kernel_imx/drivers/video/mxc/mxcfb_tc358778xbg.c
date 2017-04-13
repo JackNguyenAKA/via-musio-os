@@ -75,8 +75,6 @@ struct tc358778xbg_data {
 	int init_flag;
 } tc358778xbg;
 
-static void tc358778xbg_dispon(void);
-static void tc358778xbg_dispoff(void);
 static void tc358778xbg_init(void);
 static void tc358778xbg_suspend(void);
 static void tc358778xbg_dump_regs(int index, int len, int ulen);
@@ -613,7 +611,7 @@ struct txdt550uzpa_cmd_s txdt550uzpa_cmd14 =
 struct txdt550uzpa_cmd_s txdt550uzpa_cmd14_2 = 
 	{0xEE,7,{0x07,0x00,0x04,0x00,0x00,0xC0,0xB9}};
 struct txdt550uzpa_cmd_s txdt550uzpa_cmd14_3 = 
-	{0xEE,5,{0x77,0x00,0x55,0x05,0x1F}};
+	{0xEE,5,{0x77,0x00,0x55,0x05,0x00}}; /* 0x1F */
 struct txdt550uzpa_cmd_s txdt550uzpa_cmd15 = 
 	{0xC7,7,{0x00,0x76,0x00,0x6F,0x00,0x9B,0x00}};
 struct txdt550uzpa_cmd_s txdt550uzpa_cmd15_2 = 
@@ -1044,6 +1042,39 @@ void tc358778xbg_poweroff_sequence(void)
 	gpio_direction_output(MX6Q_DISPRESET_GPIO6_11, 1);
 }
 
+static void tc358778xbg_sleep(int enable)
+{
+	u16 data;
+
+	if (!via_lcd_cmd_sleep) 
+		return;
+
+#ifdef DEBUG
+	printk("[sam] %s(%d)\n", __func__, enable);
+#endif
+	
+	data = (enable) ? 0x0010 : 0x0011;
+	tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
+	mdelay(120);
+}
+
+static void tc358778xbg_disp(int enable)
+{
+	u16 data;
+
+	if (!via_lcd_cmd_disp)
+		return;
+
+#ifdef DEBUG
+	printk("[sam] %s(%d)\n", __func__, enable);
+#endif
+
+	/* set display on */
+	data = (enable) ? 0x0029 : 0x0028;
+	tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
+	mdelay(20);
+}
+
 static int tc358778xbg_fb_event(struct notifier_block *nb, unsigned long val, void *v)
 {
 	struct fb_event *event = v;
@@ -1071,18 +1102,18 @@ static int tc358778xbg_fb_event(struct notifier_block *nb, unsigned long val, vo
 		}
 		break;
 	case FB_EARLY_EVENT_BLANK:
-		if (*((int *)event->data) != FB_BLANK_UNBLANK) {
-			if (via_early_blank)
-				tc358778xbg_dispoff();
+		if (*((int *)event->data) == FB_BLANK_UNBLANK) {
+			tc358778xbg_sleep(0);
+		} else {
+			tc358778xbg_disp(0);
+			tc358778xbg_sleep(1);
 		}
 		break;
 	case FB_EVENT_BLANK:
 		if (*((int *)event->data) == FB_BLANK_UNBLANK) {
-			tc358778xbg_dispon();
+			tc358778xbg_disp(1);
 		} else {
-			if (via_early_blank)
-				break;
-			tc358778xbg_dispoff();
+		
 		}
 		break;
 	case FB_EVENT_SUSPEND:
@@ -1291,11 +1322,7 @@ static int via_do_proc(ctl_table *ctl, int write,
 			}
 			break;
 		case 7:
-			if (via_proc_value) {
-				tc358778xbg_dispon();
-			} else {
-				tc358778xbg_dispoff();
-			}
+			tc358778xbg_disp(via_proc_value);
 			break;
 		case 8:
 			via_lcd_cmd_sleep = via_proc_value;
@@ -1447,50 +1474,6 @@ static int tc358778xbg_remove(struct i2c_client *client)
 	return 0;
 }
 
-static void tc358778xbg_dispon(void)
-{
-	u16 data;
-
-#ifdef DEBUG
-	printk("[sam] %s %d\n", __func__, __LINE__);
-#endif
-
-	if (via_lcd_cmd_sleep) {
-		data = 0x0011;
-		tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
-		mdelay(120); /* Wait more than 1 frame */
-	}
-
-	if (via_lcd_cmd_disp) {
-		/* set display on */
-		data = 0x0029;
-		tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
-		mdelay(20); /* Wait more than 1 frame */
-	}
-}
-
-static void tc358778xbg_dispoff(void)
-{
-	u16 data;
-
-#ifdef DEBUG
-	printk("[sam] %s %d\n", __func__, __LINE__);
-#endif
-	if (via_lcd_cmd_disp) {
-		/* set display off */
-		data = 0x0028;
-		tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
-		mdelay(20); /* Wait more than 1 frame */
-	}
-	
-	if (via_lcd_cmd_sleep) {
-		data = 0x0010;
-		tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
-		mdelay(120); /* Wait more than 1 frame */
-	}
-
-}
-
 static void tc358778xbg_init(void)
 {
 //	printk("[sam] %s %d\n", __func__, __LINE__);
@@ -1593,7 +1576,7 @@ static void tc358778xbg_init(void)
 	tc358778xbg_write_word(0x004,0x0044);
 
 	/* Peripheral Setting */
-	txdt550uzpa_init2();
+	// txdt550uzpa_init2();
 }
 
 static void tc358778xbg_suspend(void)

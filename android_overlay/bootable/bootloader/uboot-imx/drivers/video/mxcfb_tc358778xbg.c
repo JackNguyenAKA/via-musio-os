@@ -652,7 +652,7 @@ struct txdt550uzpa_cmd_s txdt550uzpa_cmd14 =
 struct txdt550uzpa_cmd_s txdt550uzpa_cmd14_2 = 
 	{0xEE,7,{0x07,0x00,0x04,0x00,0x00,0xC0,0xB9}};
 struct txdt550uzpa_cmd_s txdt550uzpa_cmd14_3 = 
-	{0xEE,5,{0x77,0x00,0x55,0x05,0x1F}};
+	{0xEE,5,{0x77,0x00,0x55,0x05,0x0}}; /* 0x1F */
 struct txdt550uzpa_cmd_s txdt550uzpa_cmd15 = 
 	{0xC7,7,{0x00,0x76,0x00,0x6F,0x00,0x9B,0x00}};
 struct txdt550uzpa_cmd_s txdt550uzpa_cmd15_2 = 
@@ -1023,7 +1023,7 @@ txdt550uzpa_write_dcs_cmd(&txdt550uzpa_cmd18);
 #endif
 }
 
-static void txdt550uzpa_init2(void) {
+void txdt550uzpa_init2(void) {
 	txdt550uzpa_write_dcs_cmd(&txdt550uzpa_cmd17);
 	mdelay(120);
 	txdt550uzpa_write_dcs_cmd(&txdt550uzpa_cmd18);
@@ -1375,17 +1375,22 @@ static int tc358778xbg_remove(struct i2c_client *client)
 }
 #endif
 
-static void tc358778xbg_dispon(void)
+void tc358778xbg_dispon(void)
 {
 	u16 data;
 
 #ifdef DEBUG
 	printk("[sam] %s %d\n", __func__, __LINE__);
 #endif
+
+	data = 0x0011;
+	tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
+	mdelay(120);
+
 	/* set display on */
 	data = 0x0029;
 	tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
-	mdelay(100); /* Wait more than 1 frame */
+	mdelay(20);
 }
 
 static void tc358778xbg_dispoff(void)
@@ -1395,10 +1400,15 @@ static void tc358778xbg_dispoff(void)
 #ifdef DEBUG
 	printk("[sam] %s %d\n", __func__, __LINE__);
 #endif
+
 	/* set display off */
 	data = 0x0028;
 	tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
-	mdelay(100); /* Wait more than 1 frame */
+	mdelay(20);
+
+	data = 0x0010;
+	tc358778xbg_write_cmd(0x5, (u8 *) &data, 0);
+	mdelay(120);
 }
 
 static void tc358778xbg_init(void)
@@ -1503,7 +1513,7 @@ static void tc358778xbg_init(void)
 	tc358778xbg_write_word(0x004,0x0044);
 
 	/* Peripheral Setting */
-	txdt550uzpa_init2();
+	// txdt550uzpa_init2();
 
 	
 }
@@ -1585,6 +1595,5 @@ MODULE_LICENSE("GPL");
 int tc358778xbg_probe(void)
 {
 	tc358778xbg_init();
-	tc358778xbg_dispon();
 }
 
