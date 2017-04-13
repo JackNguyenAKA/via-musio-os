@@ -246,7 +246,7 @@ int res_create_multi_display_surface(const char* name, int* frames, gr_surface**
     result = open_png(name, &png_ptr, &info_ptr, &width, &height, &channels);
     if (result < 0) return result;
 
-    *frames = 2;
+    *frames = 24;
    /* png_textp text;
     int num_text;
     if (png_get_text(png_ptr, info_ptr, &text, &num_text)) {

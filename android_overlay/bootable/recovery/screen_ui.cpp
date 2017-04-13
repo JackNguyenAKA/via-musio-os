@@ -308,7 +308,6 @@ void* ScreenRecoveryUI::progress_thread(void *cookie) {
 
 void ScreenRecoveryUI::progress_loop() {
     double interval = 1.0 / animation_fps;
-    int direction=1;
     for (;;) {
         double start = now();
         pthread_mutex_lock(&updateMutex);
@@ -317,10 +316,9 @@ void ScreenRecoveryUI::progress_loop() {
 
         // update the installation animation, if active
         // skip this if we have a text overlay (too expensive to update)
-        if ((currentIcon == INSTALLING_UPDATE || currentIcon == ERASING) && !show_text){
-	    if(installingFrame >= installing_frames-1) direction=-1;
-	    else if(installingFrame <= 0) direction=1;
-            installingFrame += direction;
+        if ((currentIcon == INSTALLING_UPDATE || currentIcon == ERASING) &&
+            installing_frames > 0 && !show_text) {
+            installingFrame = (installingFrame + 1) % installing_frames;
             redraw = 1;
         }
 
