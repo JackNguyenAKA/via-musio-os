@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
     AppsDictionary \
     AppsEduhub \
     AppsUpdate \
+    AppsInspect \
     MusioLauncher \
     MusioMemberProfile \
     MusioSetting \
@@ -51,6 +52,7 @@ PRODUCT_PACKAGES += \
     MusioTTS \
     MusioUI \
     MusioVision \
+    
 	#MusioDummyHome	\
 
 PRODUCT_COPY_FILES += \
@@ -62,8 +64,8 @@ PRODUCT_COPY_FILES += \
 	device/fsl/musio/init.window.sh:system/etc/init.window.sh \
 	device/fsl/musio/audio_policy.conf:system/etc/audio_policy.conf \
 	device/fsl/musio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-	device/fsl/musio/bootanimation.zip:system/media/bootanimation.zip \
-	device/fsl/musio/check_wifi_mac.sh:system/etc/check_wifi_mac.sh
+	device/fsl/musio/check_wifi_mac.sh:system/etc/check_wifi_mac.sh \
+	#device/fsl/musio/bootanimation.zip:system/media/bootanimation.zip \
 
 PRODUCT_COPY_FILES += \
     packages/apps/libpocketsphinx_jni.so:system/lib/libpocketsphinx_jni.so \
