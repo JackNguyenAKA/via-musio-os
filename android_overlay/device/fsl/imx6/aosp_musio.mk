@@ -30,10 +30,12 @@ PRODUCT_PACKAGES += \
     AppsEduhub \
     AppsUpdate \
     AppsInspect \
+    AppsSophy \
+    AppsSophyTutor \
+    AppsSophyCollectRocket \
     MusioLauncher \
     MusioMemberProfile \
     MusioSetting \
-    MusioTutor \
     MusioArduino \
     MusioController \
     MusioEmotion \
@@ -76,6 +78,8 @@ PRODUCT_COPY_FILES += \
     packages/apps/librealm-jni.so:system/lib/librealm-jni.so \
     packages/apps/libdetection_based_tracker.so:system/lib/libdetection_based_tracker.so \
     packages/apps/libopencv_java3.so:system/lib/libopencv_java3.so \
+    packages/apps/libgdx.so:system/lib/libgdx.so \ 
+    packages/apps/libgdx-box2d.so:system/lib/libgdx-box2d.so \
 
 PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\

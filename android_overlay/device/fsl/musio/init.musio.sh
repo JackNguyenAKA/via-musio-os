@@ -1,5 +1,5 @@
 #!/system/bin/sh
-ime set com.akaintelligence.musio.musiosimplekeyboard/.services.MusioKeyboardService2
+ime set com.akaintelligence.musio.keyboard/.services.MusioKeyboard
 settings put secure spell_checker_enabled 0
-setprop musio.boot false
-serprop musio.init true
+setprop musio.boot 0
+stop adbd
