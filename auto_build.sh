@@ -1,16 +1,226 @@
-FRAMEWORK_PATH="/home/susan/git_project/via-musio-os"
-SYSTEM_SOFTWARE_PATH="/home/susan/git_project/musio-system"
+FRAMEWORK_PATH="$(pwd)"
+SYSTEM_SOFTWARE_PATH="$(pwd)/musio-system-library"
 
+
+function select_action() {
+	for S in $MENU_SELECTION
+	do
+		case $S in
+			0)
+				pull_framework
+				pull_system_software
+				clean_framework
+				clean_system_software
+				build_system_software	
+				apply_system_software
+				apply_overlay	
+				build_dev
+				build_test
+				build_user
+				build_dist
+				;;
+			1)
+				pull_framework
+				pull_system_software
+				;;
+			2)
+				;;
+			3)
+				clean_framework
+				clean_system_software
+				;;
+			4)	
+				build_system_software
+				apply_system_software
+				;;
+			5)
+				apply_overlay	
+				build_dev
+				build_test
+				build_user
+				build_dist
+				;;
+			a)
+				pull_framework
+				;;
+			b)
+				pull_system_software
+				;;
+			c)
+				;;
+			d)
+				;;
+			e)
+				clean_framework
+				;;
+			f)
+				clean_system_software
+				;;
+			g)
+				build_system_software
+				;; 
+			h)
+				apply_system_software
+				;;
+			i)
+				apply_overlay
+				;;
+			j)
+				build_develop
+				;;
+			k)
+				build_userdebug
+				;;
+			l)
+				build_user
+				;;		
+			m)
+				build_dist
+				;;		
+
+			q)
+				exit 0
+				;;
+		esac
+	done 
+}
+
+function menu() {
+	echo "========================================================"				
+	echo "AUTO BUILD"
+	echo "========================================================"				
+
+	echo "	0) Auto"
+	echo "	1) Pull"
+	echo "		a) Pull framework"
+	echo "		b) Pull Musio System Library"
+	echo "	2) Tag"
+	echo "		c) Tag framework"
+	echo "		d) Tag software"
+	echo "	3) Clean"
+	echo "		e) Clean framework"
+	echo "		f) Clean system software"
+	echo "	4) Build System softwares"
+	echo "		g) Build system softwares"
+	echo "		h) Apply system softwares"
+	echo "	5) Build frameworks"
+	echo " 		i) Apply Overlay"
+	echo "		j) Build develop mode and archive"
+	echo "		k) Build userdebug mode and archive"
+	echo "		l) Build user mode and archive"
+	echo "		m) Build dist mode and archive"
+	echo "	q) Quit"
+	read MENU_SELECTION
+}
+
+function pull_framework()
+{
+	echo "========================================================"				
+	echo "UPDATE FRAMEWORK"
+	echo "========================================================"				
+	cd ${FRAMEWORK_PATH}
+	git pull origin release-1.1.6
+}
+
+function pull_system_software()
+{
+	echo "========================================================"				
+	echo "UPDATE SYSTEM SOFTWARE"
+	echo "========================================================"				
+	cd ${SYSTEM_SOFTWARE_PATH}
+	git pull origin release-1.1.6
+}
+
+function build_system_software()
+{
+	echo "========================================================"				
+	echo "BUILD SYSTEM SOFTWARE"
+	echo "========================================================"				
+	cd ${SYSTEM_SOFTWARE_PATH}
+	./gradlew assembleMusio	
+	./gradlew assembleTutor	
+}
+
+function clean_framework()
+{
+	echo "========================================================"				
+	echo "CLEAN FRAMEWORK"
+	echo "========================================================"				
+	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	make installclean
+	make clobber
+}
+
+function clean_system_software()
+{
+	echo "========================================================"				
+	echo "CLEAN SYSTEM SOFTWARE"
+	echo "========================================================"				
+	cd ${SYSTEM_SOFTWARE_PATH}
+	./gradlew clean
+}
+
+function build_userdebug()
+{
+	echo "========================================================"				
+	echo "BUILD USERDEBUG MODE"
+	echo "========================================================"				
+	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
+	source build/envsetup.sh
+	lunch aosp_musio-userdebug
+	make -j8
+}
+
+function build_user()
+{
+	echo "========================================================"				
+	echo "BUILD USER MODE"
+	echo "========================================================"				
+	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
+	source build/envsetup.sh
+	lunch aosp_musio-user
+	make -j8
+}
+function build_develop()
+{
+	echo "========================================================"				
+	echo "BUILD USER MODE"
+	echo "========================================================"				
+	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cp ./device/fsl/imx6/aosp_musio_develop.mk ./device/fsl/imx6/aosp_musio.mk
+	source build/envsetup.sh
+	lunch aosp_musio-userdebug
+	make -j8
+}
+
+
+function build_dist()
+{
+	echo "========================================================"				
+	echo "BUILD DISTRIBUTION"
+	echo "========================================================"				
+	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
+	source build/envsetup.sh
+	lunch aosp_musio-user
+	make -j8 otapackage
+}
+
+
+function apply_system_software()
+{
 	echo "========================================================"				
 	echo "APPLY SYSTEM SOFTWARE"
 	echo "========================================================"
 
-	cp ${SYSTEM_SOFTWARE_PATH}/dummyhome/build/outputs/apk/dummyhome-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioDummyHome/MusioDummyHome.apk
-	#cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-dictionary-eng2jpn/build/outputs/apk/apps-eduhub-dictionary-eng2jpn-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionaryEng2Jpn/AppsDictionaryEng2Jpn.apk
-	#cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-dictionary-jpn2eng/build/outputs/apk/apps-eduhub-dictionary-jpn2eng-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionaryJpn2Eng/AppsDictionaryJpn2Eng.apk
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-dictionary/build/outputs/apk/apps-dictionary-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionary/AppsDictionary.apk
+	#cp ${SYSTEM_SOFTWARE_PATH}/dummyhome/build/outputs/apk/dummyhome-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioDummyHome/MusioDummyHome.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-dictionary-eng2jpn/build/outputs/apk/apps-eduhub-dictionary-eng2jpn-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionaryEng2Jpn/AppsDictionaryEng2Jpn.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-dictionary-jpn2eng/build/outputs/apk/apps-eduhub-dictionary-jpn2eng-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionaryJpn2Eng/AppsDictionaryJpn2Eng.apk
+	#cp ${SYSTEM_SOFTWARE_PATH}/apps-dictionary/build/outputs/apk/apps-dictionary-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionary/AppsDictionary.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub/build/outputs/apk/apps-eduhub-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhub/AppsEduhub.apk
-	#cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-conversation/build/outputs/apk/apps-eduhub-conversation-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubConversation/AppsEduhubConversation.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-conversation/build/outputs/apk/apps-eduhub-conversation-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubConversation/AppsEduhubConversation.apk
 
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-push-sample/build/outputs/apk/apps-push-sample-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsPushSample/AppsPushSample.apk
 
@@ -54,6 +264,18 @@ SYSTEM_SOFTWARE_PATH="/home/susan/git_project/musio-system"
 	cp "${SYSTEM_SOFTWARE_PATH}/libgdx4musio/libs/armeabi-v7a/libgdx-box2d.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/apps-sophy-tutor/build/intermediates/transforms/mergeJniLibs/tutor/folders/2000/1f/main/lib/armeabi-v7a/librealm-jni.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 
+}
 
+
+
+if [ $# -eq 0 ]; then
+	while [ 1 ]
+	do
+		menu
+		select_action	
+	done
+else
+	$@
+fi
 
 
