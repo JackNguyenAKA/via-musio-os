@@ -36,6 +36,7 @@ PRODUCT_PACKAGES += \
     AppsSophyBubble \
     AppsSophyCollectRocket \
     AppsUpdate \
+    AppsInspect \
     MusioLauncher \
     MusioMemberProfile \
     MusioSetting \
@@ -56,7 +57,7 @@ PRODUCT_PACKAGES += \
     MusioTouch \
     MusioTTS \
     MusioUI \
-    MusioVision 
+    MusioVision \
     
 
 PRODUCT_COPY_FILES += \

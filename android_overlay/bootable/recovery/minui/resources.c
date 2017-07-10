@@ -140,7 +140,7 @@ static int open_png(const char* name, png_structp* png_ptr, png_infop* info_ptr,
 static gr_surface init_display_surface(png_uint_32 width, png_uint_32 height) {
     gr_surface surface;
 
-    surface = malloc_surface(width * height * 4 *2);
+    surface = malloc_surface(width * height * 4);
     if (surface == NULL) return NULL;
 
     surface->width = width;
@@ -246,8 +246,8 @@ int res_create_multi_display_surface(const char* name, int* frames, gr_surface**
     result = open_png(name, &png_ptr, &info_ptr, &width, &height, &channels);
     if (result < 0) return result;
 
-    *frames = 24;
-   /* png_textp text;
+    *frames = 1;
+    png_textp text;
     int num_text;
     if (png_get_text(png_ptr, info_ptr, &text, &num_text)) {
         for (i = 0; i < num_text; ++i) {
@@ -257,7 +257,7 @@ int res_create_multi_display_surface(const char* name, int* frames, gr_surface**
             }
         }
         printf("  found frames = %d\n", *frames);
-    }*/
+    }
 
     if (height % *frames != 0) {
         printf("bad height (%d) for frame count (%d)\n", height, *frames);
@@ -279,20 +279,14 @@ int res_create_multi_display_surface(const char* name, int* frames, gr_surface**
     }
 
     unsigned char* p_row = malloc(width * 4);
-    unsigned int y,bh;
-    int frame = 0;
-    bh = (height / (*frames));
-    printf("bh : %d\n",bh);
+    unsigned int y;
     for (y = 0; y < height; ++y) {
-       png_read_row(png_ptr, p_row, NULL);
-       if((bh * (frame+1)) < y) {
-  	frame++;
-	printf("frame and y : %d,%d\n",frame,y);
-	}
-       unsigned char* out_row = surface[frame]->data +
-           (y - (bh * frame)) * surface[frame]->row_bytes;
-       transform_rgb_to_draw(p_row, out_row, channels, width);
-   }
+        png_read_row(png_ptr, p_row, NULL);
+        int frame = y % *frames;
+        unsigned char* out_row = surface[frame]->data +
+            (y / *frames) * surface[frame]->row_bytes;
+        transform_rgb_to_draw(p_row, out_row, channels, width);
+    }
     free(p_row);
 
     *pSurface = (gr_surface*) surface;

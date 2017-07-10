@@ -168,7 +168,7 @@ void ScreenRecoveryUI::draw_progress_locked()
         int dx = (gr_fb_width() - width)/2;
         int dy = (gr_fb_height() - (iconHeight / icon_screen_height_ratio + TEXT_HEIGHT + 40)) / 2 + 
 		 iconHeight / icon_screen_height_ratio + ICON_TEXT_HEIGHT + TEXT_HEIGHT + 
-		 TEXT_PROGRESSBAR_HEIGHT - height / 2 - 500; 
+		 TEXT_PROGRESSBAR_HEIGHT - height / 2 - 480; 
 
         // Erase behind the progress bar (in case this was a progress-only update)
         gr_color(0, 0, 0, 255);
@@ -381,8 +381,7 @@ void ScreenRecoveryUI::Init()
     if (text_cols > kMaxCols - 1) text_cols = kMaxCols - 1;
 
     backgroundIcon[NONE] = NULL;
-    //LoadBitmapArray("icon_installing", &installing_frames, &installation);
-    LoadBitmapArray("update_animation", &installing_frames, &installation);
+    LoadBitmapArray("icon_installing", &installing_frames, &installation);
     backgroundIcon[INSTALLING_UPDATE] = installing_frames ? installation[0] : NULL;
     backgroundIcon[ERASING] = backgroundIcon[INSTALLING_UPDATE];
     LoadBitmap("icon_error", &backgroundIcon[ERROR]);

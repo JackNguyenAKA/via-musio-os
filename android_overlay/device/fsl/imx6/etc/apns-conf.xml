@@ -56,6 +56,11 @@
 	 apn="mpr2.bizho.net"
 	 protocol="Ipv4"
     />
+    <apn carrier="soracom.io"
+	 apn="soracom.io"
+	 user="sora"
+	 password="sora"
+    />
     <apn carrier="KT LTE"
          mcc="450"
          mnc="08"
