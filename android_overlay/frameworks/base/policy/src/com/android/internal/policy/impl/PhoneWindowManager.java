@@ -124,6 +124,8 @@ import static android.view.WindowManagerPolicy.WindowManagerFuncs.LID_CLOSED;
 import static android.view.WindowManagerPolicy.WindowManagerFuncs.CAMERA_LENS_COVER_ABSENT;
 import static android.view.WindowManagerPolicy.WindowManagerFuncs.CAMERA_LENS_UNCOVERED;
 import static android.view.WindowManagerPolicy.WindowManagerFuncs.CAMERA_LENS_COVERED;
+import com.akaintelligence.musio.library.system.Toolbox;
+
 
 /**
  * WindowManagerPolicy implementation for the Android phone UI.  This
@@ -5636,6 +5638,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     } else {
                         mBootMsgDialog.setTitle(R.string.android_start_title);
                     }
+		    Toolbox.exec("wm density 420");
+		    Toolbox.exec("wm size 1080x1920");
+		    Toolbox.exec("wm overscan 0,0,0,1000");
+
                     mBootMsgDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                     mBootMsgDialog.setIndeterminate(true);
                     mBootMsgDialog.getWindow().setType(
@@ -5647,7 +5653,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     WindowManager.LayoutParams lp = mBootMsgDialog.getWindow().getAttributes();
                     lp.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_NOSENSOR;
 		    lp.y = 100;
-                    mBootMsgDialog.getWindow().setAttributes(lp);
+                    mBootMsgDialog.getWindow().setGravity(Gravity.TOP);
                     mBootMsgDialog.setCancelable(false);
                     mBootMsgDialog.show();
                 }
