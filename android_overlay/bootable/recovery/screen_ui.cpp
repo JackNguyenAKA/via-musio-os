@@ -167,7 +167,7 @@ void ScreenRecoveryUI::draw_progress_locked()
 	gr_blit(customMessage, 0, 0, gr_get_width(customMessage), gr_get_height(customMessage),
             (gr_fb_width() - gr_get_width(customMessage)) / 2,
             iconY + gr_get_height(icon) + 80);
-      }
+      
     }
 
     if (progressBarType != EMPTY) {
