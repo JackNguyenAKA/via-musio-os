@@ -45,7 +45,7 @@ static int icon_screen_width_ratio = 1;
 // There's only (at most) one of these objects, and global callbacks
 // (for pthread_create, and the input event system) need to find it,
 // so use a global variable.
-static ScreenRecoveryUI *self = NULL;
+static ScreenRecoveryUI* self = NULL;
 
 // Return the current time as a double (including fractions of a second).
 static double now() {
@@ -115,13 +115,7 @@ void ScreenRecoveryUI::draw_background_locked(Icon icon)
 	icon_screen_height_ratio = icon_screen_height_ratio > icon_screen_width_ratio ? icon_screen_height_ratio:icon_screen_width_ratio;
 	icon_screen_width_ratio = icon_screen_height_ratio;
         iconX = (gr_fb_width() - iconWidth / icon_screen_width_ratio) / 2;
-        iconY = (gr_fb_height() - (iconHeight / icon_screen_height_ratio + textHeight + 40)) / 2;
-
-	if (icon == ERROR || icon == NO_COMMAND) {
- 	    iconY = iconY - 510;;
- 	} else {
- 	    iconY = iconY - 550;
- 	}
+        iconY = (gr_fb_height() - (iconHeight / icon_screen_height_ratio + textHeight + 40)) / 2 - 500;
 
         int textX = (gr_fb_width() - textWidth) / 2;
         int textY = iconY + iconHeight / icon_screen_height_ratio + ICON_TEXT_HEIGHT;
@@ -164,10 +158,6 @@ void ScreenRecoveryUI::draw_progress_locked()
     if (currentIcon == INSTALLING_UPDATE || currentIcon == ERASING) {
         gr_surface icon = installation[installingFrame];
         gr_blit(icon, 0, 0, gr_get_width(icon), gr_get_height(icon), iconX, iconY);
-	gr_blit(customMessage, 0, 0, gr_get_width(customMessage), gr_get_height(customMessage),
-            (gr_fb_width() - gr_get_width(customMessage)) / 2,
-            iconY + gr_get_height(icon) + 80);
-      
     }
 
     if (progressBarType != EMPTY) {
@@ -178,7 +168,7 @@ void ScreenRecoveryUI::draw_progress_locked()
         int dx = (gr_fb_width() - width)/2;
         int dy = (gr_fb_height() - (iconHeight / icon_screen_height_ratio + TEXT_HEIGHT + 40)) / 2 + 
 		 iconHeight / icon_screen_height_ratio + ICON_TEXT_HEIGHT + TEXT_HEIGHT + 
-		 TEXT_PROGRESSBAR_HEIGHT - height / 2 - 800; 
+		 TEXT_PROGRESSBAR_HEIGHT - height / 2 - 480; 
 
         // Erase behind the progress bar (in case this was a progress-only update)
         gr_color(0, 0, 0, 255);
@@ -401,7 +391,6 @@ void ScreenRecoveryUI::Init()
     LoadBitmap("progress_fill", &progressBarFill);
     LoadBitmap("stage_empty", &stageMarkerEmpty);
     LoadBitmap("stage_fill", &stageMarkerFill);
-    LoadBitmap("installing_alert", &customMessage);
 
     LoadLocalizedBitmap("installing_text", &backgroundText[INSTALLING_UPDATE]);
     LoadLocalizedBitmap("erasing_text", &backgroundText[ERASING]);
