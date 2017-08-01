@@ -26,17 +26,38 @@ PRODUCT_LOCALES := en_US
 
 
 PRODUCT_PACKAGES += \
+    AppsAcademyEnglish \
+    AppsAcademyEnglishDialog \
+    AppsAcademyEnglishPattern \
+    AppsAcademyEnglishVoca \
+    AppsAcademyIcebreaker \
+    AppsAcademyLauncher \
+    AppsAcademyPlacementTest \
+    AppsAlarm \
     AppsDictionaryEng2Jpn \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
     AppsEduhubConversation \
-    AppsPushSample \
+    AppsEduhubDefinitionQuiz \
+    AppsEduhubExam \
+    AppsEduhubHangman \
+    AppsEduhubPattern \
+    AppsEduhubSpellingBee \
+    AppsEduhubWordstudy \
+    AppsGamehub \
+    AppsGamehubMovieQuotes \
+    AppsGamehubMusioAdventure \
+    AppsGamehubRockScissors \
+    AppsGamehubTicTacToe \
     AppsSophy \
     AppsSophyTutor \
     AppsSophyBubble \
     AppsSophyCollectRocket \
+    AppsSophyAttendance \
     AppsUpdate \
+    AppsWardrobe \
     AppsInspect \
+    AppsJpnChat \
     MusioLauncher \
     MusioMemberProfile \
     MusioSetting \

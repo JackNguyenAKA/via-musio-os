@@ -214,23 +214,53 @@ function apply_system_software()
 	echo "========================================================"
 
 	
-	cp ${SYSTEM_SOFTWARE_PATH}/dummyhome/build/outputs/apk/dummyhome-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioDummyHome/MusioDummyHome.apk
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-dictionary-eng2jpn/build/outputs/apk/apps-eduhub-dictionary-eng2jpn-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionaryEng2Jpn/AppsDictionaryEng2Jpn.apk
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-dictionary-jpn2eng/build/outputs/apk/apps-eduhub-dictionary-jpn2eng-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionaryJpn2Eng/AppsDictionaryJpn2Eng.apk
+	#cp ${SYSTEM_SOFTWARE_PATH}/dummyhome/build/outputs/apk/dummyhome-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioDummyHome/MusioDummyHome.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-english/build/outputs/apk/apps-academy-english-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyEnglish/AppsAcademyEnglish.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-english-dialog/build/outputs/apk/apps-academy-english-dialog-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyEnglishDialog/AppsAcademyEnglishDialog.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-english-pattern/build/outputs/apk/apps-academy-english-pattern-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyEnglishPattern/AppsAcademyEnglishPattern.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-english-voca/build/outputs/apk/apps-academy-english-voca-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyEnglishVoca/AppsAcademyEnglishVoca.apk
+
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-icebreaker/build/outputs/apk/apps-academy-icebreaker-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyIcebreaker/AppsAcademyIcebreaker.apk
+
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-launcher/build/outputs/apk/apps-academy-launcher-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyLauncher/AppsAcademyLauncher.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-placementtest/build/outputs/apk/apps-academy-launcher-placementtest-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyPlacementTest/AppsAcademyPlacementTest.apk
+	
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-alarm/build/outputs/apk/apps-alarm-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAlarm/AppsAlarm.apk
+
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub/build/outputs/apk/apps-eduhub-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhub/AppsEduhub.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-conversation/build/outputs/apk/apps-eduhub-conversation-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubConversation/AppsEduhubConversation.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-definitionquiz/build/outputs/apk/apps-eduhub-definitionquiz-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubDefinitionQuiz/AppsEduhubDefinitionQuiz.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-dictionary-eng2jpn/build/outputs/apk/apps-eduhub-dictionary-eng2jpn-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionaryEng2Jpn/AppsDictionaryEng2Jpn.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-dictionary-jpn2eng/build/outputs/apk/apps-eduhub-dictionary-jpn2eng-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsDictionaryJpn2Eng/AppsDictionaryJpn2Eng.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-exam/build/outputs/apk/apps-eduhub-exam-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubExam/AppsEduhubExam.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-hangman/build/outputs/apk/apps-eduhub-hangman-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubHangman/AppsEduhubHangman.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-pattern/build/outputs/apk/apps-eduhub-pattern-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubPattern/AppsEduhubPattern.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-spellingbee/build/outputs/apk/apps-eduhub-spellingbee-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubSpellingBee/AppsEduhubSpellingBee.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-wordstudy/build/outputs/apk/apps-eduhub-wordstudy-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubWordstudy/AppsEduhubWordstudy.apk
 
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-push-sample/build/outputs/apk/apps-push-sample-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsPushSample/AppsPushSample.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-gamehub/build/outputs/apk/apps-gamehub-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsGamehub/AppsGamehub.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-gamehub-moviequotes/build/outputs/apk/apps-gamehub-moviequotes-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsGamehubMovieQuotes/AppsGamehubMovieQuotes.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-gamehub-musioadventure/build/outputs/apk/apps-gamehub-musioadventure-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsGamehubMusioAdventure/AppsGamehubMusioAdventure.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-gamehub-rockscissors/build/outputs/apk/apps-gamehub-rockscissors-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsGamehubRockScissors/AppsGamehubRockScissors.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-gamehub-tictactoe/build/outputs/apk/apps-gamehub-tictactoe-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsGamehubTicTacToe/AppsGamehubTicTacToe.apk
 
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-inspect/build/outputs/apk/apps-inspect-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsInspect/AppsInspect.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-jpnchat/build/outputs/apk/apps-jpnchat-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsJpnChat/AppsJpnChat.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-launcher/build/outputs/apk/apps-launcher-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioLauncher/MusioLauncher.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-member/build/outputs/apk/apps-member-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioMemberProfile/MusioMemberProfile.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-notice/build/outputs/apk/apps-notice-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioNotice/MusioNotice.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-push-sample/build/outputs/apk/apps-push-sample-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsPushSample/AppsPushSample.apk
+
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-settings/build/outputs/apk/apps-settings-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioSetting/MusioSetting.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy/build/outputs/apk/apps-sophy-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophy/AppsSophy.apk
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-tutor/build/outputs/apk/apps-sophy-tutor-tutor.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyTutor/AppsSophyTutor.apk
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-collect-rocket/build/outputs/apk/apps-sophy-collect-rocket-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCollectRocket/AppsSophyCollectRocket.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-attendance/build/outputs/apk/apps-sophy-attendance-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyAttendance/AppsSophyAttendance.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-bubble/build/outputs/apk/apps-sophy-bubble-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyBubble/AppsSophyBubble.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-collect-rocket/build/outputs/apk/apps-sophy-collect-rocket-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCollectRocket/AppsSophyCollectRocket.apk
+
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-tutor/build/outputs/apk/apps-sophy-tutor-tutor.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyTutor/AppsSophyTutor.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-update/build/outputs/apk/apps-update-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsUpdate/AppsUpdate.apk
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-inspect/build/outputs/apk/apps-inspect-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsInspect/AppsInspect.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-wardrobe/build/outputs/apk/apps-wardrobe-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsWardrobe/AppsWardrobe.apk
+
 	cp ${SYSTEM_SOFTWARE_PATH}/arduino/build/outputs/apk/arduino-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioArduino/MusioArduino.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/controller/build/outputs/apk/controller-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioController/MusioController.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/emotion/build/outputs/apk/emotion-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioEmotion/MusioEmotion.apk
@@ -260,7 +290,6 @@ function apply_system_software()
 	cp "${SYSTEM_SOFTWARE_PATH}/libgdx4musio/libs/armeabi-v7a/libgdx.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/libgdx4musio/libs/armeabi-v7a/libgdx-box2d.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/apps-sophy-tutor/build/intermediates/transforms/mergeJniLibs/tutor/folders/2000/1f/main/lib/armeabi-v7a/librealm-jni.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
-
 
 }
 
