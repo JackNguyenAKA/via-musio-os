@@ -223,7 +223,7 @@ function apply_system_software()
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-icebreaker/build/outputs/apk/apps-academy-icebreaker-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyIcebreaker/AppsAcademyIcebreaker.apk
 
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-launcher/build/outputs/apk/apps-academy-launcher-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyLauncher/AppsAcademyLauncher.apk
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-placementtest/build/outputs/apk/apps-academy-launcher-placementtest-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyPlacementTest/AppsAcademyPlacementTest.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-placementtest/build/outputs/apk/apps-academy-placementtest-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyPlacementTest/AppsAcademyPlacementTest.apk
 	
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-alarm/build/outputs/apk/apps-alarm-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAlarm/AppsAlarm.apk
 
@@ -287,8 +287,8 @@ function apply_system_software()
 	cp "${SYSTEM_SOFTWARE_PATH}/touch/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/libmultitouch2.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/keyboard/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/liblipitk.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/sphinx/build/intermediates/jniLibs/musio/armeabi-v7a/libpocketsphinx_jni.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
-	cp "${SYSTEM_SOFTWARE_PATH}/libgdx4musio/libs/armeabi-v7a/libgdx.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
-	cp "${SYSTEM_SOFTWARE_PATH}/libgdx4musio/libs/armeabi-v7a/libgdx-box2d.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
+	cp "${SYSTEM_SOFTWARE_PATH}/library-gdx4musio/libs/armeabi-v7a/libgdx.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
+	cp "${SYSTEM_SOFTWARE_PATH}/library-gdx4musio/libs/armeabi-v7a/libgdx-box2d.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/apps-sophy-tutor/build/intermediates/transforms/mergeJniLibs/tutor/folders/2000/1f/main/lib/armeabi-v7a/librealm-jni.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 
 }

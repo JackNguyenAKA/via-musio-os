@@ -26,24 +26,12 @@ PRODUCT_LOCALES := en_US
 
 
 PRODUCT_PACKAGES += \
-    AppsAcademyEnglish \
-    AppsAcademyEnglishDialog \
-    AppsAcademyEnglishPattern \
-    AppsAcademyEnglishVoca \
-    AppsAcademyIcebreaker \
-    AppsAcademyLauncher \
-    AppsAcademyPlacementTest \
     AppsAlarm \
     AppsDictionaryEng2Jpn \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
     AppsEduhubConversation \
-    AppsEduhubDefinitionQuiz \
     AppsEduhubExam \
-    AppsEduhubHangman \
-    AppsEduhubPattern \
-    AppsEduhubSpellingBee \
-    AppsEduhubWordstudy \
     AppsGamehub \
     AppsGamehubMovieQuotes \
     AppsGamehubMusioAdventure \
