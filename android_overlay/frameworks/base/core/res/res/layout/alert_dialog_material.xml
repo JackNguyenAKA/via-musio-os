@@ -17,14 +17,13 @@
 		android:layout_width="match_parent" 
 		android:layout_height="750px"
 		android:orientation="vertical"
-		android:layout_gravity="center"	
+		android:layout_gravity="center"
 		android:textColor="#ffffffff"
-		android:background="@drawable/musio_error_black">
+		android:background="@drawable/musio_dialog">
     <LinearLayout android:id="@+id/topPanel"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:orientation="vertical"
-		  android:paddingTop="200px">
+                  android:orientation="vertical">
         <LinearLayout android:id="@+id/title_template"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
@@ -45,7 +44,7 @@
                                                      android:ellipsize="end"
                                                      android:layout_width="match_parent"
                                                      android:layout_height="wrap_content"
-                                                     android:textAlignment="viewStart"
+                                                     android:textAlignment="center"
                                                      android:textColor="#ffffffff"/>
         </LinearLayout>
         <!-- If the client uses a customTitle, it will be added here. -->
@@ -76,10 +75,12 @@
                           style="@style/TextAppearance.Material.Subhead"
                           android:layout_width="match_parent"
                           android:layout_height="150dip"
+			  android:layout_marginTop="355px"
                           android:paddingStart="?attr/dialogPreferredPadding"
                           android:paddingTop="@dimen/dialog_padding_top_material"
                           android:paddingEnd="?attr/dialogPreferredPadding"
                           android:textColor="#ffffffff"
+			  android:textSize="13sp"
                           android:layout_gravity="center"
                           android:textAlignment="center"
                           android:gravity="center"/>
@@ -112,7 +113,7 @@
     <LinearLayout android:id="@+id/buttonPanel"
                   style="?attr/buttonBarStyle"
                   android:layout_width="match_parent"
-                  android:layout_height="100dip"
+                  android:layout_height="90dip"
                   android:layoutDirection="locale"
                   android:orientation="horizontal"
                   android:paddingStart="12dp"

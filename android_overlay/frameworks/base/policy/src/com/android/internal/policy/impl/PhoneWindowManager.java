@@ -5634,9 +5634,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         }
                     };
                     if (mContext.getPackageManager().isUpgrade()) {
-                        mBootMsgDialog.setTitle(R.string.android_upgrading_title);
+                        //mBootMsgDialog.setTitle(R.string.android_upgrading_title);
                     } else {
-                        mBootMsgDialog.setTitle(R.string.android_start_title);
+                        //mBootMsgDialog.setTitle(R.string.android_start_title);
                     }
 		    Toolbox.exec("wm density 420");
 		    Toolbox.exec("wm size 1080x1920");
