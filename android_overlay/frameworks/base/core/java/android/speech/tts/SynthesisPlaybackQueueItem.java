@@ -62,23 +62,12 @@ final class SynthesisPlaybackQueueItem extends PlaybackQueueItem {
 
     private final BlockingAudioTrack mAudioTrack;
     private final AbstractEventLogger mLogger;
-    // MODIFIED
-    private final boolean mIsMusioVoice;
-    private final float mFxPitch;
-
-    private static final int OVERSAMPLING = 4;
-    private static final int FFTFRAMESIZE = 1024;
-
-    private int mSampleRate;
 
     SynthesisPlaybackQueueItem(AudioOutputParams audioParams, int sampleRate,
             int audioFormat, int channelCount, UtteranceProgressDispatcher dispatcher,
             Object callerIdentity, AbstractEventLogger logger) {
         super(dispatcher, callerIdentity);
 
-        //TODO
-        Log.d(TAG, "SynthQueueItemCreation as planned");
-
         mUnconsumedBytes = 0;
 
         mStopped = false;
@@ -87,45 +76,11 @@ final class SynthesisPlaybackQueueItem extends PlaybackQueueItem {
 
         mAudioTrack = new BlockingAudioTrack(audioParams, sampleRate, audioFormat, channelCount);
         mLogger = logger;
-
-        // MODIFIED
-        mIsMusioVoice = false;
-        mFxPitch = 1.0f;
-
-        mSampleRate = sampleRate;
-        initRealtimeFx(OVERSAMPLING, FFTFRAMESIZE);
     }
 
-    SynthesisPlaybackQueueItem(AudioOutputParams audioParams, int sampleRate,
-                               int audioFormat, int channelCount, UtteranceProgressDispatcher dispatcher,
-                               Object callerIdentity, AbstractEventLogger logger, boolean isMusioVoice, float fxPitch) {
-        super(dispatcher, callerIdentity);
-
-        //TODO
-        Log.d(TAG, "Musio SynthQueueItemCreation as planned");
-
-        mUnconsumedBytes = 0;
-
-        mStopped = false;
-        mDone = false;
-        mStatusCode = TextToSpeech.SUCCESS;
-
-        mAudioTrack = new BlockingAudioTrack(audioParams, sampleRate, audioFormat, channelCount);
-        mLogger = logger;
-
-        // MODIFIED
-        mIsMusioVoice = isMusioVoice;
-        mFxPitch = fxPitch;
-
-        mSampleRate = sampleRate;
-        initRealtimeFx(OVERSAMPLING, FFTFRAMESIZE);
-    }
 
     @Override
     public void run() {
-        //TODO
-        Log.d(TAG, "Queue Item Run as planned");
-
         final UtteranceProgressDispatcher dispatcher = getDispatcher();
         dispatcher.dispatchOnStart();
 
@@ -144,21 +99,9 @@ final class SynthesisPlaybackQueueItem extends PlaybackQueueItem {
             // OR (b) stop() is called in which case it will return null.
             // OR (c) done() is called in which case it will return null.
             while ((buffer = take()) != null) {
-
-                // TODO : Sequence upto 4 buffers -> process the sequence at once.
-                // TODO : Modify take() method to do so.
-
-                // MODIFIED
-                if (mIsMusioVoice) {
-                    buffer = customVoiceProcessedBuffer(buffer, mFxPitch, mSampleRate);
-                }
-
                 mAudioTrack.write(buffer);
                 mLogger.onAudioDataWritten();
             }
-
-            // 2 bytes per sample
-            // TODO : Make processing faster or introduce a buffer mechanism that only starts playing when certain number of bytes are loaded.
 
         } catch (InterruptedException ie) {
             if (DBG) Log.d(TAG, "Interrupted waiting for buffers, cleaning up.");
@@ -177,25 +120,8 @@ final class SynthesisPlaybackQueueItem extends PlaybackQueueItem {
         mLogger.onCompleted(mStatusCode);
     }
 
-    // MODIFIED
-    private static native void initRealtimeFx(int overSampling, int frameSize);
-
-    // MODIFIED
-    private static native void resetRealtimeFx();
-
-    // MODIFIED
-    private static native byte[] byteBufferFx(byte[] buffer, int bufferSize, float vocoderShift,
-                                             int sampleRate);
-
-    // MODIFIED
-    private static byte[] customVoiceProcessedBuffer(byte[] buffer, float vocoderShift, int sampleRate) {
-        return byteBufferFx(buffer, buffer.length, vocoderShift, sampleRate);
-    }
-
     @Override
     void stop(int statusCode) {
-        // TODO
-        Log.d(TAG, "Stop as planned, status code : " + statusCode);
         try {
             mListLock.lock();
 
@@ -225,8 +151,6 @@ final class SynthesisPlaybackQueueItem extends PlaybackQueueItem {
     }
 
     void done() {
-        //TODO
-        Log.d(TAG, "Done as planned");
         try {
             mListLock.lock();
 
@@ -267,8 +191,6 @@ final class SynthesisPlaybackQueueItem extends PlaybackQueueItem {
                 return;
             }
 
-            // TODO : Possibly process buffer before added to Buffer List?
-
             mDataBufferList.add(new ListEntry(buffer));
             mUnconsumedBytes += buffer.length;
             mReadReady.signal();
@@ -290,7 +212,6 @@ final class SynthesisPlaybackQueueItem extends PlaybackQueueItem {
             // If stopped, return null so that we can exit the playback loop
             // as soon as possible.
             if (mStopped) {
-                resetRealtimeFx();
                 return null;
             }
 
@@ -300,7 +221,6 @@ final class SynthesisPlaybackQueueItem extends PlaybackQueueItem {
             // This is the normal playback loop exit case, when done() was
             // called. (mDone will be true at this point).
             if (entry == null) {
-                resetRealtimeFx();
                 return null;
             }
 

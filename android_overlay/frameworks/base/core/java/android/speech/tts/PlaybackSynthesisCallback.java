@@ -49,41 +49,16 @@ class PlaybackSynthesisCallback extends AbstractSynthesisCallback {
     private final UtteranceProgressDispatcher mDispatcher;
     private final Object mCallerIdentity;
     private final AbstractEventLogger mLogger;
-    // MODIFIED
-    private final boolean mIsMusioVoice;
-    private final float mFxPitch;
 
     PlaybackSynthesisCallback(AudioOutputParams audioParams, AudioPlaybackHandler audioTrackHandler,
             UtteranceProgressDispatcher dispatcher, Object callerIdentity,
             AbstractEventLogger logger, boolean clientIsUsingV2) {
         super(clientIsUsingV2);
-        // TODO
-        Log.d(TAG, "Callback created as planned");
         mAudioParams = audioParams;
         mAudioTrackHandler = audioTrackHandler;
         mDispatcher = dispatcher;
         mCallerIdentity = callerIdentity;
         mLogger = logger;
-        // MODIFIED
-        mIsMusioVoice = false;
-        mFxPitch = 1.0f;
-        mStatusCode = TextToSpeech.SUCCESS;
-    }
-
-    PlaybackSynthesisCallback(AudioOutputParams audioParams, AudioPlaybackHandler audioTrackHandler,
-                              UtteranceProgressDispatcher dispatcher, Object callerIdentity,
-                              AbstractEventLogger logger, boolean clientIsUsingV2, boolean isMusioVoice, float fxPitch) {
-        super(clientIsUsingV2);
-        // TODO
-        Log.d(TAG, "Musio Callback created as planned");
-        mAudioParams = audioParams;
-        mAudioTrackHandler = audioTrackHandler;
-        mDispatcher = dispatcher;
-        mCallerIdentity = callerIdentity;
-        mLogger = logger;
-        // MODIFIED
-        mIsMusioVoice = isMusioVoice;
-        mFxPitch = fxPitch;
         mStatusCode = TextToSpeech.SUCCESS;
     }
 
@@ -168,10 +143,9 @@ class PlaybackSynthesisCallback extends AbstractSynthesisCallback {
                 Log.e(TAG, "Start called twice");
                 return TextToSpeech.ERROR;
             }
-            // MODIFIED
             SynthesisPlaybackQueueItem item = new SynthesisPlaybackQueueItem(
                     mAudioParams, sampleRateInHz, audioFormat, channelCount,
-                    mDispatcher, mCallerIdentity, mLogger, mIsMusioVoice, mFxPitch);
+                    mDispatcher, mCallerIdentity, mLogger);
             mAudioTrackHandler.enqueue(item);
             mItem = item;
         }

@@ -860,21 +860,10 @@ public abstract class TextToSpeechService extends Service {
         private AbstractSynthesisCallback mSynthesisCallback;
         private final EventLoggerV1 mEventLogger;
         private final int mCallerUid;
-        // MODIFIED
-        private final boolean mIsMusioVoice;
-        private final float mFxPitch;
 
         public SynthesisSpeechItemV1(Object callerIdentity, int callerUid, int callerPid,
                 Bundle params, String utteranceId, CharSequence text) {
             super(callerIdentity, callerUid, callerPid, params, utteranceId);
-
-            // Custom
-            // MODIFIED
-            mIsMusioVoice = params.getBoolean(TextToSpeech.Engine.KEY_FEATURE_IS_MUSIO_VOICE, false);
-            mFxPitch = params.getFloat(TextToSpeech.Engine.KEY_FEATURE_FX_PITCH, 1.0f);
-
-            //TODO
-            Log.d(TAG, "Speech Synth V1 as planned, Text : " + text);
             mText = text;
             mCallerUid = callerUid;
             mSynthesisRequest = new SynthesisRequest(mText, mParams);
@@ -903,9 +892,6 @@ public abstract class TextToSpeechService extends Service {
 
         @Override
         protected void playImpl() {
-            //TODO
-            Log.d(TAG, "Queue Item played as planned");
-
             AbstractSynthesisCallback synthesisCallback;
             mEventLogger.onRequestProcessingStart();
             synchronized (this) {
@@ -918,11 +904,7 @@ public abstract class TextToSpeechService extends Service {
                 synthesisCallback = mSynthesisCallback;
             }
 
-            //TODO
-            Log.d(TAG, "Callback created. synth start");
             TextToSpeechService.this.onSynthesizeText(mSynthesisRequest, synthesisCallback);
-            //TODO
-            Log.d(TAG, "synth end");
 
             // Fix for case where client called .start() & .error(), but did not called .done()
             if (synthesisCallback.hasStarted() && !synthesisCallback.hasFinished()) {
@@ -931,11 +913,8 @@ public abstract class TextToSpeechService extends Service {
         }
 
         protected AbstractSynthesisCallback createSynthesisCallback() {
-            //TODO
-            Log.d(TAG, "Modified Musio Synthesis Callback Creation as planned");
-            // MODIFIED
             return new PlaybackSynthesisCallback(getAudioParams(),
-                    mAudioPlaybackHandler, this, getCallerIdentity(), mEventLogger, false, mIsMusioVoice, mFxPitch);
+                    mAudioPlaybackHandler, this, getCallerIdentity(), mEventLogger, false);
         }
 
         private void setRequestParams(SynthesisRequest request) {
@@ -1162,9 +1141,6 @@ public abstract class TextToSpeechService extends Service {
             if (!checkNonNull(caller, text, params)) {
                 return TextToSpeech.ERROR;
             }
-
-            // TODO
-            Log.d(TAG, "speak called in speak as planned, Text : " + text);
 
             SpeechItem item = new SynthesisSpeechItemV1(caller,
                     Binder.getCallingUid(), Binder.getCallingPid(), params, utteranceId, text);
