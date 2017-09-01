@@ -166,7 +166,7 @@ public final class BluetoothPairingDialog extends AlertActivity implements
 
     private void createUserEntryDialog() {
         final AlertController.AlertParams p = mAlertParams;
-        p.mTitle = getString("");
+        p.mTitle = "";
         p.mView = createPinEntryView();
         p.mPositiveButtonText = getString(android.R.string.ok);
         p.mPositiveButtonListener = this;
@@ -270,7 +270,7 @@ public final class BluetoothPairingDialog extends AlertActivity implements
 
     private void createConfirmationDialog() {
         final AlertController.AlertParams p = mAlertParams;
-        p.mTitle = getString("");
+        p.mTitle = "";
         p.mView = createView();
         p.mPositiveButtonText = getString(R.string.bluetooth_pairing_accept);
         p.mPositiveButtonListener = this;
@@ -281,7 +281,7 @@ public final class BluetoothPairingDialog extends AlertActivity implements
 
     private void createConsentDialog() {
         final AlertController.AlertParams p = mAlertParams;
-        p.mTitle = getString("");
+        p.mTitle = "";
         p.mView = createView();
         p.mPositiveButtonText = getString(R.string.bluetooth_pairing_accept);
         p.mPositiveButtonListener = this;
@@ -292,7 +292,7 @@ public final class BluetoothPairingDialog extends AlertActivity implements
 
     private void createDisplayPasskeyOrPinDialog() {
         final AlertController.AlertParams p = mAlertParams;
-        p.mTitle = getString("");
+        p.mTitle = "";
         p.mView = createView();
         p.mNegativeButtonText = getString(android.R.string.cancel);
         p.mNegativeButtonListener = this;
