@@ -40,6 +40,7 @@ PRODUCT_PACKAGES += \
     AppsSophy \
     AppsSophyTutor \
     AppsSophyBubble \
+    AppsSophyMusioAdventure \
     AppsSophyCollectRocket \
     AppsSophyAttendance \
     AppsUpdate \

@@ -43,6 +43,7 @@ function select_action() {
 				pull_system_software
 				;;
 			c)
+				restore_system_software
 				;;
 			d)
 				;;
@@ -92,6 +93,7 @@ function menu() {
 	echo "		a) Pull framework"
 	echo "		b) Pull Musio System Library"
 	echo "	3) Clean"
+	echo "		c) restore system software"
 	echo "		e) Clean framework"
 	echo "		f) Clean system software"
 	echo "	4) Build System softwares"
@@ -207,6 +209,13 @@ function build_dist()
 }
 
 
+function restore_system_software(){
+	rm ${FRAMEWORK_PATH}/android_overlay/packages/apps/Apps*/*.apk
+	rm ${FRAMEWORK_PATH}/android_overlay/packages/apps/Musio*/*.apk
+	rm ${FRAMEWORK_PATH}/android_overlay/packages/apps/*.so
+	apply_system_software
+}
+
 function apply_system_software()
 {
 	echo "========================================================"				
@@ -256,7 +265,7 @@ function apply_system_software()
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-attendance/build/outputs/apk/apps-sophy-attendance-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyAttendance/AppsSophyAttendance.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-bubble/build/outputs/apk/apps-sophy-bubble-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyBubble/AppsSophyBubble.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-collect-rocket/build/outputs/apk/apps-sophy-collect-rocket-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCollectRocket/AppsSophyCollectRocket.apk
-
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-musioadventure/build/outputs/apk/apps-sophy-musioadventure-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyMusioAdventure/AppsSophyMusioAdventure.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-tutor/build/outputs/apk/apps-sophy-tutor-tutor.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyTutor/AppsSophyTutor.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-update/build/outputs/apk/apps-update-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsUpdate/AppsUpdate.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-wardrobe/build/outputs/apk/apps-wardrobe-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsWardrobe/AppsWardrobe.apk
