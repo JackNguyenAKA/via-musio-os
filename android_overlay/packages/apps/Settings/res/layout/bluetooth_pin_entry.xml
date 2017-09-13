@@ -51,7 +51,7 @@
 	    android:textAlignment="center"
             android:gravity="center_vertical"
             android:textSize="13sp"
-	    android:layout_marginTop="390px"
+	    android:layout_marginTop="375px"
             android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
         <EditText

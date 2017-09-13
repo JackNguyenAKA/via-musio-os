@@ -75,8 +75,8 @@
                 <TextView android:id="@+id/message"
                           style="@style/TextAppearance.Material.Subhead"
                           android:layout_width="match_parent"
-                          android:layout_height="150dip"
-			  android:layout_marginTop="355px"
+                          android:layout_height="155dip"
+			  android:layout_marginTop="255px"
                           android:paddingStart="?attr/dialogPreferredPadding"
                           android:paddingTop="@dimen/dialog_padding_top_material"
                           android:paddingEnd="?attr/dialogPreferredPadding"
@@ -114,12 +114,11 @@
     <LinearLayout android:id="@+id/buttonPanel"
                   style="?attr/buttonBarStyle"
                   android:layout_width="match_parent"
-                  android:layout_height="90dip"
+                  android:layout_height="85dip"
                   android:layoutDirection="locale"
                   android:orientation="horizontal"
                   android:paddingStart="12dp"
                   android:paddingEnd="12dp"
-                  android:paddingTop="8dp"
                   android:paddingBottom="8dp"
                   android:gravity="top|center"
                   android:textColor="#ffffffff">
@@ -128,11 +127,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#ffffffff"/>
-        <Space
-            android:layout_width="1.0dip"
-            android:layout_height="1.0dip"
-            android:visibility="invisible"
-            android:textColor="#ffffffff"/>
         <Button android:id="@+id/button2"
                 style="?attr/buttonBarNegativeButtonStyle"
                 android:layout_width="wrap_content"
