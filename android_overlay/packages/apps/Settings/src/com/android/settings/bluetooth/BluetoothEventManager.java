@@ -350,7 +350,7 @@ final class BluetoothEventManager {
             }
             int errorMsg = R.string.bluetooth_pairing_error_message;
             CachedBluetoothDevice cachedDevice = mDeviceManager.findDevice(device);
-            Utils.showError(context, cachedDevice.getName(), errorMsg);
+            //Utils.showError(context, cachedDevice.getName(), errorMsg);
         }
     }
 

@@ -55,7 +55,7 @@
 	    android:textColor="#ffffffff"
             android:textAppearance="@android:style/TextAppearance.Material.Subhead" 
             android:layout_gravity="center"
-	    android:layout_marginTop="375px"/>
+	    android:layout_marginTop="400px"/>
 
         <TextView
             android:id="@+id/pairing_caption"

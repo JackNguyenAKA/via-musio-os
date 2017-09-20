@@ -5640,7 +5640,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     }
 		    Toolbox.exec("wm density 420");
 		    Toolbox.exec("wm size 1080x1920");
-		    Toolbox.exec("wm overscan 0,0,0,1000");
+		    Toolbox.exec("wm overscan 0,20,0,1020");
 
                     mBootMsgDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                     mBootMsgDialog.setIndeterminate(true);
