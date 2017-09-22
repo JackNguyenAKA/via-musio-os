@@ -30,22 +30,16 @@ PRODUCT_PACKAGES += \
     AppsDictionaryEng2Jpn \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
-    AppsEduhubConversation \
-    AppsEduhubExam \
     AppsGamehub \
-    AppsGamehubMovieQuotes \
     AppsGamehubMusioAdventure \
-    AppsGamehubRockScissors \
     AppsGamehubTicTacToe \
     AppsSophy \
     AppsSophyTutor \
     AppsSophyBubble \
     AppsSophyCollectRocket \
-    AppsSophyAttendance \
+    AppsSophyMusioAdventure \
     AppsUpdate \
-    AppsWardrobe \
     AppsInspect \
-    AppsJpnChat \
     MusioLauncher \
     MusioMemberProfile \
     MusioSetting \

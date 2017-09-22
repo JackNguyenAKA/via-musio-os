@@ -136,8 +136,6 @@ on boot
 
     chown system system /system/etc/init.window.sh 
     chmod 0777 /system/etc/init.window.sh
-    start musio-setup
-    start window-setup
 
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -183,8 +181,6 @@ on boot
     chmod 0777 /system/bin/init.gprs-pppd
     chmod 0777 /system/bin/3gdata_call.conf
 
-    # Prevent deep sleep
-    write /sys/power/wake_lock "musio_lock"
 
 # mpu-9250 sensors
     chown root system /dev/iio:device0
