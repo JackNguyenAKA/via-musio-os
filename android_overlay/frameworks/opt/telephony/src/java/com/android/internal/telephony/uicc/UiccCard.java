@@ -343,7 +343,7 @@ public class UiccCard {
             .setPositiveButton(buttonTxt, listener)
             .create();
             dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-            dialog.show();
+            //dialog.show();
         }
     }
 
