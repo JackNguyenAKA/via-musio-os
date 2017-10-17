@@ -648,6 +648,18 @@ public class TextToSpeech {
          * @see Voice#getFeatures()
          */
         public static final String KEY_FEATURE_NETWORK_RETRIES_COUNT = "networkRetriesCount";
+
+        /**
+         * Custom feature key for checking if Musio voice.
+         * @hide
+         */
+        public static final String KEY_FEATURE_IS_MUSIO_VOICE = "isMusioVoice";
+
+        /**
+         * Custom feature key for checking if Musio voice.
+         * @hide
+         */
+        public static final String KEY_FEATURE_FX_PITCH = "fxPitch";
     }
 
     private final Context mContext;
@@ -1085,6 +1097,10 @@ public class TextToSpeech {
                      final int queueMode,
                      final Bundle params,
                      final String utteranceId) {
+
+        // TODO
+        Log.d(TAG, "speak called as planned, Text : " + text);
+
         return runAction(new Action<Integer>() {
             @Override
             public Integer run(ITextToSpeechService service) throws RemoteException {
@@ -1129,6 +1145,9 @@ public class TextToSpeech {
      */
     @Deprecated
     public int speak(final String text, final int queueMode, final HashMap<String, String> params) {
+        // TODO
+        Log.d(TAG, "speak legacy called as planned, Text : " + text);
+
         return speak(text, queueMode, convertParamsHashMaptoBundle(params),
                      params == null ? null : params.get(Engine.KEY_PARAM_UTTERANCE_ID));
     }
@@ -1889,6 +1908,10 @@ public class TextToSpeech {
             verifyBooleanBundleParam(bundle, Engine.KEY_FEATURE_EMBEDDED_SYNTHESIS);
             verifyIntegerBundleParam(bundle, Engine.KEY_FEATURE_NETWORK_TIMEOUT_MS);
             verifyIntegerBundleParam(bundle, Engine.KEY_FEATURE_NETWORK_RETRIES_COUNT);
+
+            // Custom
+            // MODIFIED
+            verifyBooleanBundleParam(bundle, Engine.KEY_FEATURE_IS_MUSIO_VOICE);
 
             return bundle;
         } else {
