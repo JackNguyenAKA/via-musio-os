@@ -26,8 +26,7 @@ WLAN_FW_BINS := \
 FW_WLAN_PATH := $(TARGET_EXTRACTED_FW)/wlan
 
 # path related to current location
-#FW_WLAN_FULL_PATH := ../../../../../$(FW_WLAN_PATH)
-FW_WLAN_FULL_PATH := patchs
+FW_WLAN_FULL_PATH := ../../../../../$(FW_WLAN_PATH)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wl18xx-fw-4.bin
