@@ -262,6 +262,8 @@ function apply_system_software()
 
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-settings/build/outputs/apk/apps-settings-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioSetting/MusioSetting.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy/build/outputs/apk/apps-sophy-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophy/AppsSophy.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-card-music-video/build/outputs/apk/apps-sophy-card-music-video-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCardMusicVideo/AppsSophyCardMusicVideo.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-launchpad/build/outputs/apk/apps-sophy-launchpad-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCardMusicLaunchpad/AppsSophyCardMusicLaunchpad.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-attendance/build/outputs/apk/apps-sophy-attendance-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyAttendance/AppsSophyAttendance.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-bubble/build/outputs/apk/apps-sophy-bubble-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyBubble/AppsSophyBubble.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-collect-rocket/build/outputs/apk/apps-sophy-collect-rocket-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCollectRocket/AppsSophyCollectRocket.apk
@@ -284,6 +286,7 @@ function apply_system_software()
 	cp ${SYSTEM_SOFTWARE_PATH}/sphinx/build/outputs/apk/sphinx-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioSphinx/MusioSphinx.apk 
 	cp "${SYSTEM_SOFTWARE_PATH}/status/build/outputs/apk/status-musio.apk" "${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioStatus/MusioStatus.apk"
 	cp ${SYSTEM_SOFTWARE_PATH}/system/build/outputs/apk/system-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioSystem/MusioSystem.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/timeout/build/outputs/apk/timeout-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioTimeout/MusioTimeout.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/touch/build/outputs/apk/touch-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioTouch/MusioTouch.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/tts/build/outputs/apk/tts-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioTTS/MusioTTS.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/ui/build/outputs/apk/ui-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioUI/MusioUI.apk
@@ -296,6 +299,7 @@ function apply_system_software()
 	cp "${SYSTEM_SOFTWARE_PATH}/touch/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/libmultitouch2.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/keyboard/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/liblipitk.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/sphinx/build/intermediates/jniLibs/musio/armeabi-v7a/libpocketsphinx_jni.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
+	cp "${SYSTEM_SOFTWARE_PATH}/library-ffmpeg/libs/armeabi-v7a/libARM_ARCH.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/library-gdx4musio/libs/armeabi-v7a/libgdx.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/library-gdx4musio/libs/armeabi-v7a/libgdx-box2d.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/
 	cp "${SYSTEM_SOFTWARE_PATH}/apps-sophy-tutor/build/intermediates/transforms/mergeJniLibs/tutor/folders/2000/1f/main/lib/armeabi-v7a/librealm-jni.so" ${FRAMEWORK_PATH}/android_overlay/packages/apps/

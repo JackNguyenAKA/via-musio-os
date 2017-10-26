@@ -30,16 +30,26 @@ PRODUCT_PACKAGES += \
     AppsDictionaryEng2Jpn \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
+    AppsEdgeClient \
+    AppsEduhubConversation \
+    AppsEduhubExam \
     AppsGamehub \
+    AppsGamehubMovieQuotes \
     AppsGamehubMusioAdventure \
+    AppsGamehubRockScissors \
     AppsGamehubTicTacToe \
     AppsSophy \
     AppsSophyTutor \
     AppsSophyBubble \
+    AppsSophyCardMusicVideo\
+    AppsSophyCardMusicLaunchPad \
     AppsSophyCollectRocket \
+    AppsSophyAttendance \
     AppsSophyMusioAdventure \
     AppsUpdate \
+    AppsWardrobe \
     AppsInspect \
+    AppsJpnChat \
     MusioLauncher \
     MusioMemberProfile \
     MusioSetting \
@@ -57,6 +67,7 @@ PRODUCT_PACKAGES += \
     MusioSphinx \
     MusioStatus \
     MusioSystem \
+    MusioTimeout \
     MusioTouch \
     MusioTTS \
     MusioUI \
