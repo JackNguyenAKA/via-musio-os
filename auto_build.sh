@@ -72,7 +72,6 @@ function select_action() {
 				build_user
 				;;		
 			m)
-				build_user
 				build_dist
 				;;		
 
@@ -236,6 +235,7 @@ function apply_system_software()
 	
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-alarm/build/outputs/apk/apps-alarm-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAlarm/AppsAlarm.apk
 
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-edge-client/build/outputs/apk/apps-edge-client-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEdgeClient/AppsEdgeClient.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub/build/outputs/apk/apps-eduhub-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhub/AppsEduhub.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-conversation/build/outputs/apk/apps-eduhub-conversation-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubConversation/AppsEduhubConversation.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-definitionquiz/build/outputs/apk/apps-eduhub-definitionquiz-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubDefinitionQuiz/AppsEduhubDefinitionQuiz.apk
