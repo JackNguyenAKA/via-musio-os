@@ -22,6 +22,7 @@ function select_action() {
 				pull_system_software
 				;;
 			2)
+				update_api
 				;;
 			3)
 				clean_framework
@@ -91,6 +92,7 @@ function menu() {
 	echo "	1) Pull"
 	echo "		a) Pull framework"
 	echo "		b) Pull Musio System Library"
+	echo "	2) Update API"
 	echo "	3) Clean"
 	echo "		c) restore system software"
 	echo "		e) Clean framework"
@@ -124,6 +126,15 @@ function pull_system_software()
 	echo "========================================================"				
 	cd ${SYSTEM_SOFTWARE_PATH}
 	git pull upstream master
+}
+
+function update_api()
+{
+	echo "========================================================"				
+	echo "UPDATE API"
+	echo "========================================================"				
+	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	./../docker/musio make update-api
 }
 
 function build_system_software()
