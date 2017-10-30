@@ -34,8 +34,13 @@ on init
     # deattch the fbcon as hdmi hotplug conflict with fbcon
     write /sys/class/vtconsole/vtcon1/bind 0
     
+    chown root root /system/etc/init.firmware.sh
+    chmod 0777 /system/etc/init.firmware.sh
 
 on boot
+
+
+    start musio-setup
 
     # wl18xx wi-fi
     insmod /system/lib/modules/compat.ko
@@ -528,6 +533,12 @@ service musio-setup /system/bin/sh /system/etc/init.musio.sh
     class late_start 
     user system
     group system
+    oneshot
+
+service firmware-setup /system/bin/sh /system/etc/init.firmware.sh
+    class late_start 
+    user root
+    group root
     oneshot
 
 service window-setup /system/bin/sh /system/etc/init.window.sh
