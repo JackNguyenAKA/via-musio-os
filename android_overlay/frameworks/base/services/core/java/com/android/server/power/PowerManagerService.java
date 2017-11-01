@@ -62,6 +62,7 @@ import android.provider.Settings;
 import android.service.dreams.DreamManagerInternal;
 import android.util.EventLog;
 import android.util.Slog;
+import android.util.Log;
 import android.util.TimeUtils;
 import android.view.Display;
 import android.view.WindowManagerPolicy;
@@ -2972,9 +2973,8 @@ public final class PowerManagerService extends SystemService
                 throw new IllegalArgumentException("event time must not be in the future");
             }
 
-            mContext.enforceCallingOrSelfPermission(
-                    android.Manifest.permission.DEVICE_POWER, null);
-
+            //mContext.enforceCallingOrSelfPermission(android.Manifest.permission.DEVICE_POWER, null);
+	    Log.d("CHADRICK_EVENT", "INSIDE GOTOSLEEP");
             final int uid = Binder.getCallingUid();
             final long ident = Binder.clearCallingIdentity();
             try {
