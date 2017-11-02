@@ -270,9 +270,11 @@ function apply_system_software()
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-member/build/outputs/apk/apps-member-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioMemberProfile/MusioMemberProfile.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-notice/build/outputs/apk/apps-notice-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioNotice/MusioNotice.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-push-sample/build/outputs/apk/apps-push-sample-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsPushSample/AppsPushSample.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-radio/build/outputs/apk/apps-radio-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsRadio/AppsRadio.apk
 
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-settings/build/outputs/apk/apps-settings-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioSetting/MusioSetting.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy/build/outputs/apk/apps-sophy-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophy/AppsSophy.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-card-tarot/build/outputs/apk/apps-sophy-card-tarot-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCardTarot/AppsSophyCardTarot.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-card-music-video/build/outputs/apk/apps-sophy-card-music-video-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCardMusicVideo/AppsSophyCardMusicVideo.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-launchpad/build/outputs/apk/apps-sophy-launchpad-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyCardMusicLaunchpad/AppsSophyCardMusicLaunchpad.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-sophy-attendance/build/outputs/apk/apps-sophy-attendance-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsSophyAttendance/AppsSophyAttendance.apk
