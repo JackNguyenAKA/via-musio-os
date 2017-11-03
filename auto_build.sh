@@ -166,6 +166,7 @@ function apply_overlay()
 	rm -rf ${FRAMEWORK_PATH}/android5.1.1-1.0.0/out/target/product/musio/obj/APPS/Musio*
 	rm -rf ${FRAMEWORK_PATH}/android5.1.1-1.0.0/out/target/product/musio/obj/APPS/Apps*
 	echo "Start copying source codes to overlay..."
+	cp -Ra ${FRAMEWORK_PATH}/BSP/* ${FRAMEWORK_PATH}/android5.1.1-1.0.0/
 	cp -Ra ${FRAMEWORK_PATH}/android_overlay/* ${FRAMEWORK_PATH}/android5.1.1-1.0.0/
 	echo "Copied."
 }
