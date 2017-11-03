@@ -1,0 +1,34 @@
+#!/bin/sh
+# Copyright (c) 2011 VIA Corporation. All rights reserved.
+# Load autorun.sh from external storages
+# Written by Vincent Chen
+
+probe_autorun ()
+{
+	local tstart=`date +"%s"`
+	local tend=
+	local tnow=
+	local quit=0
+
+	let "tend = tstart + $1"
+	tnow=`date +"%s"`
+
+	while [ $tnow -lt $tend ]; do
+		for dir in `find /mnt -maxdepth 1`; do
+			if [ -e ${dir}/autorun.sh ]; then
+				${dir}/autorun.sh
+				quit=1
+			fi
+		done
+		if [ $quit -eq 1 ]; then
+			break
+		fi
+		tnow=`date +"%s"`
+		sleep 1
+		# echo "autorun: $tnow v.s. $tend" >> /tmp/autorun.log
+	done
+}
+
+# Probe autorun.sh at booting time for N seconds
+probe_autorun 5 &
+
