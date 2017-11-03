@@ -1,0 +1,11 @@
+#
+# system.prop for sabresd_6dq
+#
+
+#rild.libpath=
+#rild.libargs=
+
+# Default network type.
+# 9 => GSM/UMTS/LTE mode preferred.
+ro.telephony.default_network=9
+
