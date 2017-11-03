@@ -40,7 +40,7 @@ on init
 on boot
 
 
-    start musio-setup
+    start firmware-setup
 
     # wl18xx wi-fi
     insmod /system/lib/modules/compat.ko
