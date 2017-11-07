@@ -1,4 +1,5 @@
 android5.1.1-1.0.0
+aosptree
 android_overlay/packages/apps/Musio*/*.apk
 android_overlay/packages/apps/Apps*/*.apk
 android_overlay/packages/apps/lib*.so

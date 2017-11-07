@@ -1,7 +1,9 @@
 #!/bin/sh
 # Copyright (c) 2016  VIA Technologies, Inc. All rights reserved.
 
-# this is the original one
+# updated 17.11.07
+# by chadrick (update partition size)
+# this one does not receive serial 
 
 bindir=$PWD/bin:$PWD/bspinst/bin:/mnt/mmcblk0p1/bspinst/bin:/mnt/sda1/bspinst/bin:/usr/bin
 
@@ -41,11 +43,7 @@ serialno=""
 barcode()
 {
    if [ "$serialno" == "" ]; then
-
-      while [ 1 ] ;
-      do
-           node1=`ls /dev/input/by-path/ | grep kbd | head -1`
-
+      node1=`ls /dev/input/by-path/ | grep kbd | head -1`
       if [ $node1 != "" ]; then
          node="/dev/input/by-path/"$node1
          reader="Barcode reader: $node1"        
@@ -56,11 +54,8 @@ barcode()
          if [ $seriallen -eq 17 ]; then
             echo $node $serialno
             drawstr `fwmul 6` `bsmul 22` $serialno
-             break
          fi
        fi
-                sleep 1
-      done
     fi
 }   
   
@@ -246,6 +241,8 @@ fi
 
 device=/dev/mmcblk0
 cmdfile=/tmp/mkpart.cmd
+
+# the emmc used is 16gb in total
 
 echo "unit MiB"                  > $cmdfile
 echo "mkpart primary 8 72"      >> $cmdfile #1 boot
