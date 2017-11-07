@@ -79,6 +79,11 @@ fi
 echo "creating new result directory"
 mkdir -p $RESULT_PATH
 
+if [ -e $RESULT_PATH ]; then
+	echo "result path exists"
+fi
+
+
 # copy files
 echo "copying files..."
 # cp -Ra $LOCAL_DIR/../android/result $RESULT_PATH

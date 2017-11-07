@@ -26,7 +26,17 @@ PRODUCT_LOCALES := en_US
 
 
 PRODUCT_PACKAGES += \
+    AppsAcademyLauncher \
+    AppsAcademyEnglish \
+    AppsAcademyEnglishDialog \
+    AppsAcademyEnglishPattern \
+    AppsAcademyEnglishVoca \
     AppsAlarm \
+    AppsRadio \
+    AppsB2CEnglishDialog \
+    AppsB2CEnglishPattern \
+    AppsB2CEnglishVoca \
+    AppsB2CLauncher \
     AppsDictionaryEng2Jpn \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
@@ -34,13 +44,12 @@ PRODUCT_PACKAGES += \
     AppsGamehub \
     AppsGamehubMusioAdventure \
     AppsGamehubTicTacToe \
-    AppsRadio \
     AppsSophy \
     AppsSophyTutor \
     AppsSophyBubble \
-    AppsSophyCardTarot\
-    AppsSophyCardMusicVideo\
-    AppsSophyCardMusicLaunchPad \
+    AppsSophyCardMusicVideo \
+    AppsSophyCardMusicLaunchpad \
+    AppsSophyCardTarot \
     AppsSophyCollectRocket \
     AppsSophyMusioAdventure \
     AppsUpdate \
@@ -67,12 +76,27 @@ PRODUCT_PACKAGES += \
     MusioTTS \
     MusioUI \
     MusioVision \
+    #MusioDummyHome \
+    #AppsEduhubWordstudy \
+    #AppsEduhubDefinitionQuiz \
+    #AppsEduhubHangman \
+    #AppsEduhubPattern \
+    #AppsEduhubSpellingBee \
+    #AppsAcademyPlacementTest \
+    #AppsEduhubConversation \
+    #AppsEduhubExam \
+    #AppsGamehubRockScissors \
+    #AppsJpnChat \
+    #AppsWardrobe \
+    #AppsAcademyIcebreaker \
+    #AppsSophyAttendance \
+    #AppsGamehubMovieQuotes \
     
 
 PRODUCT_COPY_FILES += \
 	device/fsl/musio/init.rc:root/init.freescale.rc \
-        device/fsl/musio/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
-        device/fsl/musio/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
+    device/fsl/musio/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
+    device/fsl/musio/init.i.MX6DL.rc:root/init.freescale.i.MX6DL.rc \
 	device/fsl/musio/init.i.MX6QP.rc:root/init.freescale.i.MX6QP.rc \
 	device/fsl/musio/init.musio.sh:system/etc/init.musio.sh \
 	device/fsl/musio/init.window.sh:system/etc/init.window.sh \

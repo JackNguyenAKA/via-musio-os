@@ -3,3 +3,4 @@ aosptree
 android_overlay/packages/apps/Musio*/*.apk
 android_overlay/packages/apps/Apps*/*.apk
 android_overlay/packages/apps/lib*.so
+result
