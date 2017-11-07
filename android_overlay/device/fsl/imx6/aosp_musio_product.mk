@@ -47,9 +47,9 @@ PRODUCT_PACKAGES += \
     AppsSophy \
     AppsSophyTutor \
     AppsSophyBubble \
-    AppsSophyCardMusicVideo \
+    AppsSophyCardTarot\
+    AppsSophyCardMusicVideo\
     AppsSophyCardMusicLaunchpad \
-    AppsSophyCardTarot \
     AppsSophyCollectRocket \
     AppsSophyMusioAdventure \
     AppsUpdate \
