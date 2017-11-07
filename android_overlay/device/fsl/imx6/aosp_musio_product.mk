@@ -27,6 +27,16 @@ PRODUCT_LOCALES := en_US
 
 PRODUCT_PACKAGES += \
     AppsAlarm \
+    AppsAcademyLauncher \
+    AppsAcademyPlacementTest \
+    AppsAcademyEnglish \
+    AppsAcademyEnglishDialog \
+    AppsAcademyEnglishPattern \
+    AppsAcademyEnglishVoca \
+    AppsB2CLauncher \
+    AppsB2CEnglishDialog \
+    AppsB2CEnglishVoca \
+    AppsB2CEnglishPattern \
     AppsDictionaryEng2Jpn \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
@@ -40,7 +50,7 @@ PRODUCT_PACKAGES += \
     AppsSophyBubble \
     AppsSophyCardTarot\
     AppsSophyCardMusicVideo\
-    AppsSophyCardMusicLaunchPad \
+    AppsSophyCardMusicLaunchpad \
     AppsSophyCollectRocket \
     AppsSophyMusioAdventure \
     AppsUpdate \
