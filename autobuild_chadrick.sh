@@ -138,8 +138,8 @@ function clean_framework()
 	echo "CLEAN AOSP TREE"
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
-	./../docker/musio make installclean
-	./../docker/musio make clobber
+	sudo ./../docker/musio make installclean
+	sudo ./../docker/musio make clobber
 }
 
 # function apply_overlay()
@@ -184,7 +184,7 @@ function build_user()
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
-	${FRAMEWORK_PATH}/docker/musio ./build_user.sh
+	sudo ${FRAMEWORK_PATH}/docker/musio ./build_user.sh
 }
 function build_develop()
 {
@@ -193,7 +193,7 @@ function build_develop()
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_develop.mk ./device/fsl/imx6/aosp_musio.mk
-	${FRAMEWORK_PATH}/docker/musio ./build_userdebug.sh
+	sudo ${FRAMEWORK_PATH}/docker/musio ./build_userdebug.sh
 }
 
 function build_dist()
@@ -203,7 +203,7 @@ function build_dist()
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
-	${FRAMEWORK_PATH}/docker/musio ./build_dist.sh
+	sudo ${FRAMEWORK_PATH}/docker/musio ./build_dist.sh
 }
 
 
