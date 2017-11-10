@@ -1,8 +1,10 @@
 # path config
 # this is the original file
 # currently setup for MSL v2.0.0
+# updated 17.11.10
+
 MSL_PATH=../musio-system-library
-OUTPUT_SYSTEM_DIR=../android/packages/apps
+OUTPUT_SYSTEM_DIR=../aosptree/packages/apps
 
 # apk file list
 apk,musio,dummyhome,MusioDummyHome
@@ -66,6 +68,7 @@ apk,musio,timeout,MusioTimeout
 apk,musio,apps-sophy-launchpad,AppsSophyCardMusicLaunchpad
 apk,musio,apps-sophy-card-music-video,AppsSophyCardMusicVideo
 apk,musio,apps-edge-client,AppsEdgeClient
+apk,musio,apps-edge-client-manager,AppsEdgeClientManager
 apk,musio,apps-sophy-card-tarot,AppsSophyCardTarot
 apk,musio,apps-radio,AppsRadio
 apk,musio,apps-B2C-english-dialog,AppsB2CEnglishDialog
