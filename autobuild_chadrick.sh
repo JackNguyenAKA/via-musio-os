@@ -124,15 +124,15 @@ function menu() {
 	echo "		b) Pull Musio System Library"
 	echo "	2) Update API"
 	echo "	3) Clean"
-	echo "		c) Clean aosp tree musio packages"
+	echo "		c) Clean aosp tree's musio packages"
 	echo "		e) Clean aosp tree"
 	echo "		f) Clean MSL"
 	echo "	4) Build"
 	echo "		g) Build MSL"
-	echo "		j) Build develop mode and archive"
-	echo "		k) Build userdebug mode and archive"
-	echo "		l) Build user mode and archive"
-	echo "		m) Build dist mode and archive"
+	echo "		j) Build dummy"
+	echo "		k) Build userdebug mode"
+	echo "		l) Build user mode"
+	echo "		m) Build ota"
 	echo "	q) Quit"
 	read MENU_SELECTION
 }
@@ -232,26 +232,41 @@ function build_user()
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
-	$DOCKER_EXECUTABLE ./build_user.sh
+	echo "copied & using aosp_musio_product.mk"
+	sleep 3
+	if [ -f buildlog ]; then
+		rm buildlog
+	fi
+	$DOCKER_EXECUTABLE ./build_user.sh | tee buildlog
 }
 function build_develop()
 {
 	echo "========================================================"				
-	echo "BUILD DEVELOP MODE"
+	echo "BUILD dummy"
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_develop.mk ./device/fsl/imx6/aosp_musio.mk
-	$DOCKER_EXECUTABLE ./build_userdebug.sh
+	echo "copied & using aosp_musio_develop.mk"
+	sleep 3
+	if [ -f buildlog ]; then
+		rm buildlog
+	fi
+	$DOCKER_EXECUTABLE ./build_userdebug.sh | tee buildlog
 }
 
 function build_dist()
 {
 	echo "========================================================"				
-	echo "BUILD DISTRIBUTION"
+	echo "BUILD OTA"
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
-	$DOCKER_EXECUTABLE ./build_dist.sh
+	echo "copied & using aosp_musio_product.mk"
+	sleep 3
+	if [ -f buildlog ]; then
+		rm buildlog
+	fi
+	$DOCKER_EXECUTABLE ./build_dist.sh | buildlog
 }
 
 
