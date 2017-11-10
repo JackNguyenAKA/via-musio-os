@@ -27,6 +27,10 @@ PRODUCT_LOCALES := en_US
 
 PRODUCT_PACKAGES += \
     AppsAlarm \
+    AppsAcademyLauncher \
+    AppsAcademyEnglishDialog \
+    AppsAcademyEnglishPattern \
+    AppsAcademyEnglishVoca \
     AppsB2CLauncher \
     AppsB2CEnglishDialog \
     AppsB2CEnglishVoca \

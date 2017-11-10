@@ -27,32 +27,30 @@ PRODUCT_LOCALES := en_US
 
 PRODUCT_PACKAGES += \
     AppsAlarm \
-    AppsAcademyLauncher \
-    AppsAcademyPlacementTest \
-    AppsAcademyEnglish \
     AppsAcademyEnglishDialog \
     AppsAcademyEnglishPattern \
     AppsAcademyEnglishVoca \
-    AppsB2CLauncher \
+    AppsAcademyLauncher \
     AppsB2CEnglishDialog \
-    AppsB2CEnglishVoca \
     AppsB2CEnglishPattern \
+    AppsB2CEnglishVoca \
+    AppsB2CLauncher \
     AppsDictionaryEng2Jpn \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
-    AppsEdgeClient \
+    AppsEdgeClientManager \
     AppsGamehub \
     AppsGamehubMusioAdventure \
     AppsGamehubTicTacToe \
     AppsRadio \
     AppsSophy \
-    AppsSophyTutor \
     AppsSophyBubble \
     AppsSophyCardTarot\
-    AppsSophyCardMusicVideo\
     AppsSophyCardMusicLaunchpad \
+    AppsSophyCardMusicVideo \
     AppsSophyCollectRocket \
     AppsSophyMusioAdventure \
+    AppsSophyTutor \
     AppsUpdate \
     AppsInspect \
     MusioLauncher \
