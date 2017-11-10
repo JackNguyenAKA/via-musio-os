@@ -1,6 +1,48 @@
-FRAMEWORK_PATH="/home/aka/ext2/viaMOS"
-SYSTEM_SOFTWARE_PATH="/home/aka/ext2/viaMOS/musio-system-library"
+# autobuild script for chadrick
+# update: 17.11.09
+
+function getabspath {
+	# $1: the relative path
+	# echo "inside getabspath\n"
+	# echo "input: $1 \n"
+
+	currentdir=$(pwd)
+	filename=$(basename $1)
+	dir1=$(dirname $1)
+	cd $dir1
+	abspath=$(pwd)
+	cd $currentdir
+	echo "$abspath/$filename"
+
+}
+
+FRAMEWORK_PATH=$(getabspath $(pwd))
+SYSTEM_SOFTWARE_PATH=$(getabspath ./musio-system-library)
 AOSP_TREE_NAME="aosptree"
+
+DOCKER_EXECUTABLE=""
+
+# check for docker executable
+
+if [ -f /home/$USER/bin/musio2 ]; then
+	DOCKER_EXECUTABLE=/home/$USER/bin/musio
+	echo "musio docker exists in user's bin. going to use: $DOCKER_EXECUTABLE"
+else
+	# check for one in $FRAMEWORK_PATH/docker/musio
+	if [ -f $FRAMEWORK_PATH/docker/musio ]; then
+		DOCKER_EXECUTABLE=$FRAMEWORK_PATH/docker/musio
+		echo "musio docker exists in ./docker/musio. going to use: $DOCKER_EXECUTABLE"
+	fi
+fi
+
+if [ -z $DOCKER_EXECUTABLE ]; then
+	echo "docker not found. abort"
+	exit 1
+fi
+
+# add sudo in front of it
+DOCKER_EXECUTABLE="sudo $DOCKER_EXECUTABLE"
+
 
 
 function select_action() {
@@ -119,7 +161,7 @@ function update_api()
 	echo "UPDATE API"
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
-	./../docker/musio make update-api
+	$DOCKER_EXECUTABLE make update-api
 }
 
 function build_system_software()
@@ -138,8 +180,11 @@ function clean_framework()
 	echo "CLEAN AOSP TREE"
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
-	sudo ./../docker/musio make installclean
-	sudo ./../docker/musio make clobber
+	$DOCKER_EXECUTABLE make installclean
+	$DOCKER_EXECUTABLE make clobber
+	cd bootable/bootloader/uboot-imx
+	echo "cleaning uboot dir"
+	$DOCKER_EXECUTABLE make clean
 }
 
 # function apply_overlay()
@@ -174,7 +219,10 @@ function build_userdebug()
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
 	echo "copied & using aosp_musio_product.mk"
 	sleep 3
-	sudo ${FRAMEWORK_PATH}/docker/musio ./build_userdebug.sh
+	if [ -f buildlog ]; then
+		rm buildlog
+	fi
+	sudo ${FRAMEWORK_PATH}/docker/musio ./build_userdebug.sh | tee buildlog
 }
 
 function build_user()
@@ -184,7 +232,7 @@ function build_user()
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
-	sudo ${FRAMEWORK_PATH}/docker/musio ./build_user.sh
+	$DOCKER_EXECUTABLE ./build_user.sh
 }
 function build_develop()
 {
@@ -193,7 +241,7 @@ function build_develop()
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_develop.mk ./device/fsl/imx6/aosp_musio.mk
-	sudo ${FRAMEWORK_PATH}/docker/musio ./build_userdebug.sh
+	$DOCKER_EXECUTABLE ./build_userdebug.sh
 }
 
 function build_dist()
@@ -203,7 +251,7 @@ function build_dist()
 	echo "========================================================"				
 	cd ${FRAMEWORK_PATH}/${AOSP_TREE_NAME}
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
-	sudo ${FRAMEWORK_PATH}/docker/musio ./build_dist.sh
+	$DOCKER_EXECUTABLE ./build_dist.sh
 }
 
 

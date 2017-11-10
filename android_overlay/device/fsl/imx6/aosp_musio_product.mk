@@ -27,7 +27,6 @@ PRODUCT_LOCALES := en_US
 
 PRODUCT_PACKAGES += \
     AppsAcademyLauncher \
-    AppsAcademyEnglish \
     AppsAcademyEnglishDialog \
     AppsAcademyEnglishPattern \
     AppsAcademyEnglishVoca \

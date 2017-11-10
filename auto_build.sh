@@ -1,8 +1,10 @@
-FRAMEWORK_PATH="/home/susan/git-projects/VIA-musio-os"
-SYSTEM_SOFTWARE_PATH="/home/susan/git-projects/musio-system-library"
+
+FRAMEWORK_PATH="."
+SYSTEM_SOFTWARE_PATH="../msltest"
 
 
-function select_action() {
+function select_action() 
+{
 	for S in $MENU_SELECTION
 	do
 		case $S in
@@ -133,7 +135,8 @@ function update_api()
 	echo "========================================================"				
 	echo "UPDATE API"
 	echo "========================================================"				
-	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+#	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cd ${FRAMEWORK_PATH}/aosptree
 	./../docker/musio make update-api
 }
 
@@ -152,7 +155,7 @@ function clean_framework()
 	echo "========================================================"				
 	echo "CLEAN FRAMEWORK"
 	echo "========================================================"				
-	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cd ${FRAMEWORK_PATH}/aosptree
 	./../docker/musio make installclean
 	./../docker/musio make clobber
 }
@@ -162,12 +165,12 @@ function apply_overlay()
 	echo "========================================================"				
 	echo "APPLY OVERLAY"
 	echo "========================================================"			
-	rm -rf ${FRAMEWORK_PATH}/android5.1.1-1.0.0/out/target/product/musio/system
-	rm -rf ${FRAMEWORK_PATH}/android5.1.1-1.0.0/out/target/product/musio/obj/APPS/Musio*
-	rm -rf ${FRAMEWORK_PATH}/android5.1.1-1.0.0/out/target/product/musio/obj/APPS/Apps*
+	rm -rf ${FRAMEWORK_PATH}/aosptree/out/target/product/musio/system
+	rm -rf ${FRAMEWORK_PATH}/aosptree/out/target/product/musio/obj/APPS/Musio*
+	rm -rf ${FRAMEWORK_PATH}/aosptree/out/target/product/musio/obj/APPS/Apps*
 	echo "Start copying source codes to overlay..."
-	cp -Ra ${FRAMEWORK_PATH}/BSP/* ${FRAMEWORK_PATH}/android5.1.1-1.0.0/
-	cp -Ra ${FRAMEWORK_PATH}/android_overlay/* ${FRAMEWORK_PATH}/android5.1.1-1.0.0/
+	cp -Ra ${FRAMEWORK_PATH}/BSP/* ${FRAMEWORK_PATH}/aosptree/
+	cp -Ra ${FRAMEWORK_PATH}/android_overlay/* ${FRAMEWORK_PATH}/aosptree/
 	echo "Copied."
 }
 
@@ -185,7 +188,7 @@ function build_userdebug()
 	echo "========================================================"				
 	echo "BUILD USERDEBUG MODE"
 	echo "========================================================"				
-	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cd ${FRAMEWORK_PATH}/aosptree
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
 	${FRAMEWORK_PATH}/docker/musio ./build_userdebug.sh
 }
@@ -195,7 +198,7 @@ function build_user()
 	echo "========================================================"				
 	echo "BUILD USER MODE"
 	echo "========================================================"				
-	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cd ${FRAMEWORK_PATH}/aosptree
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
 	${FRAMEWORK_PATH}/docker/musio ./build_user.sh
 }
@@ -204,7 +207,7 @@ function build_develop()
 	echo "========================================================"				
 	echo "BUILD DEVELOP MODE"
 	echo "========================================================"				
-	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cd ${FRAMEWORK_PATH}/aosptree
 	cp ./device/fsl/imx6/aosp_musio_develop.mk ./device/fsl/imx6/aosp_musio.mk
 	${FRAMEWORK_PATH}/docker/musio ./build_userdebug.sh
 }
@@ -214,7 +217,7 @@ function build_dist()
 	echo "========================================================"				
 	echo "BUILD DISTRIBUTION"
 	echo "========================================================"				
-	cd ${FRAMEWORK_PATH}/android5.1.1-1.0.0
+	cd ${FRAMEWORK_PATH}/aosptree
 	cp ./device/fsl/imx6/aosp_musio_product.mk ./device/fsl/imx6/aosp_musio.mk
 	${FRAMEWORK_PATH}/docker/musio ./build_dist.sh
 }
