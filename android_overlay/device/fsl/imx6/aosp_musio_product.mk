@@ -40,6 +40,7 @@ PRODUCT_PACKAGES += \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
     AppsEdgeClient \
+    AppsEdgeClientManager \
     AppsGamehub \
     AppsGamehubMusioAdventure \
     AppsGamehubTicTacToe \
