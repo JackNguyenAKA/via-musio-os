@@ -252,7 +252,7 @@ function apply_system_software()
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-B2C-english-voca/build/outputs/apk/apps-B2C-english-voca-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsB2CEnglishVoca/AppsB2CEnglishVoca.apk
 
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-edge-client/build/outputs/apk/apps-edge-client-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEdgeClient/AppsEdgeClient.apk
-	cp ${SYSTEM_SOFTWARE_PATH}/apps-edge-client-manager/build/outputs/apk/apps-edge-client-manager-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEdgeClientManager/AppsEdgeClientManager.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/apps-client-manager/build/outputs/apk/apps-client-manager-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsClientManager/AppsClientManager.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub/build/outputs/apk/apps-eduhub-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhub/AppsEduhub.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-conversation/build/outputs/apk/apps-eduhub-conversation-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubConversation/AppsEduhubConversation.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-eduhub-definitionquiz/build/outputs/apk/apps-eduhub-definitionquiz-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsEduhubDefinitionQuiz/AppsEduhubDefinitionQuiz.apk

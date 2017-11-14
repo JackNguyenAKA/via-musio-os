@@ -27,10 +27,12 @@ PRODUCT_LOCALES := en_US
 
 PRODUCT_PACKAGES += \
     AppsAlarm \
+    AppsAcademyPlacementTest \
+    AppsAcademyLauncher \
     AppsAcademyEnglishDialog \
     AppsAcademyEnglishPattern \
     AppsAcademyEnglishVoca \
-    AppsAcademyLauncher \
+    AppsAcademyIcebreaker \
     AppsB2CEnglishDialog \
     AppsB2CEnglishPattern \
     AppsB2CEnglishVoca \
@@ -38,7 +40,7 @@ PRODUCT_PACKAGES += \
     AppsDictionaryEng2Jpn \
     AppsDictionaryJpn2Eng \
     AppsEduhub \
-    AppsEdgeClientManager \
+    AppsClientManager \
     AppsGamehub \
     AppsGamehubMusioAdventure \
     AppsGamehubTicTacToe \
