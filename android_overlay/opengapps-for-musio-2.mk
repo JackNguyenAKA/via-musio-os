@@ -12,7 +12,6 @@ PRODUCT_PACKAGES += GoogleBackupTransport \
                     PrebuiltGmsCore \
                     GoogleServicesFramework \
                     GoogleLoginService \
-                    SetupWizard \
                     GoogleTTS \
                     GoogleCalendarSyncAdapter
 
