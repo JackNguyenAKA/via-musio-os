@@ -408,6 +408,10 @@ static void bta_dm_sys_hw_cback( tBTA_SYS_HW_EVT status )
         bta_dm_gattc_register();
 #endif
 
+#if BLE_VND_INCLUDED == TRUE
+        BTM_BleReadControllerFeatures (bta_dm_ctrl_features_rd_cmpl_cback);
+#endif
+
     }
     else
         APPL_TRACE_DEBUG(" --- ignored event");
