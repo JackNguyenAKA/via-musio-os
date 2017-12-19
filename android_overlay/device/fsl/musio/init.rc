@@ -121,6 +121,7 @@ on boot
     setprop ro.ril.wake_lock_timeout 300
     
     setprop ro.product.code MSX510017VSB
+    setprop ro.product.version "2.0.1"
 
 #  Enable adb security for JB4.2.2
     setprop ro.adb.secure 1
