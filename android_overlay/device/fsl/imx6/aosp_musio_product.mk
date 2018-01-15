@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
     AppsSophy \
     AppsSophyBubble \
     AppsSophyCardTarot\
+    AppsSophyCalculator\
     AppsSophyCardMusicLaunchpad \
     AppsSophyCardMusicVideo \
     AppsSophyCollectRocket \
