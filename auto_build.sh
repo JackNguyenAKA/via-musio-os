@@ -59,6 +59,7 @@ function select_action() {
 				;; 
 			h)
 				apply_system_software
+				show_apk_updated
 				;;
 			i)
 				apply_overlay
@@ -73,10 +74,13 @@ function select_action() {
 				build_user
 				;;		
 			m)
+				build_user
 				build_dist
 				archive_ota_results
 				;;		
-
+			n)	
+				archive_ota_results
+				;;
 			q)
 				exit 0
 				;;
@@ -107,6 +111,7 @@ function menu() {
 	echo "		k) Build userdebug mode and archive"
 	echo "		l) Build user mode and archive"
 	echo "		m) Build dist mode and archive"
+	echo "		n) archive"
 	echo "	q) Quit"
 	read MENU_SELECTION
 }
@@ -244,6 +249,11 @@ function restore_system_software(){
 	rm ${FRAMEWORK_PATH}/android_overlay/packages/apps/Musio*/*.apk
 	rm ${FRAMEWORK_PATH}/android_overlay/packages/apps/*.so
 	apply_system_software
+}
+
+function show_apk_updated(){
+	ls -al ${FRAMEWORK_PATH}/android_overlay/packages/apps/Apps*/*.apk
+	ls -al ${FRAMEWORK_PATH}/android_overlay/packages/apps/Musio*/*.apk
 }
 
 function apply_system_software()
