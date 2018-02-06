@@ -181,6 +181,8 @@ on boot
 
     # Set WiFi Display Source VideoBitRate Adaptive
     setprop media.wfd.video-bitrate 3000000
+    
+    write /sys/power/wake_lock "musio_lock"
 
 #add by simcom
 # change init.gprs-pppd for recovery mode
