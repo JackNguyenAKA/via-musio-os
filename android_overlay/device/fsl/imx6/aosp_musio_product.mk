@@ -87,6 +87,7 @@ PRODUCT_COPY_FILES += \
 	device/fsl/musio/init.i.MX6QP.rc:root/init.freescale.i.MX6QP.rc \
 	device/fsl/musio/init.musio.sh:system/etc/init.musio.sh \
 	device/fsl/musio/init.window.sh:system/etc/init.window.sh \
+	device/fsl/musio/temp_clean.sh:system/etc/temp_clean.sh \
 	device/fsl/musio/init.firmware.sh:system/etc/init.firmware.sh \
 	device/fsl/musio/audio_policy.conf:system/etc/audio_policy.conf \
 	device/fsl/musio/audio_effects.conf:system/vendor/etc/audio_effects.conf \

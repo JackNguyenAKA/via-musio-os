@@ -143,6 +143,9 @@ on boot
     chown system system /system/etc/init.window.sh 
     chmod 0777 /system/etc/init.window.sh
 
+    chown system system /system/etc/temp_clean.sh 
+    chmod 0777 /system/etc/temp_clean.sh
+
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -395,6 +398,10 @@ on property:sys.boot_completed=1
     start musio-setup
     start window-setup
 
+on property:musio.persist.reboot=1
+    start reset-musio
+
+
 # change interactive atrrubuties permissions when interactive is actived
 on property:sys.interactive="active"
     chown system root /sys/devices/system/cpu/cpufreq/interactive/timer_rate
@@ -539,6 +546,12 @@ service musio-setup /system/bin/sh /system/etc/init.musio.sh
     oneshot
 
 service firmware-setup /system/bin/sh /system/etc/init.firmware.sh
+    class late_start 
+    user root
+    group root
+    oneshot
+
+service reset-musio /system/bin/sh /system/etc/temp_clean.sh
     class late_start 
     user root
     group root
