@@ -92,6 +92,7 @@ PRODUCT_COPY_FILES += \
 	device/fsl/musio/audio_policy.conf:system/etc/audio_policy.conf \
 	device/fsl/musio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 	device/fsl/musio/check_wifi_mac.sh:system/etc/check_wifi_mac.sh \
+	device/fsl/musio/power_off.ogg:system/media/audio/ui/power_off.ogg \
 	device/fsl/musio/wl18xx-fw-4.bin:system/etc/wl18xx-fw-4.bin \
 	#device/fsl/musio/bootanimation.zip:system/media/bootanimation.zip \
 
