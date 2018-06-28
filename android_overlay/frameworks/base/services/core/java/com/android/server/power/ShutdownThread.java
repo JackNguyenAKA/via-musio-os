@@ -46,6 +46,10 @@ import android.os.SystemVibrator;
 import android.os.storage.IMountService;
 import android.os.storage.IMountShutdownObserver;
 
+import android.media.AudioManager;
+import android.net.Uri;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import com.android.internal.R;
 import com.android.internal.telephony.ITelephony;
 import com.android.server.pm.PackageManagerService;
@@ -112,6 +116,20 @@ public final class ShutdownThread extends Thread {
     public static void shutdown(final Context context, boolean confirm) {
         mReboot = false;
         mRebootSafeMode = false;
+	Log.i(TAG, "shutdown, sound playing");
+	final String soundPath = "/system/media/audio/ui/power_off.ogg";
+	if (soundPath != null) {
+		Log.i(TAG, "sound path : " + soundPath);
+		final Uri soundUri = Uri.parse("file://" + soundPath);
+		if (soundUri != null) {
+			final Ringtone sfx = RingtoneManager.getRingtone(context, soundUri);
+			if (sfx != null) {
+				Log.i(TAG, "Ringtone");
+				sfx.setStreamType(AudioManager.STREAM_SYSTEM);
+				sfx.play();
+			}
+		}
+	}
         shutdownInner(context, confirm);
     }
 
@@ -220,7 +238,7 @@ public final class ShutdownThread extends Thread {
             }
             sIsStarted = true;
         }
-
+		
         // throw up an indeterminate system dialog to indicate radio is
         // shutting down.
 //        ProgressDialog pd = new ProgressDialog(context);
@@ -232,6 +250,7 @@ public final class ShutdownThread extends Thread {
 //
 //        pd.show();
 
+                
         MusioPowerOffProgressDialog pd = new MusioPowerOffProgressDialog(context);
         pd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
         pd.setCancelable(false);

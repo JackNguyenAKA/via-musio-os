@@ -27,20 +27,11 @@ PRODUCT_LOCALES := en_US
 
 PRODUCT_PACKAGES += \
     AppsAlarm \
-    AppsAcademyPlacementTest \
-    AppsAcademyLauncher \
-    AppsAcademyEnglishDialog \
-    AppsAcademyEnglishPattern \
-    AppsAcademyEnglishVoca \
     AppsAcademyIcebreaker \
-    AppsB2CEnglishDialog \
-    AppsB2CEnglishPattern \
-    AppsB2CEnglishVoca \
-    AppsB2CLauncher \
-    AppsDictionaryEng2Jpn \
-    AppsDictionaryJpn2Eng \
-    AppsEduhub \
     AppsClientManager \
+    AppsDictionaryJpn2Eng \
+    AppsDictionaryEng2Jpn \
+    AppsEduhub \
     AppsGamehub \
     AppsGamehubMusioAdventure \
     AppsGamehubTicTacToe \
@@ -55,6 +46,7 @@ PRODUCT_PACKAGES += \
     AppsSophyMusioAdventure \
     AppsSophyTutor \
     AppsUpdate \
+    AppsWardrobe \
     AppsInspect \
     MusioLauncher \
     MusioMemberProfile \
@@ -87,10 +79,12 @@ PRODUCT_COPY_FILES += \
 	device/fsl/musio/init.i.MX6QP.rc:root/init.freescale.i.MX6QP.rc \
 	device/fsl/musio/init.musio.sh:system/etc/init.musio.sh \
 	device/fsl/musio/init.window.sh:system/etc/init.window.sh \
+	device/fsl/musio/temp_clean.sh:system/etc/temp_clean.sh \
 	device/fsl/musio/init.firmware.sh:system/etc/init.firmware.sh \
 	device/fsl/musio/audio_policy.conf:system/etc/audio_policy.conf \
 	device/fsl/musio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 	device/fsl/musio/check_wifi_mac.sh:system/etc/check_wifi_mac.sh \
+	device/fsl/musio/power_off.ogg:system/media/audio/ui/power_off.ogg \
 	device/fsl/musio/wl18xx-fw-4.bin:system/etc/wl18xx-fw-4.bin \
 	#device/fsl/musio/bootanimation.zip:system/media/bootanimation.zip \
 
