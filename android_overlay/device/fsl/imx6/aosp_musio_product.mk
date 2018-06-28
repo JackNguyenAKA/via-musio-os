@@ -27,11 +27,7 @@ PRODUCT_LOCALES := en_US
 
 PRODUCT_PACKAGES += \
     AppsAlarm \
-    AppsAcademyLauncher \
-    AppsB2CEnglishDialog \
-    AppsB2CEnglishPattern \
-    AppsB2CEnglishVoca \
-    AppsB2CLauncher \
+    AppsAcademyIcebreaker \
     AppsClientManager \
     AppsDictionaryJpn2Eng \
     AppsDictionaryEng2Jpn \
@@ -50,6 +46,7 @@ PRODUCT_PACKAGES += \
     AppsSophyMusioAdventure \
     AppsSophyTutor \
     AppsUpdate \
+    AppsWardrobe \
     AppsInspect \
     MusioLauncher \
     MusioMemberProfile \

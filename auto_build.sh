@@ -150,7 +150,6 @@ function build_system_software()
 	echo "========================================================"				
 	cd ${SYSTEM_SOFTWARE_PATH}
 	./gradlew assembleMusio	
-	./gradlew assembleTutor	
 }
 
 function clean_framework()
@@ -263,7 +262,7 @@ function apply_system_software()
 	echo "========================================================"
 
 	
-	#cp ${SYSTEM_SOFTWARE_PATH}/dummyhome/build/outputs/apk/musio/dummyhome-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioDummyHome/MusioDummyHome.apk
+	cp ${SYSTEM_SOFTWARE_PATH}/dummyhome/build/outputs/apk/musio/dummyhome-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/MusioDummyHome/MusioDummyHome.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-english/build/outputs/apk/musio/apps-academy-english-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyEnglish/AppsAcademyEnglish.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-english-dialog/build/outputs/apk/musio/apps-academy-english-dialog-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyEnglishDialog/AppsAcademyEnglishDialog.apk
 	cp ${SYSTEM_SOFTWARE_PATH}/apps-academy-english-pattern/build/outputs/apk/musio/apps-academy-english-pattern-musio.apk ${FRAMEWORK_PATH}/android_overlay/packages/apps/AppsAcademyEnglishPattern/AppsAcademyEnglishPattern.apk
