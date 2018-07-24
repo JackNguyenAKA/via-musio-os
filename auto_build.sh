@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FRAMEWORK_PATH="."
+FRAMEWORK_PATH="/home/ubuntu/via-mos-200"
 SYSTEM_SOFTWARE_PATH="../msltest"
 
 
@@ -133,7 +133,8 @@ function pull_system_software()
 	echo "UPDATE SYSTEM SOFTWARE"
 	echo "========================================================"				
 	cd ${SYSTEM_SOFTWARE_PATH}
-	git pull upstream master
+	git checkout build-machine
+	git pull origin develop
 }
 
 function update_api()
@@ -151,6 +152,7 @@ function build_system_software()
 	echo "BUILD SYSTEM SOFTWARE"
 	echo "========================================================"				
 	cd ${SYSTEM_SOFTWARE_PATH}
+	./gradlew clean
 	./gradlew assembleMusio	
 }
 
