@@ -1,0 +1,105 @@
+# path config
+# this is the original file
+# currently setup for MSL v3.0.1
+MSL_PATH=../musio-system-library
+OUTPUT_SYSTEM_DIR=../system-apps
+#OUTPUT_SYSTEM_DIR=../result/user_rc10/system/app
+
+
+# apk file list
+apk,musio,dummyhome,MusioDummyHome
+
+# system service
+apk,musio,arduino,MusioArduino
+apk,musio,controller,MusioController
+apk,musio,emotion,MusioEmotion
+apk,musio,liveface,MusioLiveFace
+apk,musio,home,MusioHome
+apk,musio,member,MusioMember
+apk,musio,mode,MusioMode
+apk,musio,muse,MusioMuse
+apk,musio,keyboard,MusioKeyboard
+apk,musio,push,MusioPush
+apk,musio,sophy,MusioSophy
+apk,musio,sphinx,MusioSphinx
+apk,musio,status,MusioStatus
+apk,musio,system,MusioSystem
+apk,musio,touch,MusioTouch
+apk,musio,tts,MusioTTS
+apk,musio,ui,MusioUI
+apk,musio,vision,MusioVision
+apk,musio,timeout,MusioTimeout
+
+
+# inspect app
+apk,musio,apps-inspect,AppsInspect
+
+# academy, for B2B
+apk,musio,apps-academy-icebreaker,AppsAcademyIcebreaker
+#apk,musio,apps-academy-english-dialog,AppsAcademyEnglishDialog
+#apk,musio,apps-academy-english-pattern,AppsAcademyEnglishPattern
+#apk,musio,apps-academy-english-voca,AppsAcademyEnglishVoca
+#apk,musio,apps-academy-launcher,AppsAcademyLauncher
+#apk,musio,apps-academy-placementtest,AppsAcademyPlacementTest
+
+# daily apps
+apk,musio,apps-alarm,AppsAlarm
+apk,musio,apps-radio,AppsRadio
+
+# download manager
+apk,musio,apps-client-manager,AppsClientManager
+
+# sophy managing app
+apk,musio,apps-sophy,AppsSophy
+
+# sophy triggered apps
+apk,musio,apps-sophy-bubble,AppsSophyBubble
+apk,musio,apps-sophy-collect-rocket,AppsSophyCollectRocket
+apk,musio,apps-sophy-musioadventure,AppsSophyMusioAdventure
+apk,musio,apps-sophy-launchpad,AppsSophyCardMusicLaunchpad
+apk,musio,apps-sophy-card-music-video,AppsSophyCardMusicVideo
+apk,musio,apps-sophy-calculator,AppsSophyCalculator
+apk,musio,apps-sophy-card-tarot,AppsSophyCardTarot
+
+
+# musio game apps
+apk,musio,apps-gamehub,AppsGamehub
+apk,musio,apps-gamehub-musioadventure,AppsGamehubMusioAdventure
+apk,musio,apps-gamehub-tictactoe,AppsGamehubTicTacToe
+
+# b2c english
+#apk,musio,apps-B2C-english-dialog,AppsB2CEnglishDialog
+#apk,musio,apps-B2C-english-pattern,AppsB2CEnglishPattern
+#apk,musio,apps-B2C-english-voca,AppsB2CEnglishVoca
+apk,musio,apps-B2C-launcher,AppsB2CLauncher
+
+# launcher default apps
+apk,musio,apps-launcher,MusioLauncher
+apk,musio,apps-member,MusioMemberProfile
+apk,musio,apps-settings,MusioSetting
+apk,musio,apps-update,AppsUpdate
+
+# eduhub
+apk,musio,apps-eduhub,AppsEduhub
+apk,musio,apps-eduhub-dictionary-eng2jpn,AppsDictionaryEng2Jpn
+apk,musio,apps-eduhub-dictionary-jpn2eng,AppsDictionaryJpn2Eng
+
+# edge
+#apk,musio,apps-edge-client,AppsEdgeClient
+
+# costume feature
+apk,musio,apps-wardrobe,AppsWardrobe
+
+
+# list so files
+so,arduino/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/libserial_port.so
+so,tts/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/libengine.so
+so,vision/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/libdetection_based_tracker.so
+so,vision/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/libopencv_java3.so
+so,touch/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/libmultitouch2.so
+so,keyboard/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/liblipitk.so
+so,sphinx/build/intermediates/jniLibs/musio/armeabi-v7a/libpocketsphinx_jni.so
+so,library-gdx4musio/libs/armeabi-v7a/libgdx.so
+so,library-gdx4musio/libs/armeabi-v7a/libgdx-box2d.so
+#so,apps-sophy-tutor/build/intermediates/transforms/mergeJniLibs/musio/0/lib/armeabi-v7a/librealm-jni.so
+
