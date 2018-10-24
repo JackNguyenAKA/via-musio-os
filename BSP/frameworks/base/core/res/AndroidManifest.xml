@@ -2407,7 +2407,7 @@
     <permission android:name="android.permission.CONFIGURE_WIFI_DISPLAY"
         android:label="@string/permlab_configureWifiDisplay"
         android:description="@string/permdesc_configureWifiDisplay"
-        android:protectionLevel="signature" />
+        android:protectionLevel="normal" />
 
     <!-- Allows an application to control low-level features of Wifi displays
          such as opening an RTSP socket.  This permission should only be used
@@ -2416,7 +2416,7 @@
     <permission android:name="android.permission.CONTROL_WIFI_DISPLAY"
         android:label="@string/permlab_controlWifiDisplay"
         android:description="@string/permdesc_controlWifiDisplay"
-        android:protectionLevel="signature" />
+        android:protectionLevel="normal" />
 
     <!-- @SystemApi Allows an application to control VPN.
          <p>Not for use by third-party applications.</p>
