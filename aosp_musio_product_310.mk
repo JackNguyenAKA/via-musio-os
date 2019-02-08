@@ -49,7 +49,6 @@ PRODUCT_PACKAGES += \
     AppsSophyProgramming \
     AppsSophyTutor \
     AppsUpdate \
-    AppsWardrobe \
     AppsInspect \
     MusioLauncher \
     MusioMemberProfile \

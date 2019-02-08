@@ -60,7 +60,7 @@ apk,musio,apps-sophy-launchpad,AppsSophyCardMusicLaunchpad
 apk,musio,apps-sophy-card-music-video,AppsSophyCardMusicVideo
 apk,musio,apps-sophy-calculator,AppsSophyCalculator
 apk,musio,apps-sophy-card-tarot,AppsSophyCardTarot
-
+apk,musio,apps-sophy-programming,AppsSophyProgramming
 
 # musio game apps
 apk,musio,apps-gamehub,AppsGamehub
@@ -90,6 +90,8 @@ apk,musio,apps-eduhub-dictionary-jpn2eng,AppsDictionaryJpn2Eng
 # costume feature
 apk,musio,apps-wardrobe,AppsWardrobe
 
+# learners chat feature
+apk,musio,apps-learners-chat,AppsLearnersChat
 
 # list so files
 so,arduino/build/intermediates/ndkBuild/musio/obj/local/armeabi-v7a/libserial_port.so
