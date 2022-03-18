@@ -1,13 +1,14 @@
 # path config
 # this is the original file
-# currently setup for MSL v3.4.0
+# currently setup for MSL v4.0.0
+# Modified: Jack (2021/12/13)
 MSL_PATH=../musio-system-library
 OUTPUT_SYSTEM_DIR=../system-apps
 #OUTPUT_SYSTEM_DIR=../result/user_rc10/system/app
 
 
 # apk file list
-# apk,musio,dummyhome,MusioDummyHome
+#apk,musio,dummyhome,MusioDummyHome
 
 # system service
 apk,musio,arduino,MusioArduino
@@ -72,7 +73,7 @@ apk,musio,apps-gamehub-tictactoe,AppsGamehubTicTacToe
 #apk,musio,apps-B2C-english-dialog,AppsB2CEnglishDialog
 #apk,musio,apps-B2C-english-pattern,AppsB2CEnglishPattern
 #apk,musio,apps-B2C-english-voca,AppsB2CEnglishVoca
-apk,musio,apps-B2C-launcher,AppsB2CLauncher
+#apk,musio,apps-B2C-launcher,AppsB2CLauncher
 
 # launcher default apps
 apk,musio,apps-launcher,MusioLauncher
@@ -84,10 +85,10 @@ apk,musio,apps-update,AppsUpdate
 apk,musio,apps-eduhub,AppsEduhub
 apk,musio,apps-eduhub-dictionary-eng2jpn,AppsDictionaryEng2Jpn
 apk,musio,apps-eduhub-dictionary-jpn2eng,AppsDictionaryJpn2Eng
-#apk,musio,apps-eduhub-dictionary-eng2kor,AppsDictionaryEng2Kor
-#apk,musio,apps-eduhub-dictionary-kor2eng,AppsDictionaryKor2Eng
-#apk,musio,apps-eduhub-dictionary-eng2chi,AppsDictionaryEng2Chi
-#apk,musio,apps-eduhub-dictionary-chi2eng,AppsDictionaryChi2Eng
+apk,musio,apps-eduhub-dictionary-eng2kor,AppsDictionaryEng2Kor
+apk,musio,apps-eduhub-dictionary-kor2eng,AppsDictionaryKor2Eng
+apk,musio,apps-eduhub-dictionary-eng2chi,AppsDictionaryEng2Chi
+apk,musio,apps-eduhub-dictionary-chi2eng,AppsDictionaryChi2Eng
 
 # edu Cambridge
 apk,musio,apps-edu-cambridge,AppsEduCambridge

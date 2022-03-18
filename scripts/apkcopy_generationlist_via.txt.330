@@ -1,6 +1,6 @@
 # path config
 # this is the original file
-# currently setup for MSL v3.4.0
+# currently setup for MSL v3.3.0
 MSL_PATH=../musio-system-library
 OUTPUT_SYSTEM_DIR=../system-apps
 #OUTPUT_SYSTEM_DIR=../result/user_rc10/system/app
@@ -90,7 +90,7 @@ apk,musio,apps-eduhub-dictionary-jpn2eng,AppsDictionaryJpn2Eng
 #apk,musio,apps-eduhub-dictionary-chi2eng,AppsDictionaryChi2Eng
 
 # edu Cambridge
-apk,musio,apps-edu-cambridge,AppsEduCambridge
+#apk,musio,apps-edu-cambridge,AppsEduCambridge
 apk,musio,apps-edu,AppsEdu
 # edge
 #apk,musio,apps-edge-client,AppsEdgeClient

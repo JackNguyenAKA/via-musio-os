@@ -1,1 +1,1 @@
-./android_overlay/device/fsl/imx6/aosp_musio_product.mk
+/home/ubuntu/via-mos-200/android_overlay/device/fsl/imx6/aosp_musio_product.mk
