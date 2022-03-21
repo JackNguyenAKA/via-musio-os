@@ -1,5 +1,7 @@
 # This is a FSL Android Reference Design platform based on i.MX6Q ARD board
 # It will inherit from FSL core product which in turn inherit from Google generic
+# For 3.3.0 with new dictionary API and Wifi login function
+# With Edu-Cambridge from Darren
 
 $(call inherit-product, device/fsl/imx6/imx6.mk)
 #$(call inherit-product-if-exists,vendor/google/products/gms.mk)
@@ -47,6 +49,7 @@ PRODUCT_PACKAGES += \
     AppsSophyCollectRocket \
     AppsSophyMusioAdventure \
     AppsSophyProgramming \
+    AppsSophyKitchen \
     AppsSophyTutor \
     AppsUpdate \
     AppsWardrobe \
@@ -73,8 +76,8 @@ PRODUCT_PACKAGES += \
     MusioTTS \
     MusioUI \
     MusioVision \
-    
-
+    AppsEdu \
+    AppsEduCambridge \
 PRODUCT_COPY_FILES += \
 	device/fsl/musio/init.rc:root/init.freescale.rc \
         device/fsl/musio/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \

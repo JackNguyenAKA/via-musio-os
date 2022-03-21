@@ -76,8 +76,8 @@ PRODUCT_PACKAGES += \
     MusioTTS \
     MusioUI \
     MusioVision \
+    AppsEdu \
     AppsEduCambridge \
-
 PRODUCT_COPY_FILES += \
 	device/fsl/musio/init.rc:root/init.freescale.rc \
         device/fsl/musio/init.i.MX6Q.rc:root/init.freescale.i.MX6Q.rc \
